@@ -1,1 +1,3 @@
 site_name: Introduction to Statistics at DTU solutions
+theme:
+        name: material
