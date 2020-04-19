@@ -1,0 +1,847 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>Chapter 1 - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercise-11-infant-birth-weight" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Chapter 1
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Chapter 1
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Chapter 1" class="md-nav__link md-nav__link--active">
+      Chapter 1
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-11-infant-birth-weight" class="md-nav__link">
+    Exercise 1.1 Infant birth weight
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1.1 Infant birth weight">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-females" class="md-nav__link">
+    a) Females
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-males" class="md-nav__link">
+    b) Males:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-the-five-quartiles" class="md-nav__link">
+    c) The five quartiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-inter-quartile-rangeiqr" class="md-nav__link">
+    d) Inter Quartile Range(IQR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-the-coefficient-of-variations" class="md-nav__link">
+    e) The coefficient of variations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-12-course-grades" class="md-nav__link">
+    Exercise 1.2 Course grades
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1.2 Course grades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-median" class="md-nav__link">
+    a) Median
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-quartiles-and-iqr" class="md-nav__link">
+    b) Quartiles and IQR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-cholesterol" class="md-nav__link">
+    Exercise 1.3 Cholesterol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-medians" class="md-nav__link">
+    a) Medians
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-standard-deviation" class="md-nav__link">
+    b) Standard deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-sample-covariance" class="md-nav__link">
+    c) Sample covariance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-correlation" class="md-nav__link">
+    d) Correlation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2/" title="Chapter 2" class="md-nav__link">
+      Chapter 2
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-11-infant-birth-weight" class="md-nav__link">
+    Exercise 1.1 Infant birth weight
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1.1 Infant birth weight">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-females" class="md-nav__link">
+    a) Females
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-males" class="md-nav__link">
+    b) Males:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-the-five-quartiles" class="md-nav__link">
+    c) The five quartiles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-inter-quartile-rangeiqr" class="md-nav__link">
+    d) Inter Quartile Range(IQR)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e-the-coefficient-of-variations" class="md-nav__link">
+    e) The coefficient of variations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-12-course-grades" class="md-nav__link">
+    Exercise 1.2 Course grades
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 1.2 Course grades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-median" class="md-nav__link">
+    a) Median
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-quartiles-and-iqr" class="md-nav__link">
+    b) Quartiles and IQR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercise-13-cholesterol" class="md-nav__link">
+    Exercise 1.3 Cholesterol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-medians" class="md-nav__link">
+    a) Medians
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-standard-deviation" class="md-nav__link">
+    b) Standard deviation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-sample-covariance" class="md-nav__link">
+    c) Sample covariance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d-correlation" class="md-nav__link">
+    d) Correlation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Chapter 1</h1>
+                
+                <h3 id="exercise-11-infant-birth-weight">Exercise 1.1 Infant birth weight</h3>
+<h4 id="a-females">a) Females</h4>
+<ul>
+<li><strong>sample mean</strong> - show average including outliers  </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\bar{x} = \frac{2474+2547+2830+3219+3429+3448+3677+3872+4001+4116}{10} = 3361.3
+</div>
+<script type="math/tex; mode=display">
+\bar{x} = \frac{2474+2547+2830+3219+3429+3448+3677+3872+4001+4116}{10} = 3361.3
+</script>
+</div>
+<ul>
+<li><strong>variance</strong> - it’s the average of the distance of values from the mean squared</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+s^2 = \frac{((2474-3361.3)^2+(2547-3361.3)^2+ 
+                      (2830-3361.3)^2+\\(3219-3361.3)^2+
+                      (3429-3361.3)^2+(3448-3361.3)^2+\\
+                      (3677-3361.3)^2+(3872-3361.3)^2+
+                      (4001-3361.3)^2+(4116-3361.3)^2}{9} = 344920.5
+</div>
+<script type="math/tex; mode=display">
+s^2 = \frac{((2474-3361.3)^2+(2547-3361.3)^2+ 
+                      (2830-3361.3)^2+\\(3219-3361.3)^2+
+                      (3429-3361.3)^2+(3448-3361.3)^2+\\
+                      (3677-3361.3)^2+(3872-3361.3)^2+
+                      (4001-3361.3)^2+(4116-3361.3)^2}{9} = 344920.5
+</script>
+</div>
+<ul>
+<li><strong>standard deviation</strong> - it's the square root of the variance. </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+s = \sqrt{283158.2} = 587.2993
+</div>
+<script type="math/tex; mode=display">
+s = \sqrt{283158.2} = 587.2993
+</script>
+</div>
+<h4 id="b-males">b) Males:</h4>
+<ul>
+<li><strong>sample mean</strong></li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\bar{x} = \frac{2844+2863+ 2963+3239+ 3379+ 3449+ 3582+ 3926+ 4151+ 4356}{10} = 3475.2
+</div>
+<script type="math/tex; mode=display">
+\bar{x} = \frac{2844+2863+ 2963+3239+ 3379+ 3449+ 3582+ 3926+ 4151+ 4356}{10} = 3475.2
+</script>
+</div>
+<ul>
+<li><strong>variance</strong> </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+s^2 = \frac{(2844-3475.2)^2+(2863-3475.2)^2+ (2963-3475.2)^2+ \\
+                    (3239-3475.2)^2+ (3379-3475.2)^2+ (3449-3475.2)^2+\\
+                    (3582-3475.2)^2+ (3926-3475.2)^2+ (4151-3475.2)^2+ 
+                    (4356-3475.2)^2}{9} =  532.1261
+</div>
+<script type="math/tex; mode=display">
+s^2 = \frac{(2844-3475.2)^2+(2863-3475.2)^2+ (2963-3475.2)^2+ \\
+                    (3239-3475.2)^2+ (3379-3475.2)^2+ (3449-3475.2)^2+\\
+                    (3582-3475.2)^2+ (3926-3475.2)^2+ (4151-3475.2)^2+ 
+                    (4356-3475.2)^2}{9} =  532.1261
+</script>
+</div>
+<ul>
+<li><strong>standard deviation</strong>  </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+s = \sqrt{1625049} = 532.1261
+</div>
+<script type="math/tex; mode=display">
+s = \sqrt{1625049} = 532.1261
+</script>
+</div>
+<ul>
+<li>Compared with females males infant is heavier with 113.9 in average. Moreover males weight varies 55.1732‬ grams less than females. </li>
+</ul>
+<h4 id="c-the-five-quartiles">c) The five quartiles</h4>
+<ul>
+<li>Females</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+Q_{0} = q_{0} = x_{1} = 2474\\
+Q_{1} = q_{0.25}= x_{25*\frac{10}{100} = x_{\lceil{2.5}\rceil}} = x_{3} = 2830 \\
+Q_{2} = q_{0.50}= \frac{x_{5}+ x_{6}}{2} = \frac{3429+3448}{2} = 3438.5  \\
+Q_{3} = q_{0.75} = x_{75*\frac{10}{100}} = x_{{\lceil{7.5}\rceil}} = x_{8} = 3872 \\
+Q_{4} = q_{1} = x_{10} = 4116\\
+</div>
+<script type="math/tex; mode=display">
+Q_{0} = q_{0} = x_{1} = 2474\\
+Q_{1} = q_{0.25}= x_{25*\frac{10}{100} = x_{\lceil{2.5}\rceil}} = x_{3} = 2830 \\
+Q_{2} = q_{0.50}= \frac{x_{5}+ x_{6}}{2} = \frac{3429+3448}{2} = 3438.5  \\
+Q_{3} = q_{0.75} = x_{75*\frac{10}{100}} = x_{{\lceil{7.5}\rceil}} = x_{8} = 3872 \\
+Q_{4} = q_{1} = x_{10} = 4116\\
+</script>
+</div>
+<ul>
+<li>Males</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+Q_{0} = q_{0} = x_{1} = 2844\\
+Q_{1} = q_{0.25}= x_{25*\frac{10}{100}} = x_{\lceil{2.5}\rceil} = x_{3} = 2963 \\
+Q_{2} = q_{0.50}= \frac{x_{5}+ x_{6}}{2} = \frac{3379+3449}{2} = 3414.5  \\
+Q_{3} = q_{0.75} = x_{75*\frac{10}{100}} = x_{{\lceil{7.5}\rceil}} = x_{8} = 3926 \\
+Q_{4} = q_{1} = x_{10} = 4356\\
+</div>
+<script type="math/tex; mode=display">
+Q_{0} = q_{0} = x_{1} = 2844\\
+Q_{1} = q_{0.25}= x_{25*\frac{10}{100}} = x_{\lceil{2.5}\rceil} = x_{3} = 2963 \\
+Q_{2} = q_{0.50}= \frac{x_{5}+ x_{6}}{2} = \frac{3379+3449}{2} = 3414.5  \\
+Q_{3} = q_{0.75} = x_{75*\frac{10}{100}} = x_{{\lceil{7.5}\rceil}} = x_{8} = 3926 \\
+Q_{4} = q_{1} = x_{10} = 4356\\
+</script>
+</div>
+<ul>
+<li>Boxplot:</li>
+</ul>
+<p><img alt="infant_birth_weight" src="../pics/infant_birth_weight.png" /></p>
+<h4 id="d-inter-quartile-rangeiqr">d) Inter Quartile Range(IQR)</h4>
+<div>
+<div class="MathJax_Preview">
+  IQR = q_{0.75} - q_{0.25} = Q_{3}-Q_{1}
+</div>
+<script type="math/tex; mode=display">
+  IQR = q_{0.75} - q_{0.25} = Q_{3}-Q_{1}
+</script>
+</div>
+<ul>
+<li>Females </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+IQR = q_{0.75}- q_{0.25} = 3872 - 2830 = 1042 \\
+\text{extremes} &lt; Q_{1} - 1042 * 1.5 = 2963 - 1563 = 1400 \\
+\text{OR} \\
+\text{extremes} &gt; Q_{3} + 1042 * 1.5 = 3872 + 1563 = 5435
+</div>
+<script type="math/tex; mode=display">
+IQR = q_{0.75}- q_{0.25} = 3872 - 2830 = 1042 \\
+\text{extremes} < Q_{1} - 1042 * 1.5 = 2963 - 1563 = 1400 \\
+\text{OR} \\
+\text{extremes} > Q_{3} + 1042 * 1.5 = 3872 + 1563 = 5435
+</script>
+</div>
+<p>There are no observations lower than 1400 or higher than 5435, so there are no  "extreme" observations</p>
+<ul>
+<li>Males </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+IQR = q_{0.75}- q_{0.25} =3926 - 2963  = 963 \\
+\text{extremes} &lt; Q_{1} - 963  * 1.5 = 2963 - 1444.5= 1518.5 \\
+\text{OR} \\
+\text{extremes} &gt; Q_{3} + * 1.5 = 3926 + 1444.5  = 5370.5
+</div>
+<script type="math/tex; mode=display">
+IQR = q_{0.75}- q_{0.25} =3926 - 2963  = 963 \\
+\text{extremes} < Q_{1} - 963  * 1.5 = 2963 - 1444.5= 1518.5 \\
+\text{OR} \\
+\text{extremes} > Q_{3} + * 1.5 = 3926 + 1444.5  = 5370.5
+</script>
+</div>
+<p>There are no observations lower than 1518.5 or higher than 5370.5 , so there are no  "extreme" observations. </p>
+<h4 id="e-the-coefficient-of-variations">e) The coefficient of variations</h4>
+<div>
+<div class="MathJax_Preview">
+V = \frac{s}{\bar{x}}
+</div>
+<script type="math/tex; mode=display">
+V = \frac{s}{\bar{x}}
+</script>
+</div>
+<ul>
+<li>
+<p>Females 
+$$
+V = \frac{587.2993}{3361.1}= 0.1747
+$$</p>
+</li>
+<li>
+<p>Males</p>
+</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+V = \frac{532.1261}{3475.2} = 0.153121
+</div>
+<script type="math/tex; mode=display">
+V = \frac{532.1261}{3475.2} = 0.153121
+</script>
+</div>
+<h3 id="exercise-12-course-grades">Exercise 1.2 Course grades</h3>
+<h4 id="a-median">a) Median</h4>
+<p>4</p>
+<h4 id="b-quartiles-and-iqr">b) Quartiles and IQR</h4>
+<div>
+<div class="MathJax_Preview">
+Q_{0} = q_{0} = x_{1} = -3\\
+Q_{1} = q_{0.25}= x_{25*\frac{251}{100} = x_{\lceil{62.75}\rceil}} = x_{63} = 0 \\
+Q_{2} = q_{0.50}= \frac{x_{125}+ x_{126}}{2} = \frac{4+4}{2} = 4  \\
+Q_{3} = q_{0.75} = x_{75*\frac{251}{100}} = x_{{\lceil{188.25}\rceil}} = x_{189} = 7 \\
+Q_{4} = q_{1} = x_{10} = 12\\ 
+IQR = q_{0.75}- q_{0.25} = 7 - 0  = 7  \\
+</div>
+<script type="math/tex; mode=display">
+Q_{0} = q_{0} = x_{1} = -3\\
+Q_{1} = q_{0.25}= x_{25*\frac{251}{100} = x_{\lceil{62.75}\rceil}} = x_{63} = 0 \\
+Q_{2} = q_{0.50}= \frac{x_{125}+ x_{126}}{2} = \frac{4+4}{2} = 4  \\
+Q_{3} = q_{0.75} = x_{75*\frac{251}{100}} = x_{{\lceil{188.25}\rceil}} = x_{189} = 7 \\
+Q_{4} = q_{1} = x_{10} = 12\\ 
+IQR = q_{0.75}- q_{0.25} = 7 - 0  = 7  \\
+</script>
+</div>
+<h4 id="exercise-13-cholesterol">Exercise 1.3 Cholesterol</h4>
+<h4 id="a-medians">a) Medians</h4>
+<div>
+<div class="MathJax_Preview">
+\bar{b} = 8.5 \\
+\bar{a} = 7.2
+</div>
+<script type="math/tex; mode=display">
+\bar{b} = 8.5 \\
+\bar{a} = 7.2
+</script>
+</div>
+<h4 id="b-standard-deviation">b) Standard deviation</h4>
+<div>
+<div class="MathJax_Preview">
+s_{b} = 0.9023778 \\
+s_{a} = 1.090129
+</div>
+<script type="math/tex; mode=display">
+s_{b} = 0.9023778 \\
+s_{a} = 1.090129
+</script>
+</div>
+<h4 id="c-sample-covariance">c) Sample covariance</h4>
+<div>
+<div class="MathJax_Preview">
+s_{ab} = \frac{1}{n-1}\sum_{i=1}^{n}{(b_{i}-\bar{b})(a_{i}-\bar{a})} = 0.7964286
+</div>
+<script type="math/tex; mode=display">
+s_{ab} = \frac{1}{n-1}\sum_{i=1}^{n}{(b_{i}-\bar{b})(a_{i}-\bar{a})} = 0.7964286
+</script>
+</div>
+<h4 id="d-correlation">d) Correlation</h4>
+<div>
+<div class="MathJax_Preview">
+r = \frac{s_{ba}}{s_{b}*s_{a}} = 0.8096188
+</div>
+<script type="math/tex; mode=display">
+r = \frac{s_{ba}}{s_{b}*s_{a}} = 0.8096188
+</script>
+</div>
+<h4 id="e">e)</h4>
+<p>I would answer something like this: the most patients decreased cholesterol level between 1.1 and 1.6, which is Inner Quartile Range (IQR). However the worst result recorded is -0.2 and the best is 2.1.  Lastly the mean is 1.21 and the median is 1.3. </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="Preface" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Preface
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../chapter_2/" title="Chapter 2" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Chapter 2
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

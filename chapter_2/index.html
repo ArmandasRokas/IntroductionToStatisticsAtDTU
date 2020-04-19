@@ -1,0 +1,885 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>Chapter 2 - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercise-21" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Chapter 2
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="Chapter 1" class="md-nav__link">
+      Chapter 1
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Chapter 2
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Chapter 2" class="md-nav__link md-nav__link--active">
+      Chapter 2
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-21" class="md-nav__link">
+    Exercise 2.1
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-24" class="md-nav__link">
+    Exercise 2.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-25" class="md-nav__link">
+    Exercise 2.5
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-27" class="md-nav__link">
+    Exercise 2.7
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-28" class="md-nav__link">
+    Exercise 2.8
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-29" class="md-nav__link">
+    Exercise 2.9
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-21" class="md-nav__link">
+    Exercise 2.1
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-24" class="md-nav__link">
+    Exercise 2.4
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-25" class="md-nav__link">
+    Exercise 2.5
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-27" class="md-nav__link">
+    Exercise 2.7
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.7">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-28" class="md-nav__link">
+    Exercise 2.8
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.8">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise-29" class="md-nav__link">
+    Exercise 2.9
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercise 2.9">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                  <h1>Chapter 2</h1>
+                
+                <h3 id="exercise-21">Exercise 2.1</h3>
+<h4 id="a">a)</h4>
+<ul>
+<li>Binomial distribution is applied</li>
+<li>Shows the density or probability of 4 successes in 10 trails with each probability 0.6 </li>
+</ul>
+<h4 id="b">b)</h4>
+<div>
+<div class="MathJax_Preview">
+P(X\leqslant5) = 0.3669\\
+P(X &lt; 5 ) = 0.1662 \\
+P(X&gt;4) = 1 - P(X &lt; 5 ) = 1 - 0.1662 = 0.8338\\
+P(X = 5) = P(X\leqslant5) - P(X &lt; 5 )  = 0.3669 - 0.1662 =  0.2007
+</div>
+<script type="math/tex; mode=display">
+P(X\leqslant5) = 0.3669\\
+P(X < 5 ) = 0.1662 \\
+P(X>4) = 1 - P(X < 5 ) = 1 - 0.1662 = 0.8338\\
+P(X = 5) = P(X\leqslant5) - P(X < 5 )  = 0.3669 - 0.1662 =  0.2007
+</script>
+</div>
+<h4 id="c">c )</h4>
+<ul>
+<li>Poisson distribution</li>
+<li>The probability of 4 events to happen with rate 3 in given interval. </li>
+</ul>
+<h4 id="d">d)</h4>
+<div>
+<div class="MathJax_Preview">
+P(X\leqslant5) = 0.9161 \\
+P(X &lt; 5 ) = 0.8153 \\
+P(X&gt;4) = 1 - P(X &lt; 5 ) = 1 - 0.8153 = 0.1847 \\
+P(X = 5) = P(X\leqslant5) - P(X &lt; 5 )  = 0.9161 - 0.8153 = 0.1008
+</div>
+<script type="math/tex; mode=display">
+P(X\leqslant5) = 0.9161 \\
+P(X < 5 ) = 0.8153 \\
+P(X>4) = 1 - P(X < 5 ) = 1 - 0.8153 = 0.1847 \\
+P(X = 5) = P(X\leqslant5) - P(X < 5 )  = 0.9161 - 0.8153 = 0.1008
+</script>
+</div>
+<h3 id="exercise-24">Exercise 2.4</h3>
+<ul>
+<li>Hypergeometric distribution</li>
+<li>0 - the desired number of successes (discrepancies)</li>
+<li>6 - total number of successes (discrepancies) in the population</li>
+<li>14 - total number of not discrepancies</li>
+<li>3 - tries without replacement </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">dhyper</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">6</span><span class="p">,</span> <span class="m">14</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.3192982</span>
+</code></pre></div>
+
+<h3 id="exercise-25">Exercise 2.5</h3>
+<ul>
+<li>Hypergeometric distribution</li>
+<li>n  = 3  - draws without replacement </li>
+<li>a = 2 - the number of successes in the large population</li>
+<li>N = 20 - elements in the large population </li>
+</ul>
+<h4 id="a_1">a)</h4>
+<div>
+<div class="MathJax_Preview">
+\mu = n \frac{a}{N}= 3 * \frac{2}{20} = 0.3 \\
+\sigma = n \frac{a(N-a)}{N^2}*\frac{N-n}{N-1} = 1.216 \\
+P(X \geqslant 1 ) = 1 - P(X = 0) = 1 - 0.7157 = 0.2843
+</div>
+<script type="math/tex; mode=display">
+\mu = n \frac{a}{N}= 3 * \frac{2}{20} = 0.3 \\
+\sigma = n \frac{a(N-a)}{N^2}*\frac{N-n}{N-1} = 1.216 \\
+P(X \geqslant 1 ) = 1 - P(X = 0) = 1 - 0.7157 = 0.2843
+</script>
+</div>
+<h4 id="b_1">b)</h4>
+<p>The difference from a) is that in a) we picked only 3 from 20 and needed to find probability only in this amount, but here we have probability of event and number of events. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">dbinom</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">0.01</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.9043821</span>
+<span class="o">&gt;</span> <span class="nf">dbinom</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">10</span><span class="p">,</span><span class="m">0.1</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.3486784</span>
+</code></pre></div>
+
+<h3 id="exercise-27">Exercise 2.7</h3>
+<blockquote>
+<p>Poisson distribution</p>
+</blockquote>
+<h4 id="a_2">a)</h4>
+<div>
+<div class="MathJax_Preview">
+x = 5 \\
+\lambda^{min} = 1.6 \\
+P(X=5) = \frac{\lambda^x}{x!}*e^{-\lambda}  = 0.0176
+</div>
+<script type="math/tex; mode=display">
+x = 5 \\
+\lambda^{min} = 1.6 \\
+P(X=5) = \frac{\lambda^x}{x!}*e^{-\lambda}  = 0.0176
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span>   <span class="nf">dpois</span><span class="p">(</span><span class="m">5</span><span class="p">,</span> <span class="m">1.6</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.01764199</span>
+</code></pre></div>
+
+<h4 id="b_2">b)</h4>
+<div>
+<div class="MathJax_Preview">
+\lambda^{5min} = \lambda{min} * 5 = 1.6 * 5 = 8 \\
+P(X \leqslant 8) =  0.5925473
+</div>
+<script type="math/tex; mode=display">
+\lambda^{5min} = \lambda{min} * 5 = 1.6 * 5 = 8 \\
+P(X \leqslant 8) =  0.5925473
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span>   <span class="nf">ppois</span><span class="p">(</span><span class="m">8</span><span class="p">,</span> <span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.5925473</span>
+</code></pre></div>
+
+<h3 id="exercise-28">Exercise 2.8</h3>
+<h4 id="a_3">a)</h4>
+<div>
+<div class="MathJax_Preview">
+\lambda^{5min}=\frac{\lambda^{60min}}{12}=\frac{180}{12}= 15 \\
+P(X&gt;20) = 1 - P(X\leqslant20) = 1 - 0.8752188 = 0.1247812
+</div>
+<script type="math/tex; mode=display">
+\lambda^{5min}=\frac{\lambda^{60min}}{12}=\frac{180}{12}= 15 \\
+P(X>20) = 1 - P(X\leqslant20) = 1 - 0.8752188 = 0.1247812
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">ppois</span><span class="p">(</span><span class="m">19</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.8752188</span>
+</code></pre></div>
+
+<h4 id="b_3">b)</h4>
+<div>
+<div class="MathJax_Preview">
+\lambda^{5min} = 15
+</div>
+<script type="math/tex; mode=display">
+\lambda^{5min} = 15
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">ppois</span><span class="p">(</span><span class="m">24</span><span class="o">:</span><span class="m">26</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.9888352</span> <span class="m">0.9938151</span> <span class="m">0.9966881</span>
+</code></pre></div>
+
+<ul>
+<li>There is 0.993 probability that there will be up to 25 calls for a randomly selected period of 5 minutes. Therefore the capacity should be 25 calls per 5 minutes.</li>
+</ul>
+<h3 id="exercise-29">Exercise 2.9</h3>
+<h4 id="a_4">a)</h4>
+<ul>
+<li>
+<p>Normal distribution</p>
+</li>
+<li>
+<p><code>pnorm(2)</code> shows <code>cdf</code> for standard normal distribution: 
+$$
+Z \sim  N(0,1) \
+\text{,where }  \mu = 0 , \sigma^2 = 1\
+F(2) =  0.9772
+$$</p>
+</li>
+</ul>
+<p><img alt="" src="pics/dnorm.png" /></p>
+<ul>
+<li><code>pnorm(2,1,1)</code> shows <code>cdf</code> for X:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+X \sim N(1,1)\\
+\text{,where }  \mu = 1 , \sigma^2 = 1\\
+F(2) = 0.8413
+</div>
+<script type="math/tex; mode=display">
+X \sim N(1,1)\\
+\text{,where }  \mu = 1 , \sigma^2 = 1\\
+F(2) = 0.8413
+</script>
+</div>
+<p><img alt="" src="../pics/dnorm1.png" />
+- <code>pnorm(2,1,2)</code> shows <code>cdf</code> for Y:</p>
+<p>$$
+Y \sim N(1,4)\
+\text{,where }  \mu = 1 , \sigma^2 = 4\
+F(2) = 0.6915
+$$
+<img alt="" src="../pics/dnorm2.png" /></p>
+<h4 id="b_4">b)</h4>
+<blockquote>
+<p>What is the result of the following command: <code>qnorm(pnorm(2))</code>?</p>
+</blockquote>
+<p><code>pnorm</code> gives "a distance" up to <strong>F(2)</strong>, which is 0.9772499. We can use "that distance"  in <code>qnorm</code> function to find a value again, which is 2.  (See Figure 2.2 in the book for more)</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">pnorm</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.9772499</span>
+<span class="o">&gt;</span> <span class="nf">qnorm</span><span class="p">(</span><span class="nf">pnorm</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">2</span>
+</code></pre></div>
+
+<h4 id="c_1">c)</h4>
+<blockquote>
+<p>State what the numbers represent in the three cases.</p>
+</blockquote>
+<ul>
+<li>First case</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="nf">qnorm</span><span class="p">(</span><span class="m">0.975</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1.96</span>
+</code></pre></div>
+N(0,1) has the 97,5% quantile at x=1.96
+<img alt="" src="../pics/qnorm.png" /></p>
+<ul>
+<li>Second case</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="nf">qnorm</span><span class="p">(</span><span class="m">0.975</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">2.96</span>
+</code></pre></div>
+N(1,1) has the 97,5% quantile at x=2.96
+<img alt="" src="../pics/qnorm1.png" /></p>
+<ul>
+<li>Third case</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="nf">qnorm</span><span class="p">(</span><span class="m">0.975</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">4.92</span>
+</code></pre></div>
+N(1,4) has the 97,5% quantile at x=4.92
+<img alt="" src="pics/qnorm2.png" /></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_1/" title="Chapter 1" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Chapter 1
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
