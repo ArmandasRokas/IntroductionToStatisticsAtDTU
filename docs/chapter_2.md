@@ -361,8 +361,10 @@ L_{beam} \sim (2900, \sigma^2_{beam}) \\
 \sigma_{L-L_{beam}}=\sqrt{9+\sigma^2_{beam}}\\
 $$
 
-- And:
+- We can draw graph like this, because 99% of all distances should between 90 and 110. So there is left only 0.5% in each side, that gives 0.005 and 0.995 quantiles:
 <img src="pics/concrete.jpg" width="400px"/>
+
+- That gives: 
 
 $$
 P(90<L-L_{beam}<110) = P(L-L_{beam}<110) - P(L-L_{beam}<90) \\
@@ -371,20 +373,20 @@ P(L-L_{beam}<90) = 0.005 \\
 $$
 
 
-- That means by Theorem 2.43 :
+- We can use theorem 2.43, because the value of the standardized normal random variable at 0.005 quantile should be equal to the transformed distance variable:
 
 $$
 z_{0.005} = \frac{90-100}{\sqrt{9+\sigma^2_{beam}}}
 $$
 
 
-- Or:
+- And the same at 0.995 quantile:
   
 $$
 z_{0.995} = \frac{110-100}{\sqrt{9+\sigma^2_{beam}}}
 $$
 
-- We choose the second in order to find a standard deviation of the distance
+- We choose the second equation in order to find a standard deviation of the distance
 
 $$
 z_{0.995}= 2.575829 \\
