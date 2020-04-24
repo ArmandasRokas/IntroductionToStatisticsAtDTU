@@ -410,3 +410,76 @@ $$
 \sigma_{beam} = 2.464107
 $$
 
+ 
+
+### 2.13 Online statistic video views
+
+> In 2013, there were 110,000 views of the DTU statistics videos that are available online. Assume first that the occurrence of views through 2014 follows a Poisson process with a 2013 average: $\lambda_{365days} = 110000$.
+
+#### a)
+
+> What is the probability that in a randomly chosen half an hour there is no
+> occurrence of views?
+
+Here we can use either Exponential distribution or Poisson to find the probability.  
+- Poisson distribution  
+
+$$
+\lambda_{30min}= \frac{110000*30}{365*24*60} = 6.278539  \\
+X \sim Po(\lambda_{30min}= 6.278539 ) \\
+P(X=0) = 0.00187614
+$$
+
+```R
+> dpois(x=0,  lambda=6.278539 )
+[1] 0.00187614
+```
+
+- Exponential distribution
+
+$$
+X \sim Exp(\lambda_{365days}=110000) \\
+$$
+
+0 event between now and 30 min is given by:
+$$
+P(X>\frac{30}{365*24*60}) =
+$$
+
+or can be written as 1 minus the probability of occurring next event between now and 30min
+$$
+= 1 - P(X\leqslant\frac{30}{365*24*60}) = 0.00187614
+$$
+
+
+```R
+> 1-pexp(q=30/(365*24*60), rate = 110000)
+[1] 0.00187614
+```
+
+
+
+#### b)
+
+> There has just been a view, what is the probability that you have to wait more than fifteen minutes for the next view?
+
+- 0 events between now and 15min is given by:
+
+$$
+P(X>\frac{15}{365*24*60}) = \\
+1 - P(X\leqslant\frac{15}{365*24*60}) = 0.04331443
+$$
+
+
+
+```R
+> 1-pexp(q=15/(365*24*60), rate = 110000)
+[1] 0.04331443
+```
+
+
+
+<!-- https://nicolewhite.github.io/2015/05/23/understanding-waiting-times.html -->
+
+<!-- https://towardsdatascience.com/what-is-exponential-distribution-7bdd08590e2a -->
+
