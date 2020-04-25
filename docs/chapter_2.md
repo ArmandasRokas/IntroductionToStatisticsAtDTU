@@ -1,13 +1,33 @@
-### 2.1 Discrete random variable
+## 2.1 Discrete random variable
 
-#### a) 
+### a) 
 
 > Let X be a stochastic variable. When running the R-command `dbinom(4,10,0.6)` R returns 0.1115, written as:
+
+```R
+dbinom(4,10,0.6)
+[1] 0.1115
+```
+
+> What distribution is applied and what does 0.1115 represent?
 
 - Binomial distribution is applied
 - Shows the density or probability of 4 successes in 10 trails with each probability 0.6 
 
-#### b)
+### b)
+
+> Let X be the same stochastic variable as above. The following are results
+> from :
+
+```R
+pbinom(4,10,0.6)
+[1] 0.1662
+pbinom(5,10,0.6)
+[1] 0.3669
+```
+
+> Calculate the following probabilities: P ( X ≤ 5 ) , P ( X < 5 ) , P ( X > 4 ) and
+> P ( X = 5 ) .
 
 $$
 P(X\leqslant5) = 0.3669\\
@@ -18,12 +38,35 @@ $$
 
 
 
-#### c ) 
+### c ) 
+
+> Let X be a stochastic variable. From R we get:
+
+```R
+dpois(4,3)
+[1] 0.168
+```
+
+> What distribution is applied and what does 0.168 represent?
 
 - Poisson distribution
 - The probability of 4 events to happen with rate 3 in given interval. 
 
-#### d) 
+### d) 
+
+>Let X be the same stochastic variable as above. The following are results
+>from R:
+
+```R
+ppois(4,3)
+[1] 0.8153
+ppois(5,3)
+[1] 0.9161
+```
+
+> Calculate the following probabilities: P ( X ≤ 5 ) , P ( X < 5 ) , P ( X > 4 ) and
+> P ( X = 5 ) .
+
 $$
 P(X\leqslant5) = 0.9161 \\
 P(X < 5 ) = 0.8153 \\
@@ -31,9 +74,16 @@ P(X>4) = 1 - P(X < 5 ) = 1 - 0.8153 = 0.1847 \\
 P(X = 5) = P(X\leqslant5) - P(X < 5 )  = 0.9161 - 0.8153 = 0.1008
 $$
 
-### Exercise 2.4
+## 2.4 Consumer survey
 
-- Hypergeometric distribution
+> In a consumer survey performed by a newspaper, 20 different groceries (products) were purchased in a grocery store. Discrepancies between the price appearing on the sales slip and the shelf price were found in 6 of these purchased products.
+
+### a) 
+> At the same time a customer buys 3 random (different) products within
+the group consisting of the 20 goods in the store. The probability that no
+discrepancies occurs for this customer is?
+
+- Hyper-geometric distribution
 - 0 - the desired number of successes (discrepancies)
 - 6 - total number of successes (discrepancies) in the population
 - 14 - total number of not discrepancies
@@ -44,14 +94,20 @@ $$
 [1] 0.3192982
 ```
 
-### Exercise 2.5
+## 2.5 Hay delivery quality
+> A horse owner receives 20 bales of hay in a sealed plastic packaging. To control the hay, 3 bales of hay are randomly selected, and each checked whether it contains harmful fungal spores.
+It is believed that among the 20 bales of hay 2 bales are infected with fungal spores. A random variable X describes the number of infected bales of hay among the three selected.
+
+
+
+### a)
+> The mean of X, (  $\mu_{X}$ ), the variance of X, ( $\sigma^2_{X}$ ) and P ( X ≥ 1 ) are?
+
 
 - Hypergeometric distribution
 - n  = 3  - draws without replacement 
 - a = 2 - the number of successes in the large population
 - N = 20 - elements in the large population 
-
-#### a)
 
 $$
 \mu = n \frac{a}{N}= 3 * \frac{2}{20} = 0.3 \\
@@ -61,7 +117,7 @@ $$
 
 
 
-#### b)
+### b)
 
 The difference from a) is that in a) we picked only 3 from 20 and needed to find probability only in this amount, but here we have probability of event and number of events. 
 
