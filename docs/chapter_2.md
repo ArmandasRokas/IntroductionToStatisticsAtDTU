@@ -1,6 +1,8 @@
-### Exercise 2.1
+### 2.1 Discrete random variable
 
 #### a) 
+
+> Let X be a stochastic variable. When running the R-command `dbinom(4,10,0.6)` R returns 0.1115, written as:
 
 - Binomial distribution is applied
 - Shows the density or probability of 4 successes in 10 trails with each probability 0.6 
@@ -162,6 +164,8 @@ F(2) = 0.6915
 $$
 ![](pics/dnorm2.png)
 
+Note that the graph has been scaled. 
+
 #### b) 
 
 > What is the result of the following command: `qnorm(pnorm(2))`?
@@ -284,6 +288,8 @@ $$
 > pnorm(10, 11,sqrt(25))
 [1] 0.4207403
 ```
+
+Note that it does not matter in continuous distributions if we use $<$ or $\leqslant$ in order to define the probability. 
 
 #### b)
 
