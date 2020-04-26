@@ -1,3 +1,4 @@
+# 2 Probability: Discrete
 ## 2.1 Discrete random variable
 
 ### a) 
@@ -40,13 +41,11 @@ $$
 
 ### c ) 
 
-> Let X be a stochastic variable. From R we get:
-
+> Let X be a stochastic variable. From R we get: 
 ```R
 dpois(4,3)
 [1] 0.168
 ```
-
 > What distribution is applied and what does 0.168 represent?
 
 - Poisson distribution
@@ -103,11 +102,12 @@ It is believed that among the 20 bales of hay 2 bales are infected with fungal s
 ### a)
 > The mean of X, (  $\mu_{X}$ ), the variance of X, ( $\sigma^2_{X}$ ) and P ( X ≥ 1 ) are?
 
-
-- Hypergeometric distribution
-- n  = 3  - draws without replacement 
-- a = 2 - the number of successes in the large population
-- N = 20 - elements in the large population 
+- We know that:
+  - Hyper-geometric distribution
+  - n  = 3  - draws without replacement 
+  - a = 2 - the number of successes in the large population
+  - N = 20 - elements in the large population 
+- So:   
 
 $$
 \mu = n \frac{a}{N}= 3 * \frac{2}{20} = 0.3 \\
@@ -119,6 +119,8 @@ $$
 
 ### b)
 
+> Another supplier advertises that no more than 1% of his bales of hay are infected. The horse owner buys 10 bales of hay from this supplier, and decides to buy hay for the rest of the season from this supplier if the 10 bales are error-free. What is the probability that the 10 purchased bales of hay are error-free, if 1% of the bales from a supplier are infected ( $p_{1}$ ) and the probability that the 10 purchased bales of hay are error-free, if 10% of the bales from a supplier are infected ( $p_{10}$ ) ?
+
 The difference from a) is that in a) we picked only 3 from 20 and needed to find probability only in this amount, but here we have probability of event and number of events. 
 
 ```R
@@ -128,24 +130,28 @@ The difference from a) is that in a) we picked only 3 from 20 and needed to find
 [1] 0.3486784
 ```
 
-### Exercise 2.7
-> Poisson distribution
+## 2.7 A fully automated production
 
-#### a)
+> On a large fully automated production plant items are pushed to a side band at random time points, from which they are automatically fed to a control unit. The production plant is set up in such a way that the number of items sent to the control unit on average is 1.6 item pr. minute. Let the random variable X denote the number of items pushed to the side band in 1 minute. It is assumed that X follows a Poisson distribution. 
 
+### a)
+
+> What is the probability that there will arrive more than 5 items at the control unit in a given minute is?
 
 $$
-x = 5 \\
-\lambda^{min} = 1.6 \\
-P(X=5) = \frac{\lambda^x}{x!}*e^{-\lambda}  = 0.0176
+X \sim Po(\lambda^{min} = 1.6) \\
+P(X>5) = 1 - P(X\leqslant  5) = 0.006040291
 $$
 
 ```R
->   dpois(5, 1.6)
-[1] 0.01764199
+> 1 - ppois(5, 1.6)
+[1] 0.006040291
 ```
 
-#### b)
+### b)
+
+> What is the probability that no more than 8 items arrive to the control unit
+> within a 5-minute period? 
 
 $$
 \lambda^{5min} = \lambda{min} * 5 = 1.6 * 5 = 8 \\
@@ -157,38 +163,51 @@ $$
 [1] 0.5925473
 ```
 
-### Exercise 2.8
+## 2.8 Call center staff
+> The staffing for answering calls in a company is based on that there will be 180 phone calls per hour randomly distributed. If there are 20 calls or more in a period of 5 minutes the capacity is exceeded, and there will be an unwanted waiting time, hence there is a capacity of 19 calls per 5 minutes.
 
-#### a)
+### a)
+> What is the probability that the capacity is exceeded in a random period of 5 minutes?
 
 $$
 \lambda^{5min}=\frac{\lambda^{60min}}{12}=\frac{180}{12}= 15 \\
-P(X>20) = 1 - P(X\leqslant20) = 1 - 0.8752188 = 0.1247812
+P(X\geqslant20) = 1 - P(X<19) = 1 - 0.8752188 = 0.1247812
 $$
 
 ```R
-> ppois(19, 15)
-[1] 0.8752188
+> 1 - ppois(19, 15)
+[1] 0.1247812
 ```
 
 #### b)
 
+> If the probability should be at least 99% that all calls will be handled without waiting time for a randomly selected period of 5 minutes, how large should the capacity per 5 minutes then at least be?
+
+The 0.99 quantile of the number of calls is at 25, so 99% of all randomly selected periods of 5 minutes will have at maximum 25 calls, so therefore the capacity should be 25 calls per 5 minutes.
+
 $$
-\lambda^{5min} = 15
+q_{0.99} = 25 
 $$
 
 ```R
-> ppois(24:26, 15)
-[1] 0.9888352 0.9938151 0.9966881
+> qpois(0.99,15)
+[1] 25
 ```
 
-- There is 0.993 probability that there will be up to 25 calls for a randomly selected period of 5 minutes. Therefore the capacity should be 25 calls per 5 minutes.
+## 2.9 Continuous random variable
 
-
-
-### Exercise 2.9
-
-#### a)
+### a)
+> The following R commands and results are given:
+```R
+pnorm(2)
+[1] 0.9772
+pnorm(2,1,1)
+[1] 0.8413
+pnorm(2,1,2)
+[1] 0.6915
+```
+> Specify which distributionsare used and explain the resulting probabili-
+ties (preferably by a sketch).
 
 - Normal distribution
 

@@ -28,5 +28,6 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 nav:
         - Preface: index.md
-        - Chapter 1: chapter_1.md
-        - Chapter 2: chapter_2.md
+        - 1 Descriptive Statistics: chapter_1.md
+        - 2 Probability Discrete: chapter_2_1.md
+        - 2 Probability Continuous: chapter_2_2.md
