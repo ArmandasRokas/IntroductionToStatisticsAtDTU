@@ -32,8 +32,8 @@ X \sim N(1,1)\\
 F(2) = 0.8413
 $$
 
-
 ![](pics/dnorm1.png)
+
 - `pnorm(2,1,2)` shows `cdf` for Y:
 
 $$
