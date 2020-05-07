@@ -1,0 +1,735 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>3 Confidence Intervals - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-confidence-intervals" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              3 Confidence Intervals
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3 Confidence Intervals
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="3 Confidence Intervals" class="md-nav__link md-nav__link--active">
+      3 Confidence Intervals
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-concrete-items" class="md-nav__link">
+    3.1 Concrete items
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Concrete items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-aluminum-profile" class="md-nav__link">
+    3.2 Aluminum profile
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Aluminum profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-concrete-items" class="md-nav__link">
+    3.1 Concrete items
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Concrete items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-aluminum-profile" class="md-nav__link">
+    3.2 Aluminum profile
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Aluminum profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="3-confidence-intervals">3 Confidence Intervals</h1>
+<h2 id="31-concrete-items">3.1 Concrete items</h2>
+<blockquote>
+<p>A construction company receives concrete items for a construction. The length
+of the items are assumed reasonably normally distributed. The following requirements
+for the length of the elements are made <span><span class="MathJax_Preview">\mu=3000mm</span><script type="math/tex">\mu=3000mm</script></span>. The company samples 9 items from a delivery which are then measured for control. The following measurements (in mm) are found: 3003, 3005, 2997, 3006, 2999, 2998, 3007, 3005, 3001.</p>
+</blockquote>
+<h3 id="a">a)</h3>
+<blockquote>
+<p>Compute the following three statistics: the sample mean, the sample standard deviation and the standard error of the mean, and what are the interpretations of these statistics?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{x} = 3002.333 \\
+s = 3.708099 \\
+SE_{\bar{x}}= \frac{s}{\sqrt{n}} = 1.236033
+</div>
+<script type="math/tex; mode=display">
+\bar{x} = 3002.333 \\
+s = 3.708099 \\
+SE_{\bar{x}}= \frac{s}{\sqrt{n}} = 1.236033
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">sample</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">3003</span><span class="p">,</span> <span class="m">3005</span><span class="p">,</span> <span class="m">2997</span><span class="p">,</span> <span class="m">3006</span><span class="p">,</span> <span class="m">2999</span><span class="p">,</span> <span class="m">2998</span><span class="p">,</span> <span class="m">3007</span><span class="p">,</span> <span class="m">3005</span><span class="p">,</span> <span class="m">3001</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">mean</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">3002.333</span>
+<span class="o">&gt;</span> <span class="n">sd</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">3.708099</span>
+<span class="o">&gt;</span> <span class="n">error</span> <span class="o">&lt;-</span> <span class="n">sd</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">9</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1.236033</span>
+</code></pre></div>
+
+<!-- Rememeber to answer about interpretation: 
+These statistics is computed from an observed sample. Page 134 -->
+
+<h3 id="b">b)</h3>
+<blockquote>
+<p>In a construction process, 5 concrete items are joined together to a single construction with a length which is then the complete length of the 5 concrete items. It is very important that the length of this new construction is within 15 m plus/minus 1 cm. How often will it happen that such a construction will be more than 1 cm away from the 15 m target (assume that the population mean concrete item length is <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> = 3000 mm and that the population standard deviation is <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> = 3)?</p>
+</blockquote>
+<p>Find:</p>
+<div>
+<div class="MathJax_Preview">
+ P(14990&gt;L&gt;15010)
+</div>
+<script type="math/tex; mode=display">
+ P(14990>L>15010)
+</script>
+</div>
+<p>We know:</p>
+<div>
+<div class="MathJax_Preview">
+L \sim N(3000,3^2 ) \\
+L^{scale} = 5L \\
+L^{scale} \sim N(15000, 45)
+</div>
+<script type="math/tex; mode=display">
+L \sim N(3000,3^2 ) \\
+L^{scale} = 5L \\
+L^{scale} \sim N(15000, 45)
+</script>
+</div>
+<p>Solution:
+$$
+P(14990&gt;L^{scale}&gt;15010) = 2*P(L^{scale}&lt;14990) = 0.1360371 \
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="m">2</span><span class="o">*</span><span class="nf">pnorm</span><span class="p">(</span><span class="m">14990</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="m">15000</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">45</span><span class="p">))</span> 
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.1360371</span>
+</code></pre></div>
+
+<h3 id="c">c)</h3>
+<blockquote>
+<p>Find the 95% confidence interval for the mean <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>.</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{x}\pm t_{0.975}* \frac{s}{\sqrt{n}} = 3002.333 \pm 2.262*1.236 = \\
+= 3002.333 \pm 2.795832 = [ 2999.537,  3005.129]
+</div>
+<script type="math/tex; mode=display">
+\bar{x}\pm t_{0.975}* \frac{s}{\sqrt{n}} = 3002.333 \pm 2.262*1.236 = \\
+= 3002.333 \pm 2.795832 = [ 2999.537,  3005.129]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.975</span><span class="p">,</span><span class="m">9</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">2.262157</span>
+</code></pre></div>
+
+<h3 id="d">d)</h3>
+<blockquote>
+<p>Find the 99% confidence interval for <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>. Compare with the 95% one from above and explain why it is smaller/larger!</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{x}\pm t_{0.995}* \frac{s}{\sqrt{n}} = 3002.333 \pm 3.249836*1.236 = \\
+= 3002.333 \pm 4.016797 = [2998.316,  3006.35]
+</div>
+<script type="math/tex; mode=display">
+\bar{x}\pm t_{0.995}* \frac{s}{\sqrt{n}} = 3002.333 \pm 3.249836*1.236 = \\
+= 3002.333 \pm 4.016797 = [2998.316,  3006.35]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.995</span><span class="p">,</span><span class="m">9</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">3.249836</span>
+</code></pre></div>
+
+<ul>
+<li>It is larger, because in this case 99% of all CI's should contain the true mean. So that means, if we want a higher likelihood, that the CI contains the population mean, so we should make the CI larger. </li>
+</ul>
+<h3 id="e">e)</h3>
+<blockquote>
+<p>Find the 95% confidence intervals for the variance <span><span class="MathJax_Preview">\sigma^2</span><script type="math/tex">\sigma^2</script></span> and the standard deviation <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>.</p>
+</blockquote>
+<ul>
+<li>The 95% CI for the variance:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\left[\frac{(n-1)s^2}{\chi^2_{0.975}}, \frac{(n-1)s^2}{\chi^2_{0.025}}\right] = [6.27333, 50.46495] \\
+</div>
+<script type="math/tex; mode=display">
+\left[\frac{(n-1)s^2}{\chi^2_{0.975}}, \frac{(n-1)s^2}{\chi^2_{0.025}}\right] = [6.27333, 50.46495] \\
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="p">(</span><span class="m">9-1</span><span class="p">)</span><span class="o">*</span><span class="nf">var</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.975</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">6.27333</span>
+<span class="o">&gt;</span> <span class="p">(</span><span class="m">9-1</span><span class="p">)</span><span class="o">*</span><span class="nf">var</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">50.46495</span>
+</code></pre></div>
+
+<ul>
+<li>The 95% CI for the standard deviation: </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\left[\sqrt{6.27333}, \sqrt{50.46495}\right] = [2.504662, 7.103869] \\
+</div>
+<script type="math/tex; mode=display">
+\left[\sqrt{6.27333}, \sqrt{50.46495}\right] = [2.504662, 7.103869] \\
+</script>
+</div>
+<h3 id="f">f)</h3>
+<blockquote>
+<p>Find the 99% confidence intervals for the variance <span><span class="MathJax_Preview">\sigma^2</span><script type="math/tex">\sigma^2</script></span> and the standard deviation <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>.</p>
+</blockquote>
+<ul>
+<li>The 99% CI for the variance:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\left[\frac{(n-1)s^2}{\chi^2_{0.995}}, \frac{(n-1)s^2}{\chi^2_{0.005}}\right] = [5.010259, 81.82009] \\
+</div>
+<script type="math/tex; mode=display">
+\left[\frac{(n-1)s^2}{\chi^2_{0.995}}, \frac{(n-1)s^2}{\chi^2_{0.005}}\right] = [5.010259, 81.82009] \\
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="p">(</span><span class="m">9-1</span><span class="p">)</span><span class="o">*</span><span class="nf">var</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.995</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">5.010259</span>
+<span class="o">&gt;</span> <span class="p">(</span><span class="m">9-1</span><span class="p">)</span><span class="o">*</span><span class="nf">var</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.005</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">81.82009</span>
+</code></pre></div>
+
+<ul>
+<li>The 99% CI for the standard deviation: </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\left[\sqrt{5.010259}, \sqrt{81.82009}\right] = [2.238361, 9.045446] \\
+</div>
+<script type="math/tex; mode=display">
+\left[\sqrt{5.010259}, \sqrt{81.82009}\right] = [2.238361, 9.045446] \\
+</script>
+</div>
+<h2 id="32-aluminum-profile">3.2 Aluminum profile</h2>
+<blockquote>
+<p>The length of an aluminum profile is checked by taking a sample of 16 items whose length is measured. The measurement results from this sample are listed below, all measurements are in mm: 180.02, 180.00, 180.01, 179.97, 179.92, 180.05, 179.94, 180.10,180.24, 180.12, 180.13, 180.22, 179.96, 180.10, 179.96, 180.06 . From data is obtained: $\bar{x}=180.05 $ and <span><span class="MathJax_Preview">s = 0.0959</span><script type="math/tex">s = 0.0959</script></span> . It can be assumed that the sample comes from a population which is normal distributed.</p>
+</blockquote>
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>A 90%-confidence interval for <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> becomes?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{x}\pm t_{0.95}* \frac{s}{\sqrt{n}} = 180.05 \pm 1.75305*\frac{0.0959}{\sqrt{16}} = \\
+= 180.05 \pm 0.04202937 = [ 180.008,  180.092]
+</div>
+<script type="math/tex; mode=display">
+\bar{x}\pm t_{0.95}* \frac{s}{\sqrt{n}} = 180.05 \pm 1.75305*\frac{0.0959}{\sqrt{16}} = \\
+= 180.05 \pm 0.04202937 = [ 180.008,  180.092]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.95</span><span class="p">,</span><span class="m">15</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1.75305</span>
+</code></pre></div>
+
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>A 99%-confidence interval for <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> becomes?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\left[\sqrt{\frac{(n-1)s^2}{\chi^2_{0.995}}}, \sqrt{\frac{(n-1)s^2}{\chi^2_{0.005}}}\right] = [0.06485128, 0.1731578] \\
+</div>
+<script type="math/tex; mode=display">
+\left[\sqrt{\frac{(n-1)s^2}{\chi^2_{0.995}}}, \sqrt{\frac{(n-1)s^2}{\chi^2_{0.005}}}\right] = [0.06485128, 0.1731578] \\
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">sqrt</span><span class="p">((</span><span class="m">16-1</span><span class="p">)</span><span class="o">*</span><span class="m">0.0959</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.995</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">15</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.06485128</span>
+<span class="o">&gt;</span> <span class="nf">sqrt</span><span class="p">((</span><span class="m">16-1</span><span class="p">)</span><span class="o">*</span><span class="m">0.0959</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.005</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">15</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.1731578</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                2 Probability Continuous
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
