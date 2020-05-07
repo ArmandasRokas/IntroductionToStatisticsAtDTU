@@ -36,18 +36,22 @@ These statistics is computed from an observed sample. Page 134 -->
 > In a construction process, 5 concrete items are joined together to a single construction with a length which is then the complete length of the 5 concrete items. It is very important that the length of this new construction is within 15 m plus/minus 1 cm. How often will it happen that such a construction will be more than 1 cm away from the 15 m target (assume that the population mean concrete item length is $\mu$ = 3000 mm and that the population standard deviation is $\sigma$ = 3)?
 
 Find:
+
 $$
  P(14990>L>15010)
 $$
+
 We know:
+
 $$
 L \sim N(3000,3^2 ) \\
 L^{scale} = 5L \\
 L^{scale} \sim N(15000, 45)
 $$
+
 Solution:
 $$
-P(14990>L>15010) = 2*P(L<14990) = 0.1360371 \\
+P(14990>L^{scale}>15010) = 2*P(L^{scale}<14990) = 0.1360371 \\
 $$
 
 ```r
@@ -72,7 +76,7 @@ $$
 
 ### d)
 
-> Find the 99% confidence interval for m. Compare with the 95% one from above and explain why it is smaller/larger!
+> Find the 99% confidence interval for $\mu$. Compare with the 95% one from above and explain why it is smaller/larger!
 
 
 $$
