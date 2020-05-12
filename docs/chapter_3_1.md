@@ -64,14 +64,14 @@ $$
 > Find the 95% confidence interval for the mean $\mu$.
 
 $$
-\bar{x}\pm t_{0.975}* \frac{s}{\sqrt{n}} = 3002.333 \pm 2.262*1.236 = \\
-= 3002.333 \pm 2.795832 = [ 2999.537,  3005.129]
+\bar{x}\pm t_{0.975}* \frac{s}{\sqrt{n}} = 3002.333 \pm 2.306*1.236 = \\
+= 3002.333 \pm  2.850216 = [ 2999.483,  3005.184]
 $$
 
 
 ```R
-> qt(0.975,9)
-[1] 2.262157
+> qt(0.975,9-1)
+[1] 2.306004
 ```
 
 ### d)
@@ -80,13 +80,13 @@ $$
 
 
 $$
-\bar{x}\pm t_{0.995}* \frac{s}{\sqrt{n}} = 3002.333 \pm 3.249836*1.236 = \\
-= 3002.333 \pm 4.016797 = [2998.316,  3006.35]
+\bar{x}\pm t_{0.995}* \frac{s}{\sqrt{n}} = 3002.333 \pm 3.355387*1.236 = \\
+= 3002.333 \pm 4.147258 = [2998.186,  3006.48]
 $$
 
 ```R
-> qt(0.995,9)
-[1] 3.249836
+> qt(0.995,9-1)
+[1] 3.355387
 ```
 
 - It is larger, because in this case 99% of all CI's should contain the true mean. So that means, if we want a higher likelihood, that the CI contains the population mean, so we should make the CI larger. 
