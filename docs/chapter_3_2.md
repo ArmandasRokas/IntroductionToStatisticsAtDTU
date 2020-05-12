@@ -15,6 +15,7 @@ $$
 > Or similarly asked: what is the evidence against the null hypothesis?
 
 We know that:
+
 $$
 \bar{x} = 3002.333 \\
 s = 3.708099 \\
@@ -116,14 +117,14 @@ $$
 hist(sample, main = "Histogram of Concrete items", xlab= "Measurements")
 ```
 
-![](pics\histOf3.3.PNG)
+![](pics/histOf3.3.png)
 
 ```R
 qqnorm(sample, ylab="Measurements Quantiles")
 qqline(sample)
 ```
 
-![](pics/qqnormOf3.3.PNG)
+![](pics/qqnormOf3.3.png)
 
 ```R
 qqwrap <- function(x, y, ...){
@@ -133,7 +134,7 @@ qqwrap <- function(x, y, ...){
 
 wallyplot(x-mean(sample), FUN=qqwrap, ylim=c(-3,3))
 ```
-![](pics/wally3.3.PNG)
+![](pics/wally3.3.png)
 
 
 
@@ -146,7 +147,7 @@ wallyplot(x-mean(sample), FUN=qqwrap, ylim=c(-3,3))
 - X coordinates represent the expected normal quantiles. 
 - Y coordinates represent the sample quantiles.
 
-For example, the point (0,3002.333) is respectively the 0.5 quantiles of the expected normal distribution and the sample.
+For example, the point $( 0, 3002.333 )$ represents respectively the 0.5 quantiles of the expected normal distribution and the sample.
 
 
 
@@ -181,7 +182,7 @@ mean of x
    180.05 
 ```
 
-$\text{p-value}$ (0.05452038) is more than 0.05, but less than 1, so there is weak evidences against $H_{0}$.
+$\text{p-value}$ (0.05452038) is more than 0.05, but less than 1, so there is a weak evidences against $H_{0}$.
 
 
 
@@ -241,9 +242,8 @@ H_{0}:\ \mu=180 \\
 H_{1}:\ \mu\neq180
 $$
 
-
-
 We know that:
+
 $$
 \bar{x} = 180.05  \\
 s = 0.0959 \\
