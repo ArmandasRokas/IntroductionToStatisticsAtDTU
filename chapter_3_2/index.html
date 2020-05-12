@@ -1,0 +1,834 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>3 Hypothesis Testing - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-hypothesis-testing" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              3 Hypothesis Testing
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-nav__link">
+      3 Confidence Intervals
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3 Hypothesis Testing
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="3 Hypothesis Testing" class="md-nav__link md-nav__link--active">
+      3 Hypothesis Testing
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#33-concrete-items" class="md-nav__link">
+    3.3 Concrete items
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Concrete items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-aluminum-profile" class="md-nav__link">
+    3.4 Aluminum profile
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Aluminum profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#33-concrete-items" class="md-nav__link">
+    3.3 Concrete items
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Concrete items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-aluminum-profile" class="md-nav__link">
+    3.4 Aluminum profile
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Aluminum profile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="3-hypothesis-testing">3 Hypothesis Testing</h1>
+<h2 id="33-concrete-items">3.3 Concrete items</h2>
+<blockquote>
+<p>A construction company receives concrete items for a construction. The length of the items are assumed reasonably normally distributed. The following requirements for the length of the elements are made <span><span class="MathJax_Preview">\mu=3000mm</span><script type="math/tex">\mu=3000mm</script></span>. The company samples 9 items from a delivery which are then measured for control. The following measurements (in mm) are found: 3003, 3005, 2997, 3006, 2999, 2998, 3007, 3005, 3001.</p>
+</blockquote>
+<h3 id="a">a)</h3>
+<blockquote>
+<p>To investigate whether the requirement to the mean is fulfilled (with <span><span class="MathJax_Preview">\alpha= 5%</span><script type="math/tex">\alpha= 5%</script></span> ), the following hypothesis should be tested</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_{0}:\ =\ 3000 \\
+H_{1}:\ \neq\ 3000
+</div>
+<script type="math/tex; mode=display">
+H_{0}:\ =\ 3000 \\
+H_{1}:\ \neq\ 3000
+</script>
+</div>
+<blockquote>
+<p>Or similarly asked: what is the evidence against the null hypothesis?</p>
+</blockquote>
+<p>We know that:</p>
+<div>
+<div class="MathJax_Preview">
+\bar{x} = 3002.333 \\
+s = 3.708099 \\
+</div>
+<script type="math/tex; mode=display">
+\bar{x} = 3002.333 \\
+s = 3.708099 \\
+</script>
+</div>
+<p><strong>By using Method 3.36</strong></p>
+<p><strong>1.</strong><br />
+$$
+t_{obs}= \frac{\bar{x}-\mu_{0}}{s/\sqrt{n}}=1.88749
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="p">(</span><span class="m">3002.333-3000</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">3.708099</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">9</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1.88749</span>
+</code></pre></div>
+
+<p><strong>2.</strong> 
+$$
+\text{p-value}= 2*P(T&gt;|t_{obs}|) = 0.09579526
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="m">2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="nf">pt</span><span class="p">(</span><span class="m">1.88749</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.09579526</span>
+</code></pre></div>
+
+<p><strong>3.  Conclusion:</strong></p>
+<p><span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> (0.096) is more than <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> (0.05), so we can accept <span><span class="MathJax_Preview">H_{0}</span><script type="math/tex">H_{0}</script></span></p>
+<p>Note that we can produce same result by using <code>t.test</code> in R</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">t.test</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="m">3000</span><span class="p">)</span>
+
+    <span class="n">One</span> <span class="n">Sample</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="n">sample</span>
+<span class="n">t</span> <span class="o">=</span> <span class="m">1.8878</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">8</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.09576</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">mean</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">3000</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">2999.483</span> <span class="m">3005.184</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">mean</span> <span class="n">of</span> <span class="n">x</span> 
+ <span class="m">3002.333</span> 
+</code></pre></div>
+
+<h3 id="b">b)</h3>
+<blockquote>
+<p>What would the level $\alpha = 0.01 $ critical values be for this test, and what are the interpretation of these?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+t_{\alpha/2} = t_{0.005}= -3.355387  \\
+t_{1-\alpha/2}= t_{0.995} = 3.355387
+</div>
+<script type="math/tex; mode=display">
+t_{\alpha/2} = t_{0.005}= -3.355387  \\
+t_{1-\alpha/2}= t_{0.995} = 3.355387
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.005</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-3.355387</span>
+<span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.995</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">3.355387</span>
+</code></pre></div>
+
+<ul>
+<li>We can reject <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> if the observed test-statistics (<span><span class="MathJax_Preview">t_{obs}</span><script type="math/tex">t_{obs}</script></span>) is more extreme than the calculated critical value with the significance level of <span><span class="MathJax_Preview">\alpha=0.01</span><script type="math/tex">\alpha=0.01</script></span></li>
+</ul>
+<h3 id="c">c)</h3>
+<blockquote>
+<p>What would the level <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span>  critical values be for this test (compare also with the values found in the previous question)?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+t_{\alpha/2} = t_{0.025}= -2.306004  \\
+t_{1-\alpha/2}= t_{0.975} = 2.306004
+</div>
+<script type="math/tex; mode=display">
+t_{\alpha/2} = t_{0.025}= -2.306004  \\
+t_{1-\alpha/2}= t_{0.975} = 2.306004
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.05</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-2.306004</span>
+<span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">2.306004</span>
+</code></pre></div>
+
+<ul>
+<li>Critical values get closer to each other as the <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span>  increases.</li>
+</ul>
+<h3 id="d">d)</h3>
+<blockquote>
+<p>Investigate, by some plots, whether the data here appears to be coming from a normal distribution (as assumed until now)?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nf">hist</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Histogram of Concrete items&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span> <span class="s">&quot;Measurements&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><img alt="" src="../pics/histOf3.3.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="nf">qqnorm</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Measurements Quantiles&quot;</span><span class="p">)</span>
+<span class="nf">qqline</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</code></pre></div>
+
+<p><img alt="" src="../pics/qqnormOf3.3.png" /></p>
+<p><div class="highlight"><pre><span></span><code><span class="n">qqwrap</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="kc">...</span><span class="p">){</span>
+  <span class="n">stdy</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="nf">sd</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+  <span class="nf">qqnorm</span><span class="p">(</span><span class="n">stdy</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span>
+  <span class="nf">qqline</span><span class="p">(</span><span class="n">stdy</span><span class="p">)}</span>
+
+<span class="nf">wallyplot</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">),</span> <span class="n">FUN</span><span class="o">=</span><span class="n">qqwrap</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</code></pre></div>
+<img alt="" src="../pics/wally3.3.png" /></p>
+<h3 id="e">e)</h3>
+<blockquote>
+<p>Assuming that you, maybe among different plots, also did the normal q-q plot above, the question is now: What exactly is plotted in that plot? Or more specifically: what are the x- and y-coordinates of e.g. the two points to the lower left in this plot?</p>
+</blockquote>
+<ul>
+<li>X coordinates represent the expected normal quantiles. </li>
+<li>Y coordinates represent the sample quantiles.</li>
+</ul>
+<p>For example, the point <span><span class="MathJax_Preview">( 0, 3002.333 )</span><script type="math/tex">( 0, 3002.333 )</script></span> represents respectively the 0.5 quantiles of the expected normal distribution and the sample.</p>
+<h2 id="34-aluminum-profile">3.4 Aluminum profile</h2>
+<blockquote>
+<p>The length of an aluminum profile is checked by taking a sample of 16 items whose length is measured. The measurement results from this sample are listed below, all measurements are in mm: 180.02, 180.00, 180.01, 179.97, 179.92, 180.05, 179.94, 180.10,180.24, 180.12, 180.13, 180.22, 179.96, 180.10, 179.96, 180.06 . From data is obtained: $\bar{x}=180.05 $ and <span><span class="MathJax_Preview">s = 0.0959</span><script type="math/tex">s = 0.0959</script></span> . It can be assumed that the sample comes from a population which is normal distributed.</p>
+</blockquote>
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>Find the evidence against the following hypothesis:</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_{0}\ : =\ \mu=180
+</div>
+<script type="math/tex; mode=display">
+H_{0}\ : =\ \mu=180
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">t.test</span><span class="p">(</span><span class="n">aluminum</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="m">180</span><span class="p">)</span>
+
+    <span class="n">One</span> <span class="n">Sample</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="n">aluminum</span>
+<span class="n">t</span> <span class="o">=</span> <span class="m">2.0851</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.05456</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">mean</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">180</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">179.9989</span> <span class="m">180.1011</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">mean</span> <span class="n">of</span> <span class="n">x</span> 
+   <span class="m">180.05</span> 
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> (0.05452038) is more than 0.05, but less than 1, so there is a weak evidences against <span><span class="MathJax_Preview">H_{0}</span><script type="math/tex">H_{0}</script></span>.</p>
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>If the following hypothesis test is carried out</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_{0}:\ \mu=180 \\
+H_{1}:\ \mu\neq180
+</div>
+<script type="math/tex; mode=display">
+H_{0}:\ \mu=180 \\
+H_{1}:\ \mu\neq180
+</script>
+</div>
+<blockquote>
+<p>What are the level <span><span class="MathJax_Preview">\alpha= 1%</span><script type="math/tex">\alpha= 1%</script></span> critical values for this test?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+t_{\alpha/2} = t_{0.005}= -2.946713  \\
+t_{1-\alpha/2}= t_{0.995} = 2.946713
+</div>
+<script type="math/tex; mode=display">
+t_{\alpha/2} = t_{0.005}= -2.946713  \\
+t_{1-\alpha/2}= t_{0.995} = 2.946713
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.005</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">16-1</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-2.946713</span>
+<span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.995</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">16-1</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">2.946713</span>
+</code></pre></div>
+
+<h3 id="c_1">c)</h3>
+<blockquote>
+<p>What is the 99%-confidence interval for <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span>?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{x}\pm t_{0.995}* \frac{s}{\sqrt{n}} = 180.05 \pm 2.946713*\frac{0.0959}{\sqrt{16}} = \\
+= 180.05 \pm 0.07064744 = [ 179.9794,  180.1206]
+</div>
+<script type="math/tex; mode=display">
+\bar{x}\pm t_{0.995}* \frac{s}{\sqrt{n}} = 180.05 \pm 2.946713*\frac{0.0959}{\sqrt{16}} = \\
+= 180.05 \pm 0.07064744 = [ 179.9794,  180.1206]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.995</span><span class="p">,</span><span class="m">15</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">2.946713</span>
+</code></pre></div>
+
+<h3 id="d_1">d)</h3>
+<blockquote>
+<p>Carry out the following hypothesis test using <span><span class="MathJax_Preview">\alpha=5\%</span><script type="math/tex">\alpha=5\%</script></span> </p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_{0}:\ \mu=180 \\
+H_{1}:\ \mu\neq180
+</div>
+<script type="math/tex; mode=display">
+H_{0}:\ \mu=180 \\
+H_{1}:\ \mu\neq180
+</script>
+</div>
+<p>We know that:</p>
+<div>
+<div class="MathJax_Preview">
+\bar{x} = 180.05  \\
+s = 0.0959 \\
+</div>
+<script type="math/tex; mode=display">
+\bar{x} = 180.05  \\
+s = 0.0959 \\
+</script>
+</div>
+<p><strong>By using Method 3.36</strong></p>
+<p><strong>1.</strong><br />
+$$
+t_{obs}= \frac{\bar{x}-\mu_{0}}{s/\sqrt{n}}= 2.085506
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="p">(</span><span class="m">180.05-180</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">0.0959</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">16</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">2.085506</span>
+</code></pre></div>
+
+<p><strong>2.</strong> 
+$$
+\text{p-value}= 2*P(T&gt;|t_{obs}|) = 0.05452038
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="m">2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="nf">pt</span><span class="p">(</span><span class="m">2.085506</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">15</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.05452038</span>
+</code></pre></div>
+
+<p><strong>3.  Conclusion:</strong></p>
+<p><span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> (0.05452038) is more than <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> (0.05), so we can accept <span><span class="MathJax_Preview">H_{0}</span><script type="math/tex">H_{0}</script></span>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">t.test</span><span class="p">(</span><span class="n">aluminum</span><span class="p">,</span> <span class="n">mu</span><span class="o">=</span><span class="m">180</span><span class="p">)</span>
+
+    <span class="n">One</span> <span class="n">Sample</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="n">aluminum</span>
+<span class="n">t</span> <span class="o">=</span> <span class="m">2.0851</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">15</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.05456</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">mean</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">180</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">179.9989</span> <span class="m">180.1011</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">mean</span> <span class="n">of</span> <span class="n">x</span> 
+   <span class="m">180.05</span> 
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> (0.05452038) is more than 0.05, but less than 1, so there is weak evidences against <span><span class="MathJax_Preview">H_{0}</span><script type="math/tex">H_{0}</script></span>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3 Confidence Intervals
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
