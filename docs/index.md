@@ -4,6 +4,3 @@ This website contains solutions to the textbook [Introduction to Statistics at D
 
 
 
-## Motivation
-
-I created this website for my own personal use, but everyone who finds the website useful are welcome here! 
