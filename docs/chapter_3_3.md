@@ -1,6 +1,6 @@
 # Analysis of Two Samples
 
-## Exercise 3.6 Cholesterol
+## 3.6 Cholesterol
 
 > In a clinical trial of a cholesterol-lowering agent, 15 patients’ cholesterol (in mmol/L) has been measured before treatment and 3 weeks after starting treatment. Data are listed in the following table:
 
@@ -126,6 +126,7 @@ c(mean_diff - qt(1-0.01/2, df=12)*sd_diff/sqrt(13),
 > Consider now the 13 pulse end measurements (first row in the table). What is the 95% confidence interval for the standard deviation of these?
 
 By method 3.19
+
 $$
 \left[\sqrt{\frac{(n-1)s^2}{\chi_{1-0.05/2}^2}}, \sqrt{\frac{(n-1)s^2}{\chi_{0.05/2}^2}} \right] = [3.721662, 8.567283]
 $$
@@ -299,9 +300,11 @@ On a 5% level we cannot conclude a significant difference in the grade point mea
 > A 99% confidence interval for the mean grade point difference is?
 
 By method 3.47:
+
 $$
 \bar{x}-\bar{y}\pm t_{1-\alpha/2}*\sqrt{\frac{s_{1}^2}{n_1}+\frac{s^2_{2}}{n_2}} = [-2.2467772,0.3367772]
 $$
+
 ```r
 c(6.420-7.375-qt(1-0.01/2, df=v)*sqrt(2.205^2/50+1.813^2/24), 
   6.420-7.375+qt(1-0.01/2, df=v)*sqrt(2.205^2/50+1.813^2/24))
@@ -317,6 +320,7 @@ c(6.420-7.375-qt(1-0.01/2, df=v)*sqrt(2.205^2/50+1.813^2/24),
 
 
 By method 3.19
+
 $$
 \left[\sqrt{\frac{(n-1)s^2}{\chi_{1-0.05/2}^2}}, \sqrt{\frac{(n-1)s^2}{\chi_{0.05/2}^2}} \right] = [1.409088, 2.543205]
 $$

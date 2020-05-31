@@ -32,4 +32,6 @@ nav:
         - 2 Probability Discrete: chapter_2_1.md
         - 2 Probability Continuous: chapter_2_2.md
         - 3 Confidence Intervals: chapter_3_1.md
-        - 3 Hypothesis Testing: chapter_3_2.md 
+        - 3 Hypothesis Testing: chapter_3_2.md
+        - 3 Analysis of Two samples: chapter_3_3.md
+        - 4 Simulation Methods: chapter_4_1.md 

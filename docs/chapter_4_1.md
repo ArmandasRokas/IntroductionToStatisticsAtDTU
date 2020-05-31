@@ -108,7 +108,7 @@ $$
 
 - It seems to be the exponential distribution
 
-![](pics/lifetimes.PNG)
+![](pics/lifetimes.png)
 
 ```R
 hist(lifetimes, col = "blue", nclass = 30)
@@ -438,19 +438,24 @@ $$
 
 
 Differentiate the function with respect to both p and v:
+
 $$
 f(p,v) = \frac{pv}{8.31} \\
 \frac{\partial f}{\partial p} = \frac{1*p^0v}{8.31}=\frac{v}{8.31} \\
     \frac{\partial f}{\partial v} = \frac{p*1*v^0}{8.31} = \frac{p}{8.31} \\
 $$
 
- Calculate the uncertainty
+
+Calculate the uncertainty:
+
 $$
 \sigma^2_{\hat{T}} = \left(\frac{\partial f}{\partial p}\right)^2*\sigma^2_p+\left(\frac{\partial f}{\partial v}\right)^2*\sigma^2_v = \\
     \frac{v^2}{8.31^2} * \sigma^2_p + \frac{p^2}{8.31^2}*\sigma^2_v  =\\
     9.987^2/8.31^2*0.03^2+240.48^2/8.31^2*0.002^2 = 0.3210887 \\
 $$
+
 So the uncertainty is:
+
 $$
  \sigma_{\hat{T}} = \sqrt{0.3210887} = 0.06818855
 $$
@@ -501,16 +506,19 @@ $$
 > Assume that $V$ is measured to be $9.987 L$ and $T$ to be $289.12 K$ with known measurement errors (given as standard deviations): $0.002 L$ and $0.02 K$. Estimate P and find the uncertainty in the estimate.
 
 We know:
+
 $$
 P = \frac{8.31T}{V}\\
 $$
 
 Estimate $P$:
+
 $$
 \hat{P} = 8.31*289.12/9.987 = 240.5715
 $$
 
 Differentiate the function with respect to both t and v:
+
 $$
 f(t,v) = \frac{8.31t}{v} \\
 \frac{\partial f}{\partial t} = \frac{1*t^0*8.31}{v}=\frac{8.31}{v} \\
@@ -518,12 +526,15 @@ f(t,v) = \frac{8.31t}{v} \\
 $$
 
  Calculate the uncertainty: 
+
 $$
 \sigma^2_{\hat{P}} = \left(\frac{\partial f}{\partial t}\right)^2*\sigma^2_t+\left(\frac{\partial f}{\partial v}\right)^2*\sigma^2_v = \\
     \frac{8.31^2}{v^2} * \sigma^2_t + \left( -\frac{8.31*t}{v^2}\sigma_v \right)^2 =\\
     8.31^2/9.987^2*0.02^2 + (- 8.31*289.12/9.987^2*0.002)^2= 0.00259796\\
 $$
+
 So the uncertainty is:
+
 $$
 \sigma_{\hat{T}} = \sqrt{0.00259796} = 0.05097019
 $$
