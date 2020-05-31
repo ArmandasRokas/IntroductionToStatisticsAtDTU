@@ -1,0 +1,1454 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>4 Simulation Methods - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-simulation-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              4 Simulation Methods
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-nav__link">
+      3 Confidence Intervals
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_2/" title="3 Hypothesis Testing" class="md-nav__link">
+      3 Hypothesis Testing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_3/" title="3 Analysis of Two samples" class="md-nav__link">
+      3 Analysis of Two samples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        4 Simulation Methods
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="4 Simulation Methods" class="md-nav__link md-nav__link--active">
+      4 Simulation Methods
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-reliability-system-lifetime" class="md-nav__link">
+    4.1 Reliability: System lifetime
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Reliability: System lifetime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    g)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-basic-bootstrap-ci" class="md-nav__link">
+    4.2 Basic bootstrap CI
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Basic bootstrap CI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-various-bootstrap-cis" class="md-nav__link">
+    4.3 Various bootstrap CIs
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Various bootstrap CIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_1" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-two-sample-tv-data" class="md-nav__link">
+    4.4 Two-sample TV data
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Two-sample TV data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-non-linear-error-propagation" class="md-nav__link">
+    4.5 Non-linear error propagation
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Non-linear error propagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_3" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_2" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-reliability-system-lifetime" class="md-nav__link">
+    4.1 Reliability: System lifetime
+  </a>
+  
+    <nav class="md-nav" aria-label="4.1 Reliability: System lifetime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    g)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-basic-bootstrap-ci" class="md-nav__link">
+    4.2 Basic bootstrap CI
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Basic bootstrap CI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-various-bootstrap-cis" class="md-nav__link">
+    4.3 Various bootstrap CIs
+  </a>
+  
+    <nav class="md-nav" aria-label="4.3 Various bootstrap CIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_1" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-two-sample-tv-data" class="md-nav__link">
+    4.4 Two-sample TV data
+  </a>
+  
+    <nav class="md-nav" aria-label="4.4 Two-sample TV data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-non-linear-error-propagation" class="md-nav__link">
+    4.5 Non-linear error propagation
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Non-linear error propagation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_3" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_2" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="4-simulation-methods">4 Simulation methods</h1>
+<h2 id="41-reliability-system-lifetime">4.1 Reliability: System lifetime</h2>
+<blockquote>
+<p>A system consists of three components A, B and C serially connected, such that A is positioned before B, which is again positioned before C. The system will be functioning only so long as A, B and C are all functioning. The lifetime in months of the three components are assumed to follow exponential distributions with means: 2 months, 3 months and 5 months, respectively (hence there are three random variables, <span><span class="MathJax_Preview">X_{A}</span><script type="math/tex">X_{A}</script></span>, <span><span class="MathJax_Preview">X_B</span><script type="math/tex">X_B</script></span> and <span><span class="MathJax_Preview">X_C</span><script type="math/tex">X_C</script></span> with exponential distributions with <span><span class="MathJax_Preview">\lambda_{A}</span><script type="math/tex">\lambda_{A}</script></span> = &frac12;, <span><span class="MathJax_Preview">\lambda_{B}</span><script type="math/tex">\lambda_{B}</script></span>= &#8531; and <span><span class="MathJax_Preview">\lambda_{C}</span><script type="math/tex">\lambda_{C}</script></span>= &#8533; resp.)</p>
+</blockquote>
+<h3 id="a">a)</h3>
+<blockquote>
+<p>Generate, by simulation, a large number (at least 1000 – go for 10000 or 100000 if your computer is up for it) of system lifetimes (hint: consider how the random variable Y = System lifetime is a function of the three X-variables: is it the sum, the mean, the median, the minimum, the maximum, the range or something even different?).</p>
+</blockquote>
+<ul>
+<li>The lifetime can be seen as the minimal value of the three random component lifetimes</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\text{"Lifetime"} = min(X_A,X_B,X_C)
+</div>
+<script type="math/tex; mode=display">
+\text{"Lifetime"} = min(X_A,X_B,X_C)
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">k</span> <span class="o">&lt;-</span> <span class="m">10000</span>
+<span class="n">xA</span> <span class="o">&lt;-</span> <span class="nf">rexp</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="m">1</span><span class="o">/</span><span class="m">2</span><span class="p">)</span>
+<span class="n">xB</span> <span class="o">&lt;-</span> <span class="nf">rexp</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="m">1</span><span class="o">/</span><span class="m">3</span><span class="p">)</span>
+<span class="n">xC</span> <span class="o">&lt;-</span> <span class="nf">rexp</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="m">1</span><span class="o">/</span><span class="m">5</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">xA</span><span class="p">,</span> <span class="n">xB</span><span class="p">,</span> <span class="n">xC</span><span class="p">)</span>
+<span class="n">lifetimes</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="m">1</span><span class="p">,</span> <span class="n">min</span><span class="p">)</span>  <span class="c1"># The second argument in apply() function, 1, means that there should be used rows (NOT columns) for finding the minimal value</span>
+</code></pre></div>
+
+<h3 id="b">b)</h3>
+<blockquote>
+<p>Estimate the mean system lifetime.</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{x} = 0.9770395
+</div>
+<script type="math/tex; mode=display">
+\bar{x} = 0.9770395
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">mean</span><span class="p">(</span><span class="n">lifetimes</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.9770395</span>
+</code></pre></div>
+
+<h3 id="c">c)</h3>
+<blockquote>
+<p>Estimate the standard deviation of system lifetimes.</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{s} = 0.9791683
+</div>
+<script type="math/tex; mode=display">
+\bar{s} = 0.9791683
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">sd</span><span class="p">(</span><span class="n">lifetimes</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.9791683</span>
+</code></pre></div>
+
+<h3 id="d">d)</h3>
+<blockquote>
+<p>Estimate the probability that the system fails within 1 month.</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+P(X&lt;1)= 0.6395
+</div>
+<script type="math/tex; mode=display">
+P(X<1)= 0.6395
+</script>
+</div>
+<div class="highlight"><pre><span></span><code>&gt; mean(lifetimes&lt;1)
+[1] 0.6395
+</code></pre></div>
+
+<h3 id="e">e)</h3>
+<blockquote>
+<p>Estimate the median system lifetime</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>&gt; median(lifetimes)
+[1] 0.6714813
+</code></pre></div>
+
+<h3 id="f">f)</h3>
+<blockquote>
+<p>Estimate the 10<sup>th</sup> percentile of system lifetimes</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">lifetimes</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+       <span class="m">10</span>% 
+<span class="m">0.09988259</span>
+</code></pre></div>
+
+<h3 id="g">g)</h3>
+<blockquote>
+<p>What seems to be the distribution of system lifetimes? (histogram etc)</p>
+</blockquote>
+<ul>
+<li>It seems to be the exponential distribution</li>
+</ul>
+<p><img alt="" src="../pics/lifetimes.png" /></p>
+<div class="highlight"><pre><span></span><code><span class="nf">hist</span><span class="p">(</span><span class="n">lifetimes</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">nclass</span> <span class="o">=</span> <span class="m">30</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="42-basic-bootstrap-ci">4.2 Basic bootstrap CI</h2>
+<blockquote>
+<p>The following measurements were given for the cylindrical compressive strength (in MPa) for 11 prestressed concrete beams:</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+38.43, 38.43, 38.39, 38.83, 38.45, 38.35, 38.43, 38.31, 38.32, 38.48, 38.50
+</div>
+<script type="math/tex; mode=display">
+38.43, 38.43, 38.39, 38.83, 38.45, 38.35, 38.43, 38.31, 38.32, 38.48, 38.50
+</script>
+</div>
+<blockquote>
+<p>1000 bootstrap samples (each sample hence consisting of 11 measurements) were generated from these data, and the 1000 bootstrap means were arranged on order. Refer to the smallest as <span><span class="MathJax_Preview">\bar{x}^*_{(1)}</span><script type="math/tex">\bar{x}^*_{(1)}</script></span> , the second smallest as <span><span class="MathJax_Preview">\bar{x}^*_{(2)}</span><script type="math/tex">\bar{x}^*_{(2)}</script></span> and so on, with the largest being <span><span class="MathJax_Preview">\bar{x}^*_{(1000)}</span><script type="math/tex">\bar{x}^*_{(1000)}</script></span>. Assume that</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{x}^*_{(25)} = 38.3818\\
+\bar{x}^*_{(26)} = 38.3818\\
+\bar{x}^*_{(50)} = 38.3909\\
+\bar{x}^*_{(51)} = 38.3918\\
+\bar{x}^*_{(950)} = 38.5218\\
+\bar{x}^*_{(951)} = 38.5236\\
+\bar{x}^*_{(975)} = 38.5382\\
+\bar{x}^*_{(976)} = 38.5391\\
+</div>
+<script type="math/tex; mode=display">
+\bar{x}^*_{(25)} = 38.3818\\
+\bar{x}^*_{(26)} = 38.3818\\
+\bar{x}^*_{(50)} = 38.3909\\
+\bar{x}^*_{(51)} = 38.3918\\
+\bar{x}^*_{(950)} = 38.5218\\
+\bar{x}^*_{(951)} = 38.5236\\
+\bar{x}^*_{(975)} = 38.5382\\
+\bar{x}^*_{(976)} = 38.5391\\
+</script>
+</div>
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>Compute a 95% bootstrap confidence interval for the mean compressive strength.</p>
+</blockquote>
+<ul>
+<li>We need to find:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+[q_{0.025}, q_{0.975}]
+</div>
+<script type="math/tex; mode=display">
+[q_{0.025}, q_{0.975}]
+</script>
+</div>
+<ul>
+<li>By definition 1.7</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+q_p = (x_{(np)}+x_{(np+1}))/2
+</div>
+<script type="math/tex; mode=display">
+q_p = (x_{(np)}+x_{(np+1}))/2
+</script>
+</div>
+<ul>
+<li>So</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+q_{0.025} = (x_{1000*0.025}+x_{1000*0.025+1})/2 = \\
+(x_{25}+ x_{26})/2 =  (38.3818 + 38.3818)/2 = 38.3818
+</div>
+<script type="math/tex; mode=display">
+q_{0.025} = (x_{1000*0.025}+x_{1000*0.025+1})/2 = \\
+(x_{25}+ x_{26})/2 =  (38.3818 + 38.3818)/2 = 38.3818
+</script>
+</div>
+<ul>
+<li>And </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+q_{0.975}= (x_{1000*0.975}+x_{1000*0.975+1})/2= \\
+(x_{975}+x_{976})/2= (38.5382 + 38.5391)/2 = 38.53865
+</div>
+<script type="math/tex; mode=display">
+q_{0.975}= (x_{1000*0.975}+x_{1000*0.975+1})/2= \\
+(x_{975}+x_{976})/2= (38.5382 + 38.5391)/2 = 38.53865
+</script>
+</div>
+<ul>
+<li>The answer is that we accept that </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\bar{x} \in [38.3818, 38.53865]
+</div>
+<script type="math/tex; mode=display">
+\bar{x} \in [38.3818, 38.53865]
+</script>
+</div>
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>Compute a 90% bootstrap confidence interval for the mean compressive strength.</p>
+</blockquote>
+<ul>
+<li>We know</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\alpha = 1 - \frac{90\%}{100\%} = 0.1 \\
+</div>
+<script type="math/tex; mode=display">
+\alpha = 1 - \frac{90\%}{100\%} = 0.1 \\
+</script>
+</div>
+<ul>
+<li>We need to find</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+[q_{\alpha/2}, q_{1-\alpha/2}] = [q_{0.05}, q_{0.95}]
+</div>
+<script type="math/tex; mode=display">
+[q_{\alpha/2}, q_{1-\alpha/2}] = [q_{0.05}, q_{0.95}]
+</script>
+</div>
+<ul>
+<li>So </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+q_{0.05} = (x_{50}+x_{51})/2 =   (38.3909+38.3918)/2 = 38.39135 \\
+q_{0.95} = (x_{950}+x_{951})/2 = (38.5218+38.5236)/2 = 38.5227
+</div>
+<script type="math/tex; mode=display">
+q_{0.05} = (x_{50}+x_{51})/2 =   (38.3909+38.3918)/2 = 38.39135 \\
+q_{0.95} = (x_{950}+x_{951})/2 = (38.5218+38.5236)/2 = 38.5227
+</script>
+</div>
+<ul>
+<li>The answer is that we accept that</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\bar{x} \in [38.39135, 38.5227]
+</div>
+<script type="math/tex; mode=display">
+\bar{x} \in [38.39135, 38.5227]
+</script>
+</div>
+<h2 id="43-various-bootstrap-cis">4.3 Various bootstrap CIs</h2>
+<blockquote>
+<p>Consider the data from the exercise above. These data are entered into R as:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">38.43</span><span class="p">,</span> <span class="m">38.43</span><span class="p">,</span> <span class="m">38.39</span><span class="p">,</span> <span class="m">38.83</span><span class="p">,</span> <span class="m">38.45</span><span class="p">,</span> <span class="m">38.35</span><span class="p">,</span>
+<span class="m">38.43</span><span class="p">,</span> <span class="m">38.31</span><span class="p">,</span> <span class="m">38.32</span><span class="p">,</span> <span class="m">38.48</span><span class="p">,</span> <span class="m">38.50</span><span class="p">)</span>
+</code></pre></div>
+
+<blockquote>
+<p>Now generate <span><span class="MathJax_Preview">k = 1000</span><script type="math/tex">k = 1000</script></span> bootstrap samples and compute the 1000 means (go higher if your computer is fine with it)</p>
+</blockquote>
+<h3 id="a_2">a)</h3>
+<blockquote>
+<p>What are the 2.5%, and 97.5% quantiles (so what is the 95% confidence interval for <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> without assuming any distribution)?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">k</span> <span class="o">&lt;-</span> <span class="m">10000</span>
+<span class="o">&gt;</span> <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">38.43</span><span class="p">,</span> <span class="m">38.43</span><span class="p">,</span> <span class="m">38.39</span><span class="p">,</span> <span class="m">38.83</span><span class="p">,</span> <span class="m">38.45</span><span class="p">,</span> <span class="m">38.35</span><span class="p">,</span>
+<span class="o">+</span>        <span class="m">38.43</span><span class="p">,</span> <span class="m">38.31</span><span class="p">,</span> <span class="m">38.32</span><span class="p">,</span> <span class="m">38.48</span><span class="p">,</span> <span class="m">38.50</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">simSamples</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">simMeans</span> <span class="o">&lt;-</span>   <span class="nf">apply</span><span class="p">(</span><span class="n">simSamples</span><span class="p">,</span><span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">hist</span><span class="p">(</span><span class="n">simMeans</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">simMeans</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span> <span class="m">0.975</span><span class="p">))</span>
+    <span class="m">2.5</span><span class="o">%    97.5%</span> 
+<span class="m">38.38091</span> <span class="m">38.53727</span>
+</code></pre></div>
+
+<h3 id="b_2">b)</h3>
+<blockquote>
+<p>Find the 95% confidence interval for <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> by the parametric bootstrap assuming the normal distribution for the observations. Compare with the classical analytic approach based on the t-distribution from Chapter 2.</p>
+</blockquote>
+<ul>
+<li>Parametric distribution:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">simSamples</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">xBar</span><span class="p">,</span> <span class="n">sBar</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">simMean</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">simSamples</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">simMean</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span><span class="m">0.975</span><span class="p">))</span>
+    <span class="m">2.5</span><span class="o">%    97.5%</span> 
+<span class="m">38.36430</span> <span class="m">38.53135</span> 
+</code></pre></div>
+
+<ul>
+<li>Based on the t-distribution:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">c</span><span class="p">(</span><span class="n">xBar</span> <span class="o">-</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.975</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="n">sBar</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)),</span>
+<span class="o">+</span>   <span class="n">xBar</span> <span class="o">+</span> <span class="nf">qt</span><span class="p">(</span><span class="m">0.975</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="n">sBar</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">38.35250</span> <span class="m">38.54205</span>
+<span class="o">&gt;</span> <span class="nf">t.test</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+    <span class="n">One</span> <span class="n">Sample</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="n">x</span>
+<span class="n">t</span> <span class="o">=</span> <span class="m">903.89</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">10</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">&lt;</span> <span class="m">2.2e-16</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">mean</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">0</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">38.35250</span> <span class="m">38.54205</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">mean</span> <span class="n">of</span> <span class="n">x</span> 
+ <span class="m">38.44727</span> 
+</code></pre></div>
+
+<h3 id="c_1">c)</h3>
+<blockquote>
+<p>Find the 95% confidence interval for <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> by the parametric bootstrap assuming the log-normal distribution for the observations.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">logx</span> <span class="o">&lt;-</span><span class="nf">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">logxMean</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">logx</span><span class="p">)</span> 
+<span class="o">&gt;</span> <span class="n">logxSd</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">logx</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">sim_logx</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nf">rlnorm</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">logx</span><span class="p">),</span> <span class="n">logxMean</span><span class="p">,</span> <span class="n">logxSd</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">sim_mean</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">sim_logx</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">sim_mean</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span> <span class="m">0.975</span><span class="p">))</span>
+    <span class="m">2.5</span><span class="o">%    97.5%</span> 
+<span class="m">38.36428</span> <span class="m">38.53088</span> 
+</code></pre></div>
+
+<h3 id="d_1">d)</h3>
+<blockquote>
+<p>Find the 95% confidence interval for the lower quartile <span><span class="MathJax_Preview">Q_1</span><script type="math/tex">Q_1</script></span> by the parametric bootstrap assuming the normal distribution for the observations.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">Q1</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">{</span><span class="nf">quantile</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">0.25</span><span class="p">)}</span>
+<span class="o">&gt;</span> <span class="n">xBar</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">sBar</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">simSamples</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="nf">rnorm</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">),</span><span class="n">xBar</span><span class="p">,</span> <span class="n">sBar</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">simQ1</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">simSamples</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">Q1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">simQ1</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span><span class="m">0.975</span><span class="p">))</span>
+    <span class="m">2.5</span><span class="o">%    97.5%</span> 
+<span class="m">38.25936</span> <span class="m">38.46556</span>
+</code></pre></div>
+
+<h3 id="e_1">e)</h3>
+<blockquote>
+<p>Find the 95% confidence interval for the lower quartile <span><span class="MathJax_Preview">Q_1</span><script type="math/tex">Q_1</script></span> by the non-parametric bootstrap (so without any distributional assumptions)</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">simSamples</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nf">sample</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">simQ1_nonparametric</span> <span class="o">&lt;-</span><span class="nf">apply</span><span class="p">(</span><span class="n">simSamples</span><span class="p">,</span><span class="m">2</span><span class="p">,</span> <span class="n">Q1</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">quantile</span><span class="p">(</span><span class="n">simQ1_nonparametric</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span> <span class="m">0.975</span><span class="p">))</span>
+  <span class="m">2.5</span><span class="o">%  97.5%</span> 
+<span class="m">38.315</span> <span class="m">38.430</span> 
+</code></pre></div>
+
+<h2 id="44-two-sample-tv-data">4.4 Two-sample TV data</h2>
+<blockquote>
+<p>A TV producer had 20 consumers evaluate the quality of two different TV flat screens - 10 consumers for each screen. A scale from 1 (worst) up to 5 (best) were used and the following results were obtained:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>TV screen 1</th>
+<th>TV screen 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>4</td>
+</tr>
+<tr>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a_3">a)</h3>
+<blockquote>
+<p>Compare the two means without assuming any distribution for the two samples (non-parametric bootstrap confidence interval and relevant hypothesis test interpretation).</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">tv1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="n">tv2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+
+<span class="n">k</span> <span class="o">&lt;-</span> <span class="m">100000</span>
+<span class="n">sim_tv1</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nf">sample</span><span class="p">(</span><span class="n">tv1</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="n">sim_tv2</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nf">sample</span><span class="p">(</span><span class="n">tv2</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))</span>
+<span class="n">means_sim_tv1</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">sim_tv1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="n">means_sim_tv2</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">sim_tv2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span> 
+<span class="n">sim_dif</span> <span class="o">&lt;-</span> <span class="n">means_sim_tv1</span> <span class="o">-</span> <span class="n">means_sim_tv2</span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">sim_dif</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span><span class="m">0.975</span><span class="p">))</span>
+     <span class="m">2.5</span><span class="o">% 97.5%</span> 
+     <span class="m">-1.9</span>  <span class="m">-0.5</span>
+</code></pre></div>
+
+<ul>
+<li>If: </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+H_0 :\  \mu_1= \mu_2
+</div>
+<script type="math/tex; mode=display">
+H_0 :\  \mu_1= \mu_2
+</script>
+</div>
+<ul>
+<li>so we reject the null hypothesis, since 0 is not included in the CI of the differences. </li>
+</ul>
+<h3 id="b_3">b)</h3>
+<blockquote>
+<p>Compare the two means assuming normal distributions for the two samples without using simulations (or rather: assuming/hoping that the sample sizes are large enough to make the results approximately valid).</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code> <span class="nf">t.test</span><span class="p">(</span><span class="n">tv1</span><span class="p">,</span> <span class="n">tv2</span><span class="p">)</span>
+
+    <span class="n">Welch</span> <span class="n">Two</span> <span class="n">Sample</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="n">tv1</span> <span class="n">and</span> <span class="n">tv2</span>
+<span class="n">t</span> <span class="o">=</span> <span class="m">-3.1574</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">17.932</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.005468</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">difference</span> <span class="n">in</span> <span class="n">means</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">0</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">-1.99869</span> <span class="m">-0.40131</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">mean</span> <span class="n">of</span> <span class="n">x</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">y</span> 
+      <span class="m">1.7</span>       <span class="m">2.9</span> 
+</code></pre></div>
+
+<h3 id="c_2">c)</h3>
+<blockquote>
+<p>Compare the two means assuming normal distributions for the two samples simulation based (parametric bootstrap confidence interval and relevant hypothesis test interpretation – in spite of the obviously wrong assumption).</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">tv1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span>
+<span class="n">tv2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">3</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">2</span><span class="p">)</span>
+
+<span class="n">k</span> <span class="o">&lt;-</span> <span class="m">100000</span>
+<span class="n">n</span> <span class="o">&lt;-</span> <span class="nf">length</span><span class="p">(</span><span class="n">tv1</span><span class="p">)</span>
+<span class="n">sim_norm_tv1</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">tv1</span><span class="p">),</span><span class="n">sd</span><span class="o">=</span><span class="nf">sd</span><span class="p">(</span><span class="n">tv1</span><span class="p">)</span> <span class="p">))</span>
+<span class="n">sim_norm_tv2</span> <span class="o">&lt;-</span> <span class="nf">replicate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">tv2</span><span class="p">),</span><span class="n">sd</span><span class="o">=</span><span class="nf">sd</span><span class="p">(</span><span class="n">tv2</span><span class="p">)</span> <span class="p">))</span>
+<span class="n">means_sim_tv1</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">sim_norm_tv1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="n">means_sim_tv2</span> <span class="o">&lt;-</span> <span class="nf">apply</span><span class="p">(</span><span class="n">sim_norm_tv2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span> 
+<span class="n">sim_norm_dif</span> <span class="o">&lt;-</span> <span class="n">means_sim_tv1</span> <span class="o">-</span> <span class="n">means_sim_tv2</span>
+<span class="nf">quantile</span><span class="p">(</span><span class="n">sim_norm_dif</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.025</span><span class="p">,</span><span class="m">0.975</span><span class="p">))</span>
+
+      <span class="m">2.5</span><span class="o">%      97.5%</span> 
+<span class="m">-1.9371878</span> <span class="m">-0.4560157</span> 
+</code></pre></div>
+
+<ul>
+<li>We reject the null hypothesis of <span><span class="MathJax_Preview">\mu_1=\mu_2</span><script type="math/tex">\mu_1=\mu_2</script></span></li>
+</ul>
+<h2 id="45-non-linear-error-propagation">4.5 Non-linear error propagation</h2>
+<blockquote>
+<p>The pressure <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>, and the volume <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> of one mole of an ideal gas are related by the equation <span><span class="MathJax_Preview">PV = 8.31T</span><script type="math/tex">PV = 8.31T</script></span>, when <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> is measured in kilopascals, <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> is measured in kelvins, and <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> is measured in liters.</p>
+</blockquote>
+<h3 id="a_4">a)</h3>
+<blockquote>
+<p>Assume that <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> is measured to be <span><span class="MathJax_Preview">240.48 kPa</span><script type="math/tex">240.48 kPa</script></span> and <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> to be <span><span class="MathJax_Preview">9.987 L</span><script type="math/tex">9.987 L</script></span> with known measurement errors (given as standard deviations): <span><span class="MathJax_Preview">0.03 kPa</span><script type="math/tex">0.03 kPa</script></span> and$ 0.002 L$. Estimate <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> and find the uncertainty in the estimate.</p>
+</blockquote>
+<p>We know:
+$$
+PV = 8.31T\
+T  = \frac{PV}{8.31}
+$$
+Estimate <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span>:
+$$
+\hat{T} = 240.48*9.987 / 8.31 = 289.0101
+$$</p>
+<p>Differentiate the function with respect to both p and v:</p>
+<div>
+<div class="MathJax_Preview">
+f(p,v) = \frac{pv}{8.31} \\
+\frac{\partial f}{\partial p} = \frac{1*p^0v}{8.31}=\frac{v}{8.31} \\
+    \frac{\partial f}{\partial v} = \frac{p*1*v^0}{8.31} = \frac{p}{8.31} \\
+</div>
+<script type="math/tex; mode=display">
+f(p,v) = \frac{pv}{8.31} \\
+\frac{\partial f}{\partial p} = \frac{1*p^0v}{8.31}=\frac{v}{8.31} \\
+    \frac{\partial f}{\partial v} = \frac{p*1*v^0}{8.31} = \frac{p}{8.31} \\
+</script>
+</div>
+<p>Calculate the uncertainty:</p>
+<div>
+<div class="MathJax_Preview">
+\sigma^2_{\hat{T}} = \left(\frac{\partial f}{\partial p}\right)^2*\sigma^2_p+\left(\frac{\partial f}{\partial v}\right)^2*\sigma^2_v = \\
+    \frac{v^2}{8.31^2} * \sigma^2_p + \frac{p^2}{8.31^2}*\sigma^2_v  =\\
+    9.987^2/8.31^2*0.03^2+240.48^2/8.31^2*0.002^2 = 0.3210887 \\
+</div>
+<script type="math/tex; mode=display">
+\sigma^2_{\hat{T}} = \left(\frac{\partial f}{\partial p}\right)^2*\sigma^2_p+\left(\frac{\partial f}{\partial v}\right)^2*\sigma^2_v = \\
+    \frac{v^2}{8.31^2} * \sigma^2_p + \frac{p^2}{8.31^2}*\sigma^2_v  =\\
+    9.987^2/8.31^2*0.03^2+240.48^2/8.31^2*0.002^2 = 0.3210887 \\
+</script>
+</div>
+<p>So the uncertainty is:</p>
+<div>
+<div class="MathJax_Preview">
+ \sigma_{\hat{T}} = \sqrt{0.3210887} = 0.06818855
+</div>
+<script type="math/tex; mode=display">
+ \sigma_{\hat{T}} = \sqrt{0.3210887} = 0.06818855
+</script>
+</div>
+<h3 id="b_4">b)</h3>
+<blockquote>
+<p>Assume that <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> is measured to be <span><span class="MathJax_Preview">240.48kPa</span><script type="math/tex">240.48kPa</script></span> and <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> to be <span><span class="MathJax_Preview">289.12K</span><script type="math/tex">289.12K</script></span> with known measurement errors (given as standard deviations): <span><span class="MathJax_Preview">0.03kPa</span><script type="math/tex">0.03kPa</script></span> and <span><span class="MathJax_Preview">0.02K</span><script type="math/tex">0.02K</script></span>. Estimate <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> and find the uncertainty in the estimate.</p>
+</blockquote>
+<p>We know:
+$$
+V = \frac{8.31T}{P}\
+$$
+Estimate
+$$
+\hat{V} = 8.31*289.12/240.48= 9.990798
+$$</p>
+<p>Differentiate the function with respect to both p and v:
+$$
+f(p,v) = \frac{8.31t}{p} \
+\frac{\partial f}{\partial t} = \frac{1*t^0*8.31}{p}=\frac{8.31}{p} \
+    \frac{\partial f}{\partial p} = 8.31t*-1*p^{-1-1} =- \frac{8.31t}{p^2} \
+$$</p>
+<p>Calculate the uncertainty: 
+$$
+\sigma^2_{\hat{V}} = \left(\frac{\partial f}{\partial t}\right)<sup>2*\sigma</sup>2_t+\left(\frac{\partial f}{\partial p}\right)<sup>2*\sigma</sup>2_p = \
+    \frac{8.31<sup>2}{p</sup>2} * \sigma^2_t + \left( -\frac{8.31*t}{p^2}\sigma_p \right)^2 =\
+    8.31<sup>2/240.48</sup>2*0.02^2 + (- 8.31*289.12/240.48<sup>2*0.03)</sup>2= 0.001425149 ^2\
+$$</p>
+<p>So the uncertainty is:
+$$
+\sigma_{\hat{T}} = \sqrt{0.001425149 ^2} = 0.001425149
+$$</p>
+<h3 id="c_3">c)</h3>
+<blockquote>
+<p>Assume that <span><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> is measured to be <span><span class="MathJax_Preview">9.987 L</span><script type="math/tex">9.987 L</script></span> and <span><span class="MathJax_Preview">T</span><script type="math/tex">T</script></span> to be <span><span class="MathJax_Preview">289.12 K</span><script type="math/tex">289.12 K</script></span> with known measurement errors (given as standard deviations): <span><span class="MathJax_Preview">0.002 L</span><script type="math/tex">0.002 L</script></span> and <span><span class="MathJax_Preview">0.02 K</span><script type="math/tex">0.02 K</script></span>. Estimate P and find the uncertainty in the estimate.</p>
+</blockquote>
+<p>We know:</p>
+<div>
+<div class="MathJax_Preview">
+P = \frac{8.31T}{V}\\
+</div>
+<script type="math/tex; mode=display">
+P = \frac{8.31T}{V}\\
+</script>
+</div>
+<p>Estimate <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span>:</p>
+<div>
+<div class="MathJax_Preview">
+\hat{P} = 8.31*289.12/9.987 = 240.5715
+</div>
+<script type="math/tex; mode=display">
+\hat{P} = 8.31*289.12/9.987 = 240.5715
+</script>
+</div>
+<p>Differentiate the function with respect to both t and v:</p>
+<div>
+<div class="MathJax_Preview">
+f(t,v) = \frac{8.31t}{v} \\
+\frac{\partial f}{\partial t} = \frac{1*t^0*8.31}{v}=\frac{8.31}{v} \\
+    \frac{\partial f}{\partial v} = 8.31t*-1*v^{-1-1} =- \frac{8.31t}{v^2} \\
+</div>
+<script type="math/tex; mode=display">
+f(t,v) = \frac{8.31t}{v} \\
+\frac{\partial f}{\partial t} = \frac{1*t^0*8.31}{v}=\frac{8.31}{v} \\
+    \frac{\partial f}{\partial v} = 8.31t*-1*v^{-1-1} =- \frac{8.31t}{v^2} \\
+</script>
+</div>
+<p>Calculate the uncertainty: </p>
+<div>
+<div class="MathJax_Preview">
+\sigma^2_{\hat{P}} = \left(\frac{\partial f}{\partial t}\right)^2*\sigma^2_t+\left(\frac{\partial f}{\partial v}\right)^2*\sigma^2_v = \\
+    \frac{8.31^2}{v^2} * \sigma^2_t + \left( -\frac{8.31*t}{v^2}\sigma_v \right)^2 =\\
+    8.31^2/9.987^2*0.02^2 + (- 8.31*289.12/9.987^2*0.002)^2= 0.00259796\\
+</div>
+<script type="math/tex; mode=display">
+\sigma^2_{\hat{P}} = \left(\frac{\partial f}{\partial t}\right)^2*\sigma^2_t+\left(\frac{\partial f}{\partial v}\right)^2*\sigma^2_v = \\
+    \frac{8.31^2}{v^2} * \sigma^2_t + \left( -\frac{8.31*t}{v^2}\sigma_v \right)^2 =\\
+    8.31^2/9.987^2*0.02^2 + (- 8.31*289.12/9.987^2*0.002)^2= 0.00259796\\
+</script>
+</div>
+<p>So the uncertainty is:</p>
+<div>
+<div class="MathJax_Preview">
+\sigma_{\hat{T}} = \sqrt{0.00259796} = 0.05097019
+</div>
+<script type="math/tex; mode=display">
+\sigma_{\hat{T}} = \sqrt{0.00259796} = 0.05097019
+</script>
+</div>
+<h3 id="d_2">d)</h3>
+<blockquote>
+<p>Try to answer one or more of these questions by simulation (assume that the errors are normally distributed).</p>
+</blockquote>
+<p>Let's do simulations in order to estimate <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> and find the the uncertainty in the estimate, where: 
+$$
+P = \frac{8.31T}{V}\
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">n</span> <span class="o">&lt;-</span> <span class="m">10000</span>
+<span class="o">&gt;</span> <span class="n">Ts</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span> <span class="m">289.12</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">0.02</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">Vs</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span> <span class="m">9.987</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">0.002</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">p</span> <span class="o">&lt;-</span> <span class="m">8.31</span><span class="o">*</span><span class="n">Ts</span><span class="o">/</span><span class="n">Vs</span>
+<span class="o">&gt;</span> <span class="nf">mean</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">240.5706</span>
+<span class="o">&gt;</span> <span class="nf">sd</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.05104125</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_3_3/" title="3 Analysis of Two samples" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3 Analysis of Two samples
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

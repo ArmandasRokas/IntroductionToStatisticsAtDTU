@@ -1,0 +1,1143 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>3 Analysis of Two samples - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analysis-of-two-samples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              3 Analysis of Two samples
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-nav__link">
+      3 Confidence Intervals
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_2/" title="3 Hypothesis Testing" class="md-nav__link">
+      3 Hypothesis Testing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3 Analysis of Two samples
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="3 Analysis of Two samples" class="md-nav__link md-nav__link--active">
+      3 Analysis of Two samples
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#36-cholesterol" class="md-nav__link">
+    3.6 Cholesterol
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Cholesterol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-pulse" class="md-nav__link">
+    3.7 Pulse
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Pulse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-foil-production" class="md-nav__link">
+    3.8 Foil production
+  </a>
+  
+    <nav class="md-nav" aria-label="3.8 Foil production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-course-project" class="md-nav__link">
+    3.9 Course project
+  </a>
+  
+    <nav class="md-nav" aria-label="3.9 Course project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-nav__link">
+      4 Simulation Methods
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#36-cholesterol" class="md-nav__link">
+    3.6 Cholesterol
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Cholesterol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-pulse" class="md-nav__link">
+    3.7 Pulse
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Pulse">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#38-foil-production" class="md-nav__link">
+    3.8 Foil production
+  </a>
+  
+    <nav class="md-nav" aria-label="3.8 Foil production">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#39-course-project" class="md-nav__link">
+    3.9 Course project
+  </a>
+  
+    <nav class="md-nav" aria-label="3.9 Course project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="analysis-of-two-samples">Analysis of Two Samples</h1>
+<h2 id="36-cholesterol">3.6 Cholesterol</h2>
+<blockquote>
+<p>In a clinical trial of a cholesterol-lowering agent, 15 patients’ cholesterol (in mmol/L) has been measured before treatment and 3 weeks after starting treatment. Data are listed in the following table:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Patient</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>9.1</td>
+<td>8.2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>8.0</td>
+<td>6.4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7.7</td>
+<td>6.6</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10.0</td>
+<td>8.5</td>
+</tr>
+<tr>
+<td>5</td>
+<td>9.6</td>
+<td>8.0</td>
+</tr>
+<tr>
+<td>6</td>
+<td>7.9</td>
+<td>5.8</td>
+</tr>
+<tr>
+<td>7</td>
+<td>9.0</td>
+<td>7.8</td>
+</tr>
+<tr>
+<td>8</td>
+<td>7.1</td>
+<td>7.2</td>
+</tr>
+<tr>
+<td>9</td>
+<td>8.3</td>
+<td>6.7</td>
+</tr>
+<tr>
+<td>10</td>
+<td>9.6</td>
+<td>9.8</td>
+</tr>
+<tr>
+<td>11</td>
+<td>8.2</td>
+<td>7.1</td>
+</tr>
+<tr>
+<td>12</td>
+<td>9.2</td>
+<td>7.7</td>
+</tr>
+<tr>
+<td>13</td>
+<td>7.3</td>
+<td>6.0</td>
+</tr>
+<tr>
+<td>14</td>
+<td>8.5</td>
+<td>6.6</td>
+</tr>
+<tr>
+<td>15</td>
+<td>9.5</td>
+<td>8.4</td>
+</tr>
+</tbody>
+</table>
+<p>The following is run in R:</p>
+<div class="highlight"><pre><span></span><code><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">9.1</span><span class="p">,</span> <span class="m">8.0</span><span class="p">,</span> <span class="m">7.7</span><span class="p">,</span> <span class="m">10.0</span><span class="p">,</span> <span class="m">9.6</span><span class="p">,</span> <span class="m">7.9</span><span class="p">,</span> <span class="m">9.0</span><span class="p">,</span> <span class="m">7.1</span><span class="p">,</span> <span class="m">8.3</span><span class="p">,</span>
+<span class="m">9.6</span><span class="p">,</span> <span class="m">8.2</span><span class="p">,</span> <span class="m">9.2</span><span class="p">,</span> <span class="m">7.3</span><span class="p">,</span> <span class="m">8.5</span><span class="p">,</span> <span class="m">9.5</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">8.2</span><span class="p">,</span> <span class="m">6.4</span><span class="p">,</span> <span class="m">6.6</span><span class="p">,</span> <span class="m">8.5</span><span class="p">,</span> <span class="m">8.0</span><span class="p">,</span> <span class="m">5.8</span><span class="p">,</span> <span class="m">7.8</span><span class="p">,</span> <span class="m">7.2</span><span class="p">,</span> <span class="m">6.7</span><span class="p">,</span>
+<span class="m">9.8</span><span class="p">,</span> <span class="m">7.1</span><span class="p">,</span> <span class="m">7.7</span><span class="p">,</span> <span class="m">6.0</span><span class="p">,</span> <span class="m">6.6</span><span class="p">,</span> <span class="m">8.4</span><span class="p">)</span>
+
+<span class="nf">t.test</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span>
+<span class="n">Welch</span> <span class="n">Two</span> <span class="n">Sample</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>
+<span class="n">data</span><span class="o">:</span> <span class="n">x1</span> <span class="n">and</span> <span class="n">x2</span>
+<span class="n">t</span> <span class="o">=</span> <span class="m">3.3</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">27</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.003</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">difference</span> <span class="n">in</span> <span class="n">means</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">0</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+<span class="m">0.4637</span> <span class="m">1.9630</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">mean</span> <span class="n">of</span> <span class="n">x</span> <span class="n">mean</span> <span class="n">of</span> <span class="n">y</span>
+<span class="m">8.600</span> <span class="m">7.387</span>
+
+<span class="nf">t.test</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">pair</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">Paired</span> <span class="n">t</span><span class="o">-</span><span class="n">test</span>
+<span class="n">data</span><span class="o">:</span> <span class="n">x1</span> <span class="n">and</span> <span class="n">x2</span>
+<span class="n">t</span> <span class="o">=</span> <span class="m">7.3</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">14</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.000004</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">difference</span> <span class="n">in</span> <span class="n">means</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">0</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+<span class="m">0.8588</span> <span class="m">1.5678</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">mean</span> <span class="n">of</span> <span class="n">the</span> <span class="n">differences</span>
+<span class="m">1.213</span>
+</code></pre></div>
+
+<h3 id="a">a)</h3>
+<blockquote>
+<p>Can there, based on these data be demonstrated a significant decrease in cholesterol levels with <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> = 0.001?</p>
+</blockquote>
+<p>This is clearly a <strong>paired</strong> setting, because the same persons were measured before treatment and 3 weeks after starting treatment. So only the results from the last of the R-calls are relevant, where we can read off the results:</p>
+<p>The (non-directional) <span><span class="MathJax_Preview">\text{p-value}= 0.00000367</span><script type="math/tex">\text{p-value}= 0.00000367</script></span>, so there is very strong evidence against the null hypothesis, and we can beyond any reasonable doubts conclude that the mean cholesterol level has decreased after the 3 weeks.</p>
+<h2 id="37-pulse">3.7 Pulse</h2>
+<table>
+<thead>
+<tr>
+<th>Runner</th>
+<th>Pulse end</th>
+<th>Pulse 1min</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>173</td>
+<td>120</td>
+</tr>
+<tr>
+<td>2</td>
+<td>175</td>
+<td>115</td>
+</tr>
+<tr>
+<td>3</td>
+<td>174</td>
+<td>122</td>
+</tr>
+<tr>
+<td>4</td>
+<td>183</td>
+<td>123</td>
+</tr>
+<tr>
+<td>5</td>
+<td>181</td>
+<td>125</td>
+</tr>
+<tr>
+<td>6</td>
+<td>180</td>
+<td>140</td>
+</tr>
+<tr>
+<td>7</td>
+<td>170</td>
+<td>108</td>
+</tr>
+<tr>
+<td>8</td>
+<td>182</td>
+<td>133</td>
+</tr>
+<tr>
+<td>9</td>
+<td>188</td>
+<td>134</td>
+</tr>
+<tr>
+<td>10</td>
+<td>178</td>
+<td>121</td>
+</tr>
+<tr>
+<td>11</td>
+<td>181</td>
+<td>130</td>
+</tr>
+<tr>
+<td>12</td>
+<td>183</td>
+<td>126</td>
+</tr>
+<tr>
+<td>13</td>
+<td>185</td>
+<td>128</td>
+</tr>
+</tbody>
+</table>
+<p>The following was run in R:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Pulse_end</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">173</span><span class="p">,</span><span class="m">175</span><span class="p">,</span><span class="m">174</span><span class="p">,</span><span class="m">183</span><span class="p">,</span><span class="m">181</span><span class="p">,</span><span class="m">180</span><span class="p">,</span><span class="m">170</span><span class="p">,</span><span class="m">182</span><span class="p">,</span><span class="m">188</span><span class="p">,</span><span class="m">178</span><span class="p">,</span><span class="m">181</span><span class="p">,</span><span class="m">183</span><span class="p">,</span><span class="m">185</span><span class="p">)</span>
+<span class="n">Pulse_1min</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">120</span><span class="p">,</span><span class="m">115</span><span class="p">,</span><span class="m">122</span><span class="p">,</span><span class="m">123</span><span class="p">,</span><span class="m">125</span><span class="p">,</span><span class="m">140</span><span class="p">,</span><span class="m">108</span><span class="p">,</span><span class="m">133</span><span class="p">,</span><span class="m">134</span><span class="p">,</span><span class="m">121</span><span class="p">,</span><span class="m">130</span><span class="p">,</span><span class="m">126</span><span class="p">,</span><span class="m">128</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">Pulse_end</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">179.5</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">Pulse_1min</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">125</span>
+<span class="nf">sd</span><span class="p">(</span><span class="n">Pulse_end</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">5.19</span>
+<span class="nf">sd</span><span class="p">(</span><span class="n">Pulse_1min</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">8.406</span>
+<span class="nf">sd</span><span class="p">(</span><span class="n">Pulse_end</span><span class="o">-</span><span class="n">Pulse_1min</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">5.768</span>
+</code></pre></div>
+
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>What is the 99% confidence interval for the mean pulse drop (meaning the drop during 1 minute from end of workout)?</p>
+</blockquote>
+<ul>
+<li>We know that these samples are dependent(paired situation), so so we apply the one-sample theory (Method 3.9) on the differences in order to find CI</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">mean_diff</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">Pulse_end</span><span class="p">)</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">Pulse_1min</span><span class="p">)</span>
+
+
+<span class="nf">c</span><span class="p">(</span><span class="n">mean_diff</span> <span class="o">-</span> <span class="nf">qt</span><span class="p">(</span><span class="m">1-0.01</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">12</span><span class="p">)</span><span class="o">*</span><span class="n">sd_diff</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">13</span><span class="p">),</span>
+  <span class="n">mean_diff</span> <span class="o">+</span> <span class="nf">qt</span><span class="p">(</span><span class="m">1-0.01</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">12</span><span class="p">)</span><span class="o">*</span><span class="n">sd_diff</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">13</span><span class="p">))</span>
+<span class="m">49.57507</span> <span class="m">59.34801</span>
+</code></pre></div>
+
+<h3 id="b">b)</h3>
+<blockquote>
+<p>Consider now the 13 pulse end measurements (first row in the table). What is the 95% confidence interval for the standard deviation of these?</p>
+</blockquote>
+<p>By method 3.19</p>
+<div>
+<div class="MathJax_Preview">
+\left[\sqrt{\frac{(n-1)s^2}{\chi_{1-0.05/2}^2}}, \sqrt{\frac{(n-1)s^2}{\chi_{0.05/2}^2}} \right] = [3.721662, 8.567283]
+</div>
+<script type="math/tex; mode=display">
+\left[\sqrt{\frac{(n-1)s^2}{\chi_{1-0.05/2}^2}}, \sqrt{\frac{(n-1)s^2}{\chi_{0.05/2}^2}} \right] = [3.721662, 8.567283]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="nf">c</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">12</span><span class="o">*</span><span class="nf">var</span><span class="p">(</span><span class="n">Pulse_end</span><span class="p">)</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">12</span><span class="p">)),</span>     <span class="nf">sqrt</span><span class="p">(</span><span class="m">12</span><span class="o">*</span><span class="nf">var</span><span class="p">(</span><span class="n">Pulse_end</span><span class="p">)</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.05</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">12</span><span class="p">)))</span> 
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">3.721662</span> <span class="m">8.567283</span>
+</code></pre></div>
+
+<ul>
+<li>So the answer is that we accept that <span><span class="MathJax_Preview">\sigma\in[3.721662, 8.567283]</span><script type="math/tex">\sigma\in[3.721662, 8.567283]</script></span> </li>
+</ul>
+<h2 id="38-foil-production">3.8 Foil production</h2>
+<blockquote>
+<p>In the production of a certain foil (film), the foil is controlled by measuring the thickness of the foil in a number of points distributed over the width of the foil. The production is considered stable if the mean of the difference between the maximum and minimum measurements does not exceed 0.35 mm. At a given day, the following random samples are observed for 10 foils:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Foil</th>
+<th>Max. in mm <span><span class="MathJax_Preview">y_{max}</span><script type="math/tex">y_{max}</script></span></th>
+<th>Min. in mm <span><span class="MathJax_Preview">y_{min}</span><script type="math/tex">y_{min}</script></span></th>
+<th>Max-Min(D)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2.62</td>
+<td>2.14</td>
+<td>0.48</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.71</td>
+<td>2.39</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.18</td>
+<td>1.86</td>
+<td>0.32</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2.25</td>
+<td>1.92</td>
+<td>0.33</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2.72</td>
+<td>2.33</td>
+<td>0.39</td>
+</tr>
+<tr>
+<td>6</td>
+<td>2.34</td>
+<td>2.00</td>
+<td>0.34</td>
+</tr>
+<tr>
+<td>7</td>
+<td>2.63</td>
+<td>2.25</td>
+<td>0.38</td>
+</tr>
+<tr>
+<td>8</td>
+<td>1.86</td>
+<td>1.50</td>
+<td>0.36</td>
+</tr>
+<tr>
+<td>9</td>
+<td>2.84</td>
+<td>2.27</td>
+<td>0.57</td>
+</tr>
+<tr>
+<td>10</td>
+<td>2.93</td>
+<td>2.37</td>
+<td>0.56</td>
+</tr>
+</tbody>
+</table>
+<p>The following statistics may potentially be used
+$$
+\bar{y}<em min="min">{max} = 2.508, \bar{y}</em>= 2.103, s_{y_{max}}=0.3373,\
+s_{y_{min}}=0.2834, s_D=0.09664
+$$</p>
+<h3 id="a_2">a)</h3>
+<blockquote>
+<p>What is a 95% confidence interval for the mean difference? </p>
+</blockquote>
+<p>Answer:
+$$
+[0.3358679, 0.4741321]
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">c</span><span class="p">(</span><span class="m">2.508-2.103</span> <span class="o">-</span> <span class="nf">qt</span><span class="p">(</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">9</span><span class="p">)</span><span class="o">*</span><span class="m">0.09664</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">10</span><span class="p">),</span>
+    <span class="m">2.508-2.103</span> <span class="o">+</span> <span class="nf">qt</span><span class="p">(</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">9</span><span class="p">)</span><span class="o">*</span><span class="m">0.09664</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.3358679</span> <span class="m">0.4741321</span>
+</code></pre></div>
+
+<p>Note: The confidence interval contains those values of the mean difference that we believe in based on the data.</p>
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>How much evidence is there that the mean difference is different from 0.35? State the null hypothesis, t-statistic and p-value for this question.</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_0:\ \mu=0.35 \\
+H_1:\ \mu\ne0.35
+</div>
+<script type="math/tex; mode=display">
+H_0:\ \mu=0.35 \\
+H_1:\ \mu\ne0.35
+</script>
+</div>
+<p><strong>By using Method 3.36</strong></p>
+<p><strong>1.</strong><br />
+$$
+t_{obs}= \frac{\bar{x}-\mu_{0}}{s/\sqrt{n}}=1.799723
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="p">((</span><span class="m">2.508-2.103</span><span class="p">)</span><span class="m">-0.35</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">0.09664</span><span class="o">/</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">10</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1.799723</span>
+</code></pre></div>
+
+<p><strong>2.</strong> 
+$$
+\text{p-value}= 2*P(T&gt;|t_{obs}|) =  0.1054369
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="m">2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="nf">pt</span><span class="p">(</span><span class="m">1.799723</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">9</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.1054369</span>
+</code></pre></div>
+
+<p><strong>3.  Conclusion:</strong></p>
+<p><span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> is 0.1054369, so there is little or evidence against <span><span class="MathJax_Preview">H_{0}</span><script type="math/tex">H_{0}</script></span>, which is <span><span class="MathJax_Preview">\mu=0.35</span><script type="math/tex">\mu=0.35</script></span></p>
+<h2 id="39-course-project">3.9 Course project</h2>
+<blockquote>
+<p>At a specific education it was decided to introduce a project, running through the course period, as a part of the grade point evaluation. In order to assess whether it has changed the percentage of students passing the course, the following data was collected:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Before introduction of project</th>
+<th>After introduction of project</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Number of students evaluated</td>
+<td>50</td>
+<td>24</td>
+</tr>
+<tr>
+<td>Number of students failed</td>
+<td>13</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Average grade point <span><span class="MathJax_Preview">\bar{x}</span><script type="math/tex">\bar{x}</script></span></td>
+<td>6.420</td>
+<td>7.375</td>
+</tr>
+<tr>
+<td>Sample standard deviation <span><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span></td>
+<td>2.205</td>
+<td>1.813</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a_3">a)</h3>
+<blockquote>
+<p>As it is assumed that the grades are approximately normally distributed in each group, the following hypothesis is tested:</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_{0} \ : \ \mu_{Before}= \mu_{After} \equiv \mu_{Before}-\mu_{After}= 0 \\
+H_{1}\ : \ \mu_{Before} \ne \mu_{After} \equiv \mu_{Before}-\mu_{After}\ne 0
+</div>
+<script type="math/tex; mode=display">
+H_{0} \ : \ \mu_{Before}= \mu_{After} \equiv \mu_{Before}-\mu_{After}= 0 \\
+H_{1}\ : \ \mu_{Before} \ne \mu_{After} \equiv \mu_{Before}-\mu_{After}\ne 0
+</script>
+</div>
+<blockquote>
+<p>The test statistic, the p-value and the conclusion for this test become?</p>
+</blockquote>
+<p>By method 3.51(Welch):</p>
+<ol>
+<li></li>
+</ol>
+<div>
+<div class="MathJax_Preview">
+t_{obs}= \frac{(\bar{x}_1-\bar{x}_2)-\delta_0}{\sqrt{s_1^2/n_1+s^2_2/n_2}}= -1.973387\\
+v = \frac{(\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2})^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_2^2/n_2)^2}{n_2-1}}= 54.38591
+</div>
+<script type="math/tex; mode=display">
+t_{obs}= \frac{(\bar{x}_1-\bar{x}_2)-\delta_0}{\sqrt{s_1^2/n_1+s^2_2/n_2}}= -1.973387\\
+v = \frac{(\frac{s^2_1}{n_1}+\frac{s^2_2}{n_2})^2}{\frac{(s_1^2/n_1)^2}{n_1-1}+\frac{(s_2^2/n_2)^2}{n_2-1}}= 54.38591
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">tobs</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">6.420-7.375</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">((</span><span class="m">2.205</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">50</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="m">1.813</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">24</span><span class="p">)))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-1.973387</span>
+<span class="o">&gt;</span> <span class="n">v</span> <span class="o">&lt;-</span> <span class="p">((</span><span class="n">s1</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n1</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">s2</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="o">/</span>
+  <span class="p">(((</span><span class="n">s1</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n1</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="p">(</span><span class="n">n1</span><span class="m">-1</span><span class="p">))</span><span class="o">+</span><span class="p">((</span><span class="n">s2</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="p">(</span><span class="n">n2</span><span class="m">-1</span><span class="p">)))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">54.38591</span>
+</code></pre></div>
+
+<ol>
+<li></li>
+</ol>
+<div>
+<div class="MathJax_Preview">
+\text{p-value}= 0.05354164
+</div>
+<script type="math/tex; mode=display">
+\text{p-value}= 0.05354164
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="m">2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="nf">pt</span><span class="p">(</span><span class="m">1.973387</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">54.38591</span><span class="p">))</span>
+</code></pre></div>
+
+<ol>
+<li>Conclusion</li>
+</ol>
+<p>On a 5% level we cannot conclude a significant difference in the grade point means before and after. This means that we cannot reject <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span></p>
+<h3 id="b_2">b)</h3>
+<blockquote>
+<p>A 99% confidence interval for the mean grade point difference is?</p>
+</blockquote>
+<p>By method 3.47:</p>
+<div>
+<div class="MathJax_Preview">
+\bar{x}-\bar{y}\pm t_{1-\alpha/2}*\sqrt{\frac{s_{1}^2}{n_1}+\frac{s^2_{2}}{n_2}} = [-2.2467772,0.3367772]
+</div>
+<script type="math/tex; mode=display">
+\bar{x}-\bar{y}\pm t_{1-\alpha/2}*\sqrt{\frac{s_{1}^2}{n_1}+\frac{s^2_{2}}{n_2}} = [-2.2467772,0.3367772]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="nf">c</span><span class="p">(</span><span class="m">6.420-7.375</span><span class="o">-</span><span class="nf">qt</span><span class="p">(</span><span class="m">1-0.01</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">2.205</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">50+1.813</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">24</span><span class="p">),</span> 
+  <span class="m">6.420-7.375</span><span class="o">+</span><span class="nf">qt</span><span class="p">(</span><span class="m">1-0.01</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="n">v</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">2.205</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">50+1.813</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="m">24</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-2.2467772</span>  <span class="m">0.3367772</span>
+</code></pre></div>
+
+<ul>
+<li>The answer: we accept that the mean difference in the interval <span><span class="MathJax_Preview">[-2.247; 0.337]</span><script type="math/tex">[-2.247; 0.337]</script></span></li>
+</ul>
+<h3 id="c">c)</h3>
+<blockquote>
+<p>A 95% confidence interval for the grade point standard deviation after the introduction of the project becomes?</p>
+</blockquote>
+<p>By method 3.19</p>
+<div>
+<div class="MathJax_Preview">
+\left[\sqrt{\frac{(n-1)s^2}{\chi_{1-0.05/2}^2}}, \sqrt{\frac{(n-1)s^2}{\chi_{0.05/2}^2}} \right] = [1.409088, 2.543205]
+</div>
+<script type="math/tex; mode=display">
+\left[\sqrt{\frac{(n-1)s^2}{\chi_{1-0.05/2}^2}}, \sqrt{\frac{(n-1)s^2}{\chi_{0.05/2}^2}} \right] = [1.409088, 2.543205]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">n</span> <span class="o">&lt;-</span> <span class="m">24</span>
+<span class="n">sd</span> <span class="o">&lt;-</span> <span class="m">1.813</span>
+<span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="nf">c</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">((</span><span class="n">n</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="n">sd</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">))),</span>     
+  <span class="nf">sqrt</span><span class="p">((</span><span class="n">n</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="n">sd</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="nf">qchisq</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="p">(</span><span class="n">n</span><span class="m">-1</span><span class="p">))))</span> 
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">1.409088</span> <span class="m">2.543205</span>
+</code></pre></div>
+
+<ul>
+<li>So the answer is that we accept that <span><span class="MathJax_Preview">\sigma\in[1.409088,  2.543205]</span><script type="math/tex">\sigma\in[1.409088,  2.543205]</script></span> </li>
+</ul>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_3_2/" title="3 Hypothesis Testing" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3 Hypothesis Testing
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                4 Simulation Methods
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
