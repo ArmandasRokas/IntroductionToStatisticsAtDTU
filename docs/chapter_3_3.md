@@ -1,4 +1,4 @@
-# Analysis of Two Samples
+# 3 Analysis of Two Samples
 
 ## 3.6 Cholesterol
 
