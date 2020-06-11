@@ -105,9 +105,7 @@ beta1hat + qt((1-0.05/2), df=length(t)-2)*sigmabeta1
 
 > Can a relation between temperature and life time be documented on level 5%?
 
-- By the method 5.14
-
-1. 
+- By the method 5.14 1.: 
 
 $$
 H_{01}\ :\ \beta_1= 0 \\
@@ -115,8 +113,7 @@ H_{11}\ :\ \beta_1\ne 0
 $$
 
 
-
-2. 
+- 2.:
 
 $$
 t_{obs, \beta_{1}} =   -20.77291 \\
@@ -124,15 +121,15 @@ $$
 
 
 
-3. 
+- 3.: 
 
 $$
 \text{p-value}_{1} = 1.505039*10^{-7}
 $$
 
-4. 
+- 4.: 
 
-- $\text{p-value}_1$  is less than $\alpha = 0.05$, so we reject $H_{01}$ 
+ $\text{p-value}_1$  is less than $\alpha = 0.05$, so we reject $H_{01}$ 
 
 
 
@@ -474,7 +471,7 @@ pvalue0 <- out$coefficients[1,4]
 
 
 
-$ \text{p-value}_0=0.68$ is higher than $\alpha=0.05$, so we need to accept that the line passes through (0, 0). 
+$\text{p-value}_0=0.68$ is higher than $\alpha=0.05$, so we need to accept that the line passes through (0, 0). 
 
 
 
@@ -526,6 +523,7 @@ $$
 By Method 5.18 constants differs only by this term: $(x_{new}-\bar{x})^2$ 
 
 So since $\bar{x}=5.547$:
+
 $$
 (5.0-5.547)^2<(3.5-5.547)^2<(9.5-5.547)^2 \\
 (x^B_{new}-5.547)^2<(x^A_{new}-5.547)^2<(x^C_{new}-5.547)^2 \\

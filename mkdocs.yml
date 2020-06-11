@@ -34,4 +34,6 @@ nav:
         - 3 Confidence Intervals: chapter_3_1.md
         - 3 Hypothesis Testing: chapter_3_2.md
         - 3 Analysis of Two samples: chapter_3_3.md
-        - 4 Simulation Methods: chapter_4_1.md 
+        - 4 Simulation Methods: chapter_4_1.md
+        - 5 Simple Linear Regression: chapter_5.md
+
