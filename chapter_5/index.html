@@ -1,0 +1,1499 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.1">
+    
+    
+      
+        <title>5 Simple Linear Regression - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.a676eddb.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.b302131d.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5350">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="red" data-md-color-accent="red">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#simple-linear-regression" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              5 Simple Linear Regression
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-nav__link">
+      3 Confidence Intervals
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_2/" title="3 Hypothesis Testing" class="md-nav__link">
+      3 Hypothesis Testing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_3/" title="3 Analysis of Two samples" class="md-nav__link">
+      3 Analysis of Two samples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-nav__link">
+      4 Simulation Methods
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        5 Simple Linear Regression
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="5 Simple Linear Regression" class="md-nav__link md-nav__link--active">
+      5 Simple Linear Regression
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-plastic-film-folding-machine" class="md-nav__link">
+    5.1 Plastic film folding machine
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Plastic film folding machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-linear-regression-life-time-model" class="md-nav__link">
+    5.2 Linear regression life time model
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Linear regression life time model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-yield-of-chemical-process" class="md-nav__link">
+    5.3 Yield of chemical process
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Yield of chemical process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-plastic-material" class="md-nav__link">
+    5.4 Plastic material
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 Plastic material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-water-pollution" class="md-nav__link">
+    5.5 Water pollution
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Water pollution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-membrane-pressure-drop" class="md-nav__link">
+    5.6 Membrane pressure drop
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 Membrane pressure drop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_5" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_5" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_3" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#51-plastic-film-folding-machine" class="md-nav__link">
+    5.1 Plastic film folding machine
+  </a>
+  
+    <nav class="md-nav" aria-label="5.1 Plastic film folding machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-linear-regression-life-time-model" class="md-nav__link">
+    5.2 Linear regression life time model
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Linear regression life time model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-yield-of-chemical-process" class="md-nav__link">
+    5.3 Yield of chemical process
+  </a>
+  
+    <nav class="md-nav" aria-label="5.3 Yield of chemical process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#54-plastic-material" class="md-nav__link">
+    5.4 Plastic material
+  </a>
+  
+    <nav class="md-nav" aria-label="5.4 Plastic material">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#55-water-pollution" class="md-nav__link">
+    5.5 Water pollution
+  </a>
+  
+    <nav class="md-nav" aria-label="5.5 Water pollution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#56-membrane-pressure-drop" class="md-nav__link">
+    5.6 Membrane pressure drop
+  </a>
+  
+    <nav class="md-nav" aria-label="5.6 Membrane pressure drop">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_5" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_5" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_3" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="simple-linear-regression">Simple Linear Regression</h1>
+<h2 id="51-plastic-film-folding-machine">5.1 Plastic film folding machine</h2>
+<blockquote>
+<p>On a machine that folds plastic film the temperature may be varied in the range of 130-185 °C. For obtaining, if possible, a model for the influence of temperature on the folding thickness, n = 12 related set of values of temperature and the fold thickness were measured that is illustrated in the following figure:</p>
+</blockquote>
+<p><img alt="" src="../pics/5_1.PNG" /></p>
+<h3 id="a">a)</h3>
+<blockquote>
+<p>Determine by looking at the figure, which of the following sets of estimates for the parameters in the usual regression model is correct:</p>
+</blockquote>
+<ol>
+<li><span><span class="MathJax_Preview">\hat{\beta_0}=0</span><script type="math/tex">\hat{\beta_0}=0</script></span>, <span><span class="MathJax_Preview">\hat{\beta_1}=-0.9</span><script type="math/tex">\hat{\beta_1}=-0.9</script></span>, <span><span class="MathJax_Preview">\hat{\sigma}=36</span><script type="math/tex">\hat{\sigma}=36</script></span> </li>
+<li><span><span class="MathJax_Preview">\hat{\beta_0}=0</span><script type="math/tex">\hat{\beta_0}=0</script></span>, <span><span class="MathJax_Preview">\hat{\beta_1}=0.9</span><script type="math/tex">\hat{\beta_1}=0.9</script></span>, <span><span class="MathJax_Preview">\hat{\sigma}=3.6</span><script type="math/tex">\hat{\sigma}=3.6</script></span></li>
+<li><span><span class="MathJax_Preview">\hat{\beta_0}=252</span><script type="math/tex">\hat{\beta_0}=252</script></span>, <span><span class="MathJax_Preview">\hat{\beta_1}=-0.9</span><script type="math/tex">\hat{\beta_1}=-0.9</script></span>, <span><span class="MathJax_Preview">\hat{\sigma}=3.6</span><script type="math/tex">\hat{\sigma}=3.6</script></span></li>
+<li><span><span class="MathJax_Preview">\hat{\beta_0}=-252</span><script type="math/tex">\hat{\beta_0}=-252</script></span>, <span><span class="MathJax_Preview">\hat{\beta_1}=-0.9</span><script type="math/tex">\hat{\beta_1}=-0.9</script></span>, <span><span class="MathJax_Preview">\hat{\sigma}=36</span><script type="math/tex">\hat{\sigma}=36</script></span></li>
+<li>
+<p><span><span class="MathJax_Preview">\hat{\beta_0}=252</span><script type="math/tex">\hat{\beta_0}=252</script></span>, <span><span class="MathJax_Preview">\hat{\beta_1}=-0.9</span><script type="math/tex">\hat{\beta_1}=-0.9</script></span>, <span><span class="MathJax_Preview">\hat{\sigma}=36</span><script type="math/tex">\hat{\sigma}=36</script></span></p>
+</li>
+<li>
+<p>The only possible intercept  <span><span class="MathJax_Preview">\beta_0</span><script type="math/tex">\beta_0</script></span> among the ones given in the answers is 252, because the line continues to ascend to the left, and it must cross y-axis somewhere above 130. </p>
+</li>
+<li>The slope estimate of -0.9 in these two options looks reasonable, because the line goes downward.</li>
+<li>The estimated standard deviation of the error <span><span class="MathJax_Preview">s_e =\hat{\sigma}</span><script type="math/tex">s_e =\hat{\sigma}</script></span> is 3.6, because from the figure it is clear that the points are NOT having an average vertical distance to the line in the size of 36.</li>
+<li>So <strong>the answer is 3.</strong> </li>
+</ol>
+<h3 id="b">b)</h3>
+<blockquote>
+<p>What is the only possible correct answer:</p>
+</blockquote>
+<ol>
+<li>The proportion of explained variation is 50% and the correlation is 0.98</li>
+<li>The proportion of explained variation is 0% and the correlation is -0.98</li>
+<li>The proportion of explained variation is 96% and the correlation is -1</li>
+<li>The proportion of explained variation is 96% and the correlation is 0.98</li>
+<li>
+<p>The proportion of explained variation is 96% and the correlation is -0.98</p>
+</li>
+<li>
+<p>The proportion of variation explained must be pretty high, because the observations are pretty close to the line. That means that 96% of total variation is explained by the line.  </p>
+</li>
+<li>Answer 1 and 4 are ruled out since the correlation clearly is negative. </li>
+<li>This also narrows the possibilities down to answer 3 and 5. </li>
+<li>And since the correlation is NOT exactly -1 (in which case the observations would be exactly on the line), the correct <strong>answer is: 5</strong></li>
+</ol>
+<h2 id="52-linear-regression-life-time-model">5.2 Linear regression life time model</h2>
+<blockquote>
+<p>A company manufactures an electronic device to be used in a very wide temperature range. The company knows that increased temperature shortens the life time of the device, and a study is therefore performed in which the life time is determined as a function of temperature. The following data is found:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Temperature in Celsius (t)</th>
+<th>Life time in hours(y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>420</td>
+</tr>
+<tr>
+<td>20</td>
+<td>365</td>
+</tr>
+<tr>
+<td>30</td>
+<td>285</td>
+</tr>
+<tr>
+<td>40</td>
+<td>220</td>
+</tr>
+<tr>
+<td>50</td>
+<td>176</td>
+</tr>
+<tr>
+<td>60</td>
+<td>117</td>
+</tr>
+<tr>
+<td>70</td>
+<td>69</td>
+</tr>
+<tr>
+<td>80</td>
+<td>34</td>
+</tr>
+<tr>
+<td>90</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>Calculate the 95% confidence interval for the slope in the usual linear regression model, which expresses the life time as a linear function of the temperature.</p>
+</blockquote>
+<ul>
+<li>By using the linear regression model</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+Y_i = \beta_0 + \beta_1 t_i+ \epsilon_i\text{ , } \epsilon_i \sim N(0,\sigma^2_{\epsilon})\text{, } i = 1,...,5
+</div>
+<script type="math/tex; mode=display">
+Y_i = \beta_0 + \beta_1 t_i+ \epsilon_i\text{ , } \epsilon_i \sim N(0,\sigma^2_{\epsilon})\text{, } i = 1,...,5
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">20</span><span class="p">,</span><span class="m">30</span><span class="p">,</span><span class="m">40</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">60</span><span class="p">,</span><span class="m">70</span><span class="p">,</span><span class="m">80</span><span class="p">,</span><span class="m">90</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">420</span><span class="p">,</span><span class="m">365</span><span class="p">,</span><span class="m">285</span><span class="p">,</span><span class="m">220</span><span class="p">,</span><span class="m">176</span><span class="p">,</span><span class="m">117</span><span class="p">,</span><span class="m">69</span><span class="p">,</span><span class="m">34</span><span class="p">,</span><span class="m">5</span><span class="p">)</span>
+<span class="n">tbar</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">ybar</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Find parameter estimates</span>
+<span class="n">Sxx</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">tbar</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<span class="n">beta1hat</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">((</span><span class="n">t</span><span class="o">-</span><span class="n">tbar</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">ybar</span><span class="p">))</span><span class="o">/</span><span class="n">Sxx</span>
+<span class="n">beta0hat</span> <span class="o">&lt;-</span> <span class="n">ybar</span> <span class="o">-</span> <span class="n">beta1hat</span><span class="o">*</span><span class="n">tbar</span>
+
+<span class="c1"># Find the error variance estimate</span>
+<span class="n">e</span> <span class="o">&lt;-</span> <span class="n">y</span> <span class="o">-</span> <span class="p">(</span><span class="n">beta0hat</span> <span class="o">+</span> <span class="n">beta1hat</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">sigmahat</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">e</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="m">-2</span><span class="p">))</span> 
+
+<span class="c1"># Find the standart error for the slope</span>
+<span class="n">sigmabeta1</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">sigmahat</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">Sxx</span><span class="p">)</span>
+<span class="n">sigmabeta1</span>
+<span class="c1"># Find CI for the slope (Method 5.15)</span>
+<span class="nf">c</span><span class="p">(</span> <span class="n">beta1hat</span> <span class="o">-</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="m">-2</span><span class="p">)</span><span class="o">*</span><span class="n">sigmabeta1</span><span class="p">,</span> 
+<span class="n">beta1hat</span> <span class="o">+</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="m">-2</span><span class="p">)</span><span class="o">*</span><span class="n">sigmabeta1</span>
+<span class="p">)</span>
+
+    <span class="m">-5.918161</span> <span class="m">-4.708505</span>
+</code></pre></div>
+
+<ul>
+<li>So the answer is that we accept <span><span class="MathJax_Preview">\beta_1 \in [-5.918161 -4.708505]</span><script type="math/tex">\beta_1 \in [-5.918161 -4.708505]</script></span> </li>
+</ul>
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>Can a relation between temperature and life time be documented on level 5%?</p>
+</blockquote>
+<ul>
+<li>By the method 5.14 1.: </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+H_{01}\ :\ \beta_1= 0 \\
+H_{11}\ :\ \beta_1\ne 0
+</div>
+<script type="math/tex; mode=display">
+H_{01}\ :\ \beta_1= 0 \\
+H_{11}\ :\ \beta_1\ne 0
+</script>
+</div>
+<ul>
+<li>2.:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+t_{obs, \beta_{1}} =   -20.77291 \\
+</div>
+<script type="math/tex; mode=display">
+t_{obs, \beta_{1}} =   -20.77291 \\
+</script>
+</div>
+<ul>
+<li>3.: </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\text{p-value}_{1} = 1.505039*10^{-7}
+</div>
+<script type="math/tex; mode=display">
+\text{p-value}_{1} = 1.505039*10^{-7}
+</script>
+</div>
+<ul>
+<li>4.: </li>
+</ul>
+<p><span><span class="MathJax_Preview">\text{p-value}_1</span><script type="math/tex">\text{p-value}_1</script></span>  is less than <span><span class="MathJax_Preview">\alpha = 0.05</span><script type="math/tex">\alpha = 0.05</script></span>, so we reject <span><span class="MathJax_Preview">H_{01}</span><script type="math/tex">H_{01}</script></span> </p>
+<div class="highlight"><pre><span></span><code><span class="n">tobsbeta1</span> <span class="o">&lt;-</span> <span class="n">beta1hat</span><span class="o">/</span><span class="n">sigmabeta1</span>
+<span class="n">pvalue1</span> <span class="o">&lt;-</span> <span class="m">2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="nf">pt</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">tobsbeta1</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="m">-2</span> <span class="p">))</span>
+</code></pre></div>
+
+<h2 id="53-yield-of-chemical-process">5.3 Yield of chemical process</h2>
+<blockquote>
+<p>The yield y of a chemical process is a random variable whose value is considered to be a linear function of the temperature x. The following data of corresponding values of x and y is found:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Temperature in °C (x)</th>
+<th>Yield in grams(y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>14</td>
+</tr>
+<tr>
+<td>25</td>
+<td>38</td>
+</tr>
+<tr>
+<td>50</td>
+<td>54</td>
+</tr>
+<tr>
+<td>75</td>
+<td>76</td>
+</tr>
+<tr>
+<td>100</td>
+<td>95</td>
+</tr>
+</tbody>
+</table>
+<p>The average and standard deviation of temperature and yield are
+$$
+\bar{x} = 50 ,  s_x = 39.52847, \bar{y}=55.4, s_y=31.66702 s_y=31.66702
+$$</p>
+<p>In the exercise the usual linear regression model is used</p>
+<div>
+<div class="MathJax_Preview">
+Y_i = \beta_0 + \beta_1 X_i+ \epsilon_i\text{ , } \epsilon_i \sim N(0,\sigma^2_{\epsilon})\text{, } i = 1,...,5
+</div>
+<script type="math/tex; mode=display">
+Y_i = \beta_0 + \beta_1 X_i+ \epsilon_i\text{ , } \epsilon_i \sim N(0,\sigma^2_{\epsilon})\text{, } i = 1,...,5
+</script>
+</div>
+<h3 id="a_2">a)</h3>
+<blockquote>
+<p>Can a significant relationship between yield and temperature be documented on the usual significance level <span><span class="MathJax_Preview">\alpha = 0.05</span><script type="math/tex">\alpha = 0.05</script></span>?</p>
+</blockquote>
+<ul>
+<li>In R output P-value of the slope is only  <span><span class="MathJax_Preview">6.27*10^{-5}</span><script type="math/tex">6.27*10^{-5}</script></span> that is less than <span><span class="MathJax_Preview">0.05</span><script type="math/tex">0.05</script></span>. So we can conclude that there is a significant relationship between yield and temperature</li>
+</ul>
+<h3 id="b_2">b)</h3>
+<blockquote>
+<p>Give the 95% confidence interval of the expected yield at a temperature of <span><span class="MathJax_Preview">x_{new}= 80 °C</span><script type="math/tex">x_{new}= 80 °C</script></span>.</p>
+</blockquote>
+<ul>
+<li>By method 5.18</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\hat\beta_0+\hat\beta_1x_{new}\pm t_{1-\alpha/2} \hat\sigma \sqrt{\frac{1}{n}+\frac{(x_{new}-\bar{x})^2}{S_{xx}}}
+</div>
+<script type="math/tex; mode=display">
+\hat\beta_0+\hat\beta_1x_{new}\pm t_{1-\alpha/2} \hat\sigma \sqrt{\frac{1}{n}+\frac{(x_{new}-\bar{x})^2}{S_{xx}}}
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">25</span><span class="p">,</span><span class="m">50</span><span class="p">,</span><span class="m">75</span><span class="p">,</span><span class="m">100</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">14</span><span class="p">,</span><span class="m">38</span><span class="p">,</span><span class="m">54</span><span class="p">,</span><span class="m">76</span><span class="p">,</span><span class="m">95</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span> <span class="n">y</span> <span class="o">~</span> <span class="n">x</span><span class="p">)</span>
+
+<span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="n">xnew</span> <span class="o">&lt;-</span> <span class="m">80</span>
+<span class="c1"># By method 5.18</span>
+<span class="n">res</span> <span class="o">&lt;-</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span><span class="o">+</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span><span class="o">*</span><span class="n">xnew</span> 
+<span class="n">range</span> <span class="o">&lt;-</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">),</span><span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="m">-2</span><span class="p">)</span><span class="o">*</span><span class="nf">sigma</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">xnew</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="nf">sum</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="p">))</span>
+
+<span class="nf">c</span><span class="p">(</span><span class="n">res</span><span class="o">-</span><span class="n">range</span><span class="p">,</span> <span class="n">res</span><span class="o">+</span><span class="n">range</span><span class="p">)</span>
+ <span class="m">75.79348</span>    <span class="m">83.00652</span> 
+
+<span class="c1"># By using predict function</span>
+<span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">xnew</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&quot;confidence&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">fit</span>  <span class="n">lwr</span>   <span class="n">upr</span>
+<span class="m">79.4</span> <span class="m">75.79</span> <span class="m">83.01</span>
+</code></pre></div>
+
+<ul>
+<li>Thus the answer is <span><span class="MathJax_Preview">[75.79,83.01]</span><script type="math/tex">[75.79,83.01]</script></span></li>
+</ul>
+<h3 id="c">c)</h3>
+<blockquote>
+<p>What is the upper quartile of the residuals?</p>
+</blockquote>
+<p>Upper quantile = <span><span class="MathJax_Preview">Q_3</span><script type="math/tex">Q_3</script></span> = <span><span class="MathJax_Preview">q_{0.75}</span><script type="math/tex">q_{0.75}</script></span>
+$$
+pn= 0.75*5 = 3.75
+$$
+<span><span class="MathJax_Preview">pn</span><script type="math/tex">pn</script></span> is not an integer, so we take "next one" in the list, that is 4. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">sort</span><span class="p">(</span><span class="n">fit</span><span class="o">$</span><span class="n">residuals</span><span class="p">)[</span><span class="m">4</span><span class="p">]</span>
+  <span class="m">4</span> 
+<span class="m">0.6</span> 
+</code></pre></div>
+
+<ul>
+<li>Thus the answer is: 0.6 </li>
+</ul>
+<h2 id="54-plastic-material">5.4 Plastic material</h2>
+<blockquote>
+<p>In the manufacturing of a plastic material, it is believed that the cooling time has an influence on the impact strength. Therefore a study is carried out in which plastic material impact strength is determined for 4 different cooling times. The results of this experiment are shown in the following table:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Cooling times in seconds(x)</th>
+<th>Impact strength in <span><span class="MathJax_Preview">kJ/m^2</span><script type="math/tex">kJ/m^2</script></span> (y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>15</td>
+<td>42.1</td>
+</tr>
+<tr>
+<td>25</td>
+<td>36.0</td>
+</tr>
+<tr>
+<td>35</td>
+<td>31.8</td>
+</tr>
+<tr>
+<td>40</td>
+<td>28.7</td>
+</tr>
+</tbody>
+</table>
+<p>The following statistics may by used:
+$$
+\bar{x} = 28.75,  \bar{y}=34.65, S_{xx}=368.75
+$$</p>
+<h3 id="a_3">a)</h3>
+<blockquote>
+<p>What is the 95% confidence interval for the slope of the regression model, expressing the impact strength as a linear function of the cooling time?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">15</span><span class="p">,</span><span class="m">25</span><span class="p">,</span><span class="m">35</span><span class="p">,</span><span class="m">40</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">42.1</span><span class="p">,</span><span class="m">36.0</span><span class="p">,</span><span class="m">31.8</span><span class="p">,</span><span class="m">28.7</span><span class="p">)</span>
+<span class="n">xbar</span> <span class="o">&lt;-</span> <span class="m">28.75</span>
+<span class="n">ybar</span> <span class="o">&lt;-</span> <span class="m">34.65</span>
+<span class="n">Sxx</span> <span class="o">&lt;-</span> <span class="m">368.75</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">y</span><span class="o">~</span><span class="n">x</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="n">beta1hat</span> <span class="o">&lt;-</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span>
+<span class="n">sigmabeta1</span> <span class="o">&lt;-</span> <span class="n">out</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span>
+<span class="nf">c</span><span class="p">(</span> <span class="n">beta1hat</span> <span class="o">-</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="m">-2</span><span class="p">)</span><span class="o">*</span><span class="n">sigmabeta1</span><span class="p">,</span> 
+   <span class="n">beta1hat</span> <span class="o">+</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="m">-2</span><span class="p">)</span><span class="o">*</span><span class="n">sigmabeta1</span>
+<span class="p">)</span>
+    <span class="m">-0.6460407</span> <span class="m">-0.3966711</span> 
+</code></pre></div>
+
+<ul>
+<li>So the answer is that we accept <span><span class="MathJax_Preview">\beta_1 \in [-0.6460407, -0.3966711]</span><script type="math/tex">\beta_1 \in [-0.6460407, -0.3966711]</script></span> </li>
+</ul>
+<h3 id="b_3">b)</h3>
+<blockquote>
+<p>Can you conclude that there is a relation between the impact strength and the cooling time at significance level <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> = 5%?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">pvalue1</span> <span class="o">&lt;-</span> <span class="n">out</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
+<span class="m">0.003075239</span>
+</code></pre></div>
+
+<ul>
+<li><span><span class="MathJax_Preview">\text{p-value}_1</span><script type="math/tex">\text{p-value}_1</script></span>  is less than <span><span class="MathJax_Preview">\alpha = 0.05</span><script type="math/tex">\alpha = 0.05</script></span>, so we can conclude that there is a relation between the impact strength and the cooling time. In other words, the relation is statically significant. </li>
+</ul>
+<h3 id="c_1">c)</h3>
+<blockquote>
+<p>For a similar plastic material the tabulated value for the linear relation between temperature and impact strength (i.e the slope) is -0.30. If the following hypothesis is tested (at level <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> = 0.05)</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_0: \beta_1 = -0.30 \\
+H_1: \beta_1 \ne -0.30
+</div>
+<script type="math/tex; mode=display">
+H_0: \beta_1 = -0.30 \\
+H_1: \beta_1 \ne -0.30
+</script>
+</div>
+<blockquote>
+<p>with the usual t-test statistic for such a test, what is the range (for t) within which the hypothesis is accepted?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="nf">c</span><span class="p">(</span><span class="nf">qt</span><span class="p">(</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">2</span><span class="p">),</span><span class="nf">qt</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">2</span><span class="p">))</span>
+    <span class="m">-4.302653</span>  <span class="m">4.302653</span>
+</code></pre></div>
+
+<ul>
+<li>The critical values for the t-statistic with ν = 2 degrees of freedom is</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+[-4.302653,  4.302653]
+</div>
+<script type="math/tex; mode=display">
+[-4.302653,  4.302653]
+</script>
+</div>
+<h2 id="55-water-pollution">5.5 Water pollution</h2>
+<blockquote>
+<p>In a study of pollution in a water stream, the concentration of pollution is measured at 5 different locations. The locations are at different distances to the pollution source. In the table below, these distances and the average pollution are given:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Distance to the pollution source(km)</th>
+<th>Average concentration</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>11.5</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10.2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>10.3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>9.68</td>
+</tr>
+<tr>
+<td>10</td>
+<td>9.32</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a_4">a)</h3>
+<blockquote>
+<p>What are the parameter estimates for the three unknown parameters in the usual linear regression model: 1) The intercept (<span><span class="MathJax_Preview">\beta_0</span><script type="math/tex">\beta_0</script></span>), 2) the slope (<span><span class="MathJax_Preview">\beta_1</span><script type="math/tex">\beta_1</script></span>) and 3) error standard deviation (<span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>)?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">distances</span> <span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">10</span><span class="p">)</span>
+<span class="n">concentrations</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">11.5</span><span class="p">,</span> <span class="m">10.2</span><span class="p">,</span> <span class="m">10.3</span><span class="p">,</span> <span class="m">9.68</span><span class="p">,</span> <span class="m">9.32</span><span class="p">)</span>
+<span class="n">fit</span> <span class="o">&lt;-</span> <span class="nf">lm</span><span class="p">(</span><span class="n">concentrations</span> <span class="o">~</span> <span class="n">distances</span><span class="p">)</span>
+<span class="n">out</span> <span class="o">&lt;-</span> <span class="nf">summary</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+<span class="n">beta0hat</span> <span class="o">&lt;-</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+    <span class="m">11.664</span> 
+<span class="n">beta1hat</span> <span class="o">&lt;-</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span>
+    <span class="m">-0.244</span>
+<span class="n">sigmahat</span> <span class="o">&lt;-</span> <span class="nf">sigma</span><span class="p">(</span><span class="n">fit</span><span class="p">)</span>
+    <span class="m">0.348023</span>
+</code></pre></div>
+
+<div>
+<div class="MathJax_Preview">
+\hat\beta_0 = 11.664 \\
+\hat\beta_1 = -0.244 \\
+\hat\sigma = 0.348023
+</div>
+<script type="math/tex; mode=display">
+\hat\beta_0 = 11.664 \\
+\hat\beta_1 = -0.244 \\
+\hat\sigma = 0.348023
+</script>
+</div>
+<h3 id="b_4">b)</h3>
+<blockquote>
+<p>How large a part of the variation in concentration can be explained by the distance?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">out</span><span class="o">$</span><span class="n">r.squared</span>
+ <span class="m">0.8676188</span>
+</code></pre></div>
+
+<div>
+<div class="MathJax_Preview">
+R^2 = 0.8676188
+</div>
+<script type="math/tex; mode=display">
+R^2 = 0.8676188
+</script>
+</div>
+<ul>
+<li>Note that this is only an estimate. </li>
+</ul>
+<h3 id="c_2">c)</h3>
+<blockquote>
+<p>What is a 95%-confidence interval for the expected pollution concentration 7 km from the pollution source?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">distances</span><span class="o">=</span><span class="n">dnew</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&quot;confidence&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span>
+    <span class="n">fit</span>      <span class="n">lwr</span>      <span class="n">upr</span>
+<span class="m">1</span> <span class="m">9.956</span> <span class="m">9.430636</span> <span class="m">10.48136</span>
+</code></pre></div>
+
+<ul>
+<li>The answer:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+[9.430636, 10.48136]
+</div>
+<script type="math/tex; mode=display">
+[9.430636, 10.48136]
+</script>
+</div>
+<h2 id="56-membrane-pressure-drop">5.6 Membrane pressure drop</h2>
+<blockquote>
+<p>When purifying drinking water you can use a so-called membrane filtration. In an experiment one wishes to examine the relationship between the pressure drop across a membrane and the flux (flow per area) through the membrane. We observe the following 10 related values of pressure (x) and flux (y):</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Pressure(x)</th>
+<th>Flux(y)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1.02</td>
+<td>1.15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2.08</td>
+<td>0.85</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2.89</td>
+<td>1.56</td>
+</tr>
+<tr>
+<td>4</td>
+<td>4.01</td>
+<td>1.72</td>
+</tr>
+<tr>
+<td>5</td>
+<td>5.32</td>
+<td>4.32</td>
+</tr>
+<tr>
+<td>6</td>
+<td>5.83</td>
+<td>5.07</td>
+</tr>
+<tr>
+<td>7</td>
+<td>7.26</td>
+<td>5.00</td>
+</tr>
+<tr>
+<td>8</td>
+<td>7.96</td>
+<td>5.31</td>
+</tr>
+<tr>
+<td>9</td>
+<td>9.11</td>
+<td>6.17</td>
+</tr>
+<tr>
+<td>10</td>
+<td>9.99</td>
+<td>7.04</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a_5">a)</h3>
+<blockquote>
+<p>What is the empirical correlation between pressure and flux estimated to? Give also an interpretation of the correlation.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nf">cor</span><span class="p">(</span><span class="n">D</span><span class="o">$</span><span class="n">pressure</span><span class="p">,</span> <span class="n">D</span><span class="o">$</span><span class="n">flux</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.9638184</span>
+</code></pre></div>
+
+<div>
+<div class="MathJax_Preview">
+\hat\rho = r = 0.964
+</div>
+<script type="math/tex; mode=display">
+\hat\rho = r = 0.964
+</script>
+</div>
+<ul>
+<li>This means that flux increase with increasing pressure. </li>
+</ul>
+<h3 id="b_5">b)</h3>
+<blockquote>
+<p>What is a 90% confidence interval for the slope <span><span class="MathJax_Preview">\beta_1</span><script type="math/tex">\beta_1</script></span> in the usual regression model?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">0.1</span>
+<span class="n">beta1hat</span> <span class="o">&lt;-</span> <span class="nf">coef</span><span class="p">(</span><span class="n">fit</span><span class="p">)[</span><span class="m">2</span><span class="p">]</span>
+<span class="n">sigmabeta1</span> <span class="o">&lt;-</span> <span class="n">out</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">2</span><span class="p">,</span> <span class="m">2</span><span class="p">]</span>
+<span class="nf">c</span><span class="p">(</span> <span class="n">beta1hat</span> <span class="o">-</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="n">out</span><span class="o">$</span><span class="n">df</span><span class="p">[</span><span class="m">2</span><span class="p">])</span><span class="o">*</span><span class="n">sigmabeta1</span><span class="p">,</span> 
+   <span class="n">beta1hat</span> <span class="o">+</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df</span><span class="o">=</span><span class="n">out</span><span class="o">$</span><span class="n">df</span><span class="p">[</span><span class="m">2</span><span class="p">])</span><span class="o">*</span><span class="n">sigmabeta1</span>
+<span class="p">)</span>
+    <span class="m">0.5911094</span> <span class="m">0.8538426</span>
+</code></pre></div>
+
+<ul>
+<li>So the answer is that we accept <span><span class="MathJax_Preview">\beta_1 \in [0.5911094, 0.8538426]</span><script type="math/tex">\beta_1 \in [0.5911094, 0.8538426]</script></span></li>
+</ul>
+<h3 id="c_3">c)</h3>
+<blockquote>
+<p>How large a part of the flux-variation <span><span class="MathJax_Preview">\sum\limits_{i=1}^{10}(y_i-\bar{y})^2</span><script type="math/tex">\sum\limits_{i=1}^{10}(y_i-\bar{y})^2</script></span> is not explained by pressure differences?</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="m">1</span> <span class="o">-</span> <span class="nf">cor</span><span class="p">(</span><span class="n">D</span><span class="o">$</span><span class="n">pressure</span><span class="p">,</span> <span class="n">D</span><span class="o">$</span><span class="n">flux</span><span class="p">)</span><span class="o">^</span><span class="m">2</span>
+    <span class="m">0.07105402</span>
+</code></pre></div>
+
+<h3 id="d">d)</h3>
+<blockquote>
+<p>Can you at significance level <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> = 0.05 reject the hypothesis that the line passes through (0, 0)?</p>
+</blockquote>
+<p>The intercept should be equals to 0, if the line passes through (0,0). This means that if we can reject that the intercept equals to 0, so we can reject that the line passes through (0, 0).  Therefore we formulate the null hypothesis and the alternative hypothesis as follows:
+$$
+H_{00}:  \beta_0=0 \
+H_{01} :  \beta_0 \ne 0
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="n">pvalue0</span> <span class="o">&lt;-</span> <span class="n">out</span><span class="o">$</span><span class="n">coefficients</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="m">4</span><span class="p">]</span>
+    <span class="m">0.6806967</span>
+</code></pre></div>
+
+<p><span><span class="MathJax_Preview">\text{p-value}_0=0.68</span><script type="math/tex">\text{p-value}_0=0.68</script></span> is higher than <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span>, so we need to accept that the line passes through (0, 0). </p>
+<h3 id="e">e)</h3>
+<blockquote>
+<p>A confidence interval for the line at three different pressure levels: <span><span class="MathJax_Preview">x_{new}^A= 3.5</span><script type="math/tex">x_{new}^A= 3.5</script></span>, <span><span class="MathJax_Preview">x^B_{new}=5.0</span><script type="math/tex">x^B_{new}=5.0</script></span> and  , <span><span class="MathJax_Preview">x^C_{new}=9.5</span><script type="math/tex">x^C_{new}=9.5</script></span> will look as follows:</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\hat\beta_0+\beta_1*x^U_{new}\pm C_U
+</div>
+<script type="math/tex; mode=display">
+\hat\beta_0+\beta_1*x^U_{new}\pm C_U
+</script>
+</div>
+<blockquote>
+<p>where <span><span class="MathJax_Preview">U</span><script type="math/tex">U</script></span> then is either <span><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>, <span><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span> or <span><span class="MathJax_Preview">C</span><script type="math/tex">C</script></span>. Write the constants <span><span class="MathJax_Preview">C_U</span><script type="math/tex">C_U</script></span> in increasing order.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="n">xnews</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">3.5</span><span class="p">,</span><span class="m">5.0</span><span class="p">,</span> <span class="m">9.5</span><span class="p">)</span>
+
+<span class="n">CIs</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">newdata</span><span class="o">=</span><span class="nf">data.frame</span><span class="p">(</span><span class="n">pressure</span><span class="o">=</span><span class="n">xnews</span><span class="p">),</span> <span class="n">interval</span><span class="o">=</span><span class="s">&quot;confidence&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="p">)</span>
+<span class="n">constants</span> <span class="o">&lt;-</span> <span class="nf">numeric</span><span class="p">(</span><span class="m">3</span><span class="p">)</span>
+
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">){</span>
+  <span class="n">constants</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="n">CIs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="m">3</span><span class="p">]</span><span class="o">-</span><span class="n">CIs</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="m">1</span><span class="p">]</span>  
+<span class="p">}</span>
+<span class="n">constants</span>
+    <span class="m">0.4647513</span> <span class="m">0.3858058</span> <span class="m">0.6429206</span>
+</code></pre></div>
+
+<div>
+<div class="MathJax_Preview">
+C_A = 0.4647513 \\
+C_B = 0.3858058 \\ 
+C_C = 0.6429206
+</div>
+<script type="math/tex; mode=display">
+C_A = 0.4647513 \\
+C_B = 0.3858058 \\ 
+C_C = 0.6429206
+</script>
+</div>
+<ul>
+<li>This gives that:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+C_B &lt; C_A &lt; C_C
+</div>
+<script type="math/tex; mode=display">
+C_B < C_A < C_C
+</script>
+</div>
+<ul>
+<li>It can also be calculated without R as follows:</li>
+</ul>
+<p>By Method 5.18 constants differs only by this term: <span><span class="MathJax_Preview">(x_{new}-\bar{x})^2</span><script type="math/tex">(x_{new}-\bar{x})^2</script></span> </p>
+<p>So since <span><span class="MathJax_Preview">\bar{x}=5.547</span><script type="math/tex">\bar{x}=5.547</script></span>:</p>
+<div>
+<div class="MathJax_Preview">
+(5.0-5.547)^2&lt;(3.5-5.547)^2&lt;(9.5-5.547)^2 \\
+(x^B_{new}-5.547)^2&lt;(x^A_{new}-5.547)^2&lt;(x^C_{new}-5.547)^2 \\
+C_B&lt;C_A&lt;C_C
+</div>
+<script type="math/tex; mode=display">
+(5.0-5.547)^2<(3.5-5.547)^2<(9.5-5.547)^2 \\
+(x^B_{new}-5.547)^2<(x^A_{new}-5.547)^2<(x^C_{new}-5.547)^2 \\
+C_B<C_A<C_C
+</script>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                4 Simulation Methods
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.c51dfa35.min.js"></script>
+      <script src="../assets/javascripts/bundle.eaaa3931.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
