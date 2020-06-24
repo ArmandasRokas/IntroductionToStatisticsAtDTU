@@ -7,7 +7,7 @@ decided to formulate a linear model that describes the nitrate concentration in
 the fjord as a function of nitrate loading, it was further decided to correct for
 fresh water runoff. The resulting model was
 $$
-Y_i = \beta_0+\beta_1x_{1,i}+\beta_2x_{2,i}+  \varepsilon_i \ , \ \ \ \ \varepsilon_i\sim N(0,\sigma^2)
+Y_i = \beta_0+\beta_1x_{1,i}+\beta_2x_{2,i}+  \varepsilon_i \ , \qquad \varepsilon_i\sim N(0,\sigma^2)
 $$
 
 where $Y_i$ is the natural logarithm of nitrate concentration, $x_{1,i}$ is the natural
@@ -29,12 +29,12 @@ logarithm of nitrate loading, and $x_{2,i}$ is the natural logarithm of fresh wa
 5. $\varepsilon_i = 0$ for all $i = 1, ..., n,$ and $x_j$ follows a normal distribution for
    $j = \{1, 2\}$
 
-- **Answer**: only 4. is correct, because this is the usual assumption about the errors
+**Answer**: only 4. is correct, because this is the usual assumption about the errors
 
 
+### b) 
 
-The parameters in the model were estimated in R and the following results are
-available (slightly modified output from summary):
+> The parameters in the model were estimated in R and the following results are available (slightly modified output from summary):
 
 ```R
 > summary(lm(y ~ x1 + x2))
@@ -51,7 +51,6 @@ Multiple R-squared: 0.3438,Adjusted R-squared: 0.3382
 F-statistic: 62.07 on 2 and 237 DF, p-value: < 2.2e-16
 ```
 
-### b) 
 
 >  What are the parameter estimates for the model parameters ($\hat\beta_i$ and $\hat\sigma^2$) and how many observations are included in the estimation?
 
@@ -62,7 +61,7 @@ $$
 \hat\sigma^2 = 0.3064^2
 $$
 
-- And there are **240 observations** included in the estimation, because the number of degrees of freedom (237) is equal $n-(p+1)$, where $p=2$
+- And there are **240 observations** included in the estimation, because the number of degrees of freedom (237) is equal $n-(p+1)$, where $p=2$ (because of $\hat\beta_2$)
 
 
 
@@ -70,11 +69,14 @@ $$
 
 > Calculate the usual 95% confidence intervals for the parameters ($\beta_0$,$\beta_1$, and $\beta_2$)
 
-By method 6.5 parameter confidence intervals are given by:
+By method 6.5 confidence intervals for the parameters are given by:
+
 $$
 \hat\beta_i\pm t_{1-\alpha/2}\hat\sigma_{\beta_i}
 $$
+
 So:
+
 $$
 \hat\beta_0\in [-2.80203, -1.92797] \\
 \hat\beta_1 \in [0.3546792, 0.5977408] \\
@@ -123,7 +125,7 @@ y=c(1.45, 1.93, 0.81, 0.61, 1.55, 0.95, 0.45, 1.14, 0.74, 0.98,
 It is expected that the response variable $y$ can be described by the independent variables $x_1$ and $x_2$. This imply that the parameters of the following model should be estimated and tested
 
 $$
-Y_i = \beta_0+\beta_1x_{1}+\beta_2x_{2}+  \varepsilon_i \ , \ \ \ \ \varepsilon_i\sim N(0,\sigma^2)
+Y_i = \beta_0+\beta_1x_{1}+\beta_2x_{2}+  \varepsilon_i \ , \qquad \varepsilon_i\sim N(0,\sigma^2)
 $$
 
 
@@ -131,7 +133,7 @@ $$
 
 
 
-> Calculate the parameter estimates ($\beta_0$,$\beta_1$, $\beta_2$, and $\sigma^2$), in addition find the usual 95% confidence intervals for $\beta_0$,$\beta_1$ and $\beta_2$.
+> Calculate the parameter estimates ($\beta_0$, $\beta_1$, $\beta_2$, and $\sigma^2$), in addition find the usual 95% confidence intervals for $\beta_0$,$\beta_1$ and $\beta_2$.
 
 
 
@@ -198,7 +200,7 @@ Since the confidence interval for $\beta_2$ cover zero and the $\text{p-value}$ 
 
 
 $$
-Y_i = \beta_0+\beta_1x_{1}+  \varepsilon_i \ , \ \ \ \ \varepsilon_i\sim N(0,\sigma^2)
+Y_i = \beta_0+\beta_1x_{1}+  \varepsilon_i \ ,  \qquad  \varepsilon_i\sim N(0,\sigma^2)
 $$
 
 The parameter estimates in the simpler model are:
@@ -242,7 +244,7 @@ qqline(fit$residuals)
 plot(fit$fitted.values, fit$residuals, main="Fitted vs residuals")
 ```
 
-![](pics/qqplot_6_2.PNG)
+![](pics/qqplot_6_2.png)
 
 
 ```R
@@ -255,7 +257,7 @@ qqwrap <- function(x, y, ...){
 wallyplot(fit$residuals, FUN=qqwrap, ylim=c(-3,3))
 ```
 
-![](pics/wally_6_2.PNG)
+![](pics/wally_6_2.png)
 
 
 
@@ -284,4 +286,4 @@ legend("topleft", c("Prediction","Confidence band","Prediction band"),
 
 
 
-![](pics/conf_6_2.PNG)
+![](pics/conf_6_2.png)
