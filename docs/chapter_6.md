@@ -247,10 +247,13 @@ plot(fit$fitted.values, fit$residuals, main="Fitted vs residuals")
 
 ```R
 ## Walley
+library(MESS)
+
 qqwrap <- function(x, y, ...){
   stdy <- (y-mean(y))/sd(y)
   qqnorm(stdy, main="", ...)
   qqline(stdy)}
+
 
 wallyplot(fit$residuals, FUN=qqwrap, ylim=c(-3,3))
 ```
