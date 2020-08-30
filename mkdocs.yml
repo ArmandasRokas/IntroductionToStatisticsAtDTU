@@ -24,6 +24,8 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tabbed
   - pymdownx.tilde
+  - admonition
+  - pymdownx.details
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
 nav:
@@ -37,5 +39,5 @@ nav:
         - 4 Simulation Methods: chapter_4_1.md
         - 5 Simple Linear Regression: chapter_5.md
         - 6 Multiple Linear Regression: chapter_6.md
-
+        - 7 Categorical and Count Data: chapter_7.md 
 

@@ -95,8 +95,7 @@ sample estimates:
 
 
 !!! Note
-
-​	$z_{1-\alpha/2}$, but $\chi^2_{1-\alpha}$ . So you don't divide $\alpha$ by two, when you use $\chi^2$  distribution.
+	$z_{1-\alpha/2}$, but $\chi^2_{1-\alpha}$ . So you don't divide $\alpha$ by two, when you use $\chi^2$  distribution.
 
 
 
@@ -298,14 +297,7 @@ sample estimates:
 0.227027 
 ```
 
-
-
-
-
-
-
-
-## 7.4
+## 7.4 Sugar quality
 
 > A wholesaler needs to find a supplier that delivers sugar in 1 kg bags. From two potential suppliers 50 bags of sugar are received from each. A bag is described as ’defective’ if the weight of the filled bag is less than 990 grams. The received bags were all control weighed and 6 defective from supplier A and 12 defective from supplier B were found.
 
@@ -393,7 +385,7 @@ Where
 $$
 n = 200 \\
 \hat{p} = \frac{36}{200} = 0.18 \\
-z_{1-0.01/2} = 2.575829
+z_{1-0.01/2} = 2.575829
 $$
 So  the answer is:
 $$
@@ -435,7 +427,7 @@ sample estimates:
 
 
 
-## 7.5
+## 7.5 Physical training
 
 > A company wants to investigate whether the employees’ physical training condition will affect their success in the job. 200 employees were tested and the following count data were found:
 
@@ -476,7 +468,7 @@ $$
 - **A:**
 
 The number of contributions to the test statistic: 
- $R*C = 3*3 = 9 $, one for each cell 
+ $R*C = 3*3 = 9$ , one for each cell 
 
 
 
