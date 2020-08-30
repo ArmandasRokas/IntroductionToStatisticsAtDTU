@@ -1,0 +1,1380 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.11">
+    
+    
+      
+        <title>7 Categorical and Count Data - Introduction to Statistics at DTU solutions</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.860688db.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.943997b5.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5552">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#categorical-and-count-data" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics at DTU solutions
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              7 Categorical and Count Data
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics at DTU solutions" class="md-nav__button md-logo" aria-label="Introduction to Statistics at DTU solutions">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Introduction to Statistics at DTU solutions
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-nav__link">
+      3 Confidence Intervals
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_2/" title="3 Hypothesis Testing" class="md-nav__link">
+      3 Hypothesis Testing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_3/" title="3 Analysis of Two samples" class="md-nav__link">
+      3 Analysis of Two samples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-nav__link">
+      4 Simulation Methods
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_5/" title="5 Simple Linear Regression" class="md-nav__link">
+      5 Simple Linear Regression
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_6/" title="6 Multiple Linear Regression" class="md-nav__link">
+      6 Multiple Linear Regression
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        7 Categorical and Count Data
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="7 Categorical and Count Data" class="md-nav__link md-nav__link--active">
+      7 Categorical and Count Data
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-passing-proportions" class="md-nav__link">
+    7.1 Passing proportions
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Passing proportions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-outdoor-lighting" class="md-nav__link">
+    7.2 Outdoor lighting
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 Outdoor lighting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-local-election" class="md-nav__link">
+    7.3 Local election
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Local election">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-sugar-quality" class="md-nav__link">
+    7.4 Sugar quality
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 Sugar quality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-physical-training" class="md-nav__link">
+    7.5 Physical training
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 Physical training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#71-passing-proportions" class="md-nav__link">
+    7.1 Passing proportions
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 Passing proportions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-outdoor-lighting" class="md-nav__link">
+    7.2 Outdoor lighting
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 Outdoor lighting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-local-election" class="md-nav__link">
+    7.3 Local election
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 Local election">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#74-sugar-quality" class="md-nav__link">
+    7.4 Sugar quality
+  </a>
+  
+    <nav class="md-nav" aria-label="7.4 Sugar quality">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#75-physical-training" class="md-nav__link">
+    7.5 Physical training
+  </a>
+  
+    <nav class="md-nav" aria-label="7.5 Physical training">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_4" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_4" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="categorical-and-count-data">Categorical and Count Data</h1>
+<h2 id="71-passing-proportions">7.1 Passing proportions</h2>
+<blockquote>
+<p>The passing proportions for the two courses, <span><span class="MathJax_Preview">p_1</span><script type="math/tex">p_1</script></span> and <span><span class="MathJax_Preview">p_2</span><script type="math/tex">p_2</script></span> should be compared. </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Course 1</th>
+<th>Course 2</th>
+<th><em>Row total</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Passed</td>
+<td>82</td>
+<td>104</td>
+<td>186</td>
+</tr>
+<tr>
+<td>Not passed</td>
+<td>26</td>
+<td>39</td>
+<td>65</td>
+</tr>
+<tr>
+<td><em>Column total</em></td>
+<td>108</td>
+<td>143</td>
+<td>251</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a">a)</h3>
+<blockquote>
+<p>Compute a 95% confidence interval for the difference between the two passing proportions. </p>
+</blockquote>
+<p><strong>By Method 7.15</strong>
+$$
+\hat{p_1} = \frac{82}{108} = 0.7592593 \
+\hat{p_2} = \frac{104}{143} = 0.7272727
+$$</p>
+<div>
+<div class="MathJax_Preview">
+\hat{\sigma}_{\hat{p_1} -\hat{p_2}} = \sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n_1}+\frac{\hat{p_2}(1-\hat{p_2})}{n_2}} = 0.05549318
+</div>
+<script type="math/tex; mode=display">
+\hat{\sigma}_{\hat{p_1} -\hat{p_2}} = \sqrt{\frac{\hat{p_1}(1-\hat{p_1})}{n_1}+\frac{\hat{p_2}(1-\hat{p_2})}{n_2}} = 0.05549318
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">n1</span> <span class="o">&lt;-</span> <span class="m">108</span>
+<span class="n">n2</span> <span class="o">&lt;-</span> <span class="m">143</span>
+<span class="n">p1</span> <span class="o">&lt;-</span> <span class="m">82</span><span class="o">/</span><span class="n">n1</span>
+<span class="n">p2</span> <span class="o">&lt;-</span> <span class="m">104</span><span class="o">/</span><span class="n">n2</span>
+
+<span class="n">SEp1</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">p1</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">p1</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span><span class="p">)</span> 
+<span class="n">SEp2</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">p2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">p2</span><span class="p">)</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span>
+<span class="n">SEp1p2</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">SEp1</span><span class="o">^</span><span class="m">2</span><span class="o">+</span><span class="n">SEp2</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<span class="n">SEp1p2</span>
+<span class="m">0.05549318</span>
+</code></pre></div>
+
+<ul>
+<li>So the 95% CI for the difference is: </li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+(\hat{p}_1-\hat{p}_2) \pm z_{1-\alpha/2}*\hat\sigma_{\hat{p}_1-{\hat{p}_2}} = [-0.0767781,0.1407512 ]
+</div>
+<script type="math/tex; mode=display">
+(\hat{p}_1-\hat{p}_2) \pm z_{1-\alpha/2}*\hat\sigma_{\hat{p}_1-{\hat{p}_2}} = [-0.0767781,0.1407512 ]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="p">(</span><span class="n">p1</span><span class="o">-</span><span class="n">p2</span><span class="p">)</span> <span class="o">-</span> <span class="nf">qnorm</span><span class="p">(</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">SEp1p2</span>
+<span class="m">-0.0767781</span>
+<span class="p">(</span><span class="n">p1</span><span class="o">-</span><span class="n">p2</span><span class="p">)</span> <span class="o">+</span> <span class="nf">qnorm</span><span class="p">(</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">SEp1p2</span>
+<span class="m">0.1407512</span>
+</code></pre></div>
+
+<p><strong>By <code>prop.test</code> function</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">prop.test</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">82</span><span class="p">,</span><span class="m">104</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">),</span> <span class="n">correct</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+    <span class="m">2</span><span class="o">-</span><span class="n">sample</span> <span class="n">test</span> <span class="n">for</span> <span class="n">equality</span> <span class="n">of</span> <span class="n">proportions</span> <span class="n">without</span> <span class="n">continuity</span> <span class="n">correction</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="nf">c</span><span class="p">(</span><span class="m">82</span><span class="p">,</span> <span class="m">104</span><span class="p">)</span> <span class="n">out</span> <span class="n">of</span> <span class="nf">c</span><span class="p">(</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="p">)</span>
+<span class="n">X</span><span class="o">-</span><span class="n">squared</span> <span class="o">=</span> <span class="m">0.32805</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.5668</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">two.sided</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">-0.0767781</span>  <span class="m">0.1407512</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+   <span class="n">prop</span> <span class="m">1</span>    <span class="n">prop</span> <span class="m">2</span> 
+<span class="m">0.7592593</span> <span class="m">0.7272727</span> 
+</code></pre></div>
+
+<h3 id="b">b)</h3>
+<blockquote>
+<p>What is the critical values for the <span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>-test of the hypothesis <span><span class="MathJax_Preview">H_0:p_1=p_2</span><script type="math/tex">H_0:p_1=p_2</script></span> with significance level <span><span class="MathJax_Preview">\alpha= 0.01</span><script type="math/tex">\alpha= 0.01</script></span> ?</p>
+</blockquote>
+<p><strong>By method 7.22</strong></p>
+<ul>
+<li>The degree of freedom is  <span><span class="MathJax_Preview">(r-1)(c-1) = (2-1)(2-1) = 1</span><script type="math/tex">(r-1)(c-1) = (2-1)(2-1) = 1</script></span> </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qchisq</span><span class="p">(</span><span class="m">1-0.01</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">6.634897</span>
+</code></pre></div>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><span><span class="MathJax_Preview">z_{1-\alpha/2}</span><script type="math/tex">z_{1-\alpha/2}</script></span>, but <span><span class="MathJax_Preview">\chi^2_{1-\alpha}</span><script type="math/tex">\chi^2_{1-\alpha}</script></span> . So you don't divide <span><span class="MathJax_Preview">\alpha</span><script type="math/tex">\alpha</script></span> by two, when you use <span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>  distribution.</p>
+</div>
+<h3 id="c">c)</h3>
+<blockquote>
+<p>If the passing proportion for a course given repeatedly is assumed to be 0.80 on average, and there are 250 students who are taking the exam each time, what is the expected value, <span><span class="MathJax_Preview">\mu</span><script type="math/tex">\mu</script></span> and standard deviation <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span>, for the number of students who <strong>do not pass</strong> the exam for a randomly selected course?</p>
+</blockquote>
+<p><strong>By Theorem 2.21</strong></p>
+<div>
+<div class="MathJax_Preview">
+\mu = np = 250 * 0.20  = 50 \\
+\sigma = \sqrt{np(1-p)} = \sqrt{250*0.2(1-0.2)} =  6.324555
+</div>
+<script type="math/tex; mode=display">
+\mu = np = 250 * 0.20  = 50 \\
+\sigma = \sqrt{np(1-p)} = \sqrt{250*0.2(1-0.2)} =  6.324555
+</script>
+</div>
+<h2 id="72-outdoor-lighting">7.2 Outdoor lighting</h2>
+<blockquote>
+<p>A company that sells outdoor lighting, gets a lamp produced in 3 material variations: in copper, with painted surface and with stainless steel. The lamps are sold partly in Denmark and partly for export. For 250 lamps the distribution of sales between the three variants and Denmark/export are depicted. The data is shown in the following table:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Denmark (Success?)</th>
+<th>Export (Failure?)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Copper variant</td>
+<td>7.2%</td>
+<td>6.4%</td>
+</tr>
+<tr>
+<td>Painted variant</td>
+<td>28.0%</td>
+<td>34.8%</td>
+</tr>
+<tr>
+<td>Stainless steel variant</td>
+<td>8.8%</td>
+<td>14.8%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>Is there a significant difference between the proportion exported and the proportion sold in Denmark (with <span><span class="MathJax_Preview">\alpha = 0.05</span><script type="math/tex">\alpha = 0.05</script></span>)?
+</p>
+</blockquote>
+<ul>
+<li>Here we need to find difference between Denmark and export, which means that we don't need to specify different variants. So the total number for Denmark and the total number for export is respectively 44% and 56% or 110 lamps and 140 lamps.</li>
+</ul>
+<p><strong>By method 7.11 (One sample proportion hypothesis test) :</strong></p>
+<div>
+<div class="MathJax_Preview">
+H_0: {p} = 0.5 \\
+H_1:  {p} \ne 0.5
+</div>
+<script type="math/tex; mode=display">
+H_0: {p} = 0.5 \\
+H_1:  {p} \ne 0.5
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+z_{obs} = \frac{x-np_0}{\sqrt{np_0(1-p_0)}} = -1.897367
+</div>
+<script type="math/tex; mode=display">
+z_{obs} = \frac{x-np_0}{\sqrt{np_0(1-p_0)}} = -1.897367
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
+\text{p-value} =   0.05777957
+</div>
+<script type="math/tex; mode=display">
+\text{p-value} =   0.05777957
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">zobs</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">110</span> <span class="o">-</span> <span class="m">250</span><span class="o">*</span><span class="m">0.5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">250</span><span class="o">*</span><span class="m">0.5</span><span class="o">*</span><span class="p">(</span><span class="m">0.5</span><span class="p">)))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-1.897367</span>
+<span class="o">&gt;</span> <span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="m">2</span><span class="o">*</span> <span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="nf">pnorm</span><span class="p">(</span><span class="nf">abs</span><span class="p">(</span><span class="n">zobs</span><span class="p">)))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.05777957</span>
+</code></pre></div>
+
+<ul>
+<li><span><span class="MathJax_Preview">\text{p-value} &gt; \alpha</span><script type="math/tex">\text{p-value} > \alpha</script></span> , so we accept <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span>, meaning that there is no significant difference between the proportion exported and the proportion sold in Denmark. </li>
+</ul>
+<p><strong>With <code>prop.test</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">prop.test</span><span class="p">(</span><span class="n">x</span><span class="o">=</span> <span class="n">xDK</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">n</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">,</span> <span class="n">correct</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+    <span class="m">1</span><span class="o">-</span><span class="n">sample</span> <span class="n">proportions</span> <span class="n">test</span> <span class="n">without</span> <span class="n">continuity</span> <span class="n">correction</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="n">xDK</span> <span class="n">out</span> <span class="n">of</span> <span class="n">n</span><span class="p">,</span> <span class="n">null</span> <span class="n">probability</span> <span class="m">0.5</span>
+<span class="n">X</span><span class="o">-</span><span class="n">squared</span> <span class="o">=</span> <span class="m">3.6</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.05778</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">p</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">0.5</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">0.379837</span> <span class="m">0.501979</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+   <span class="n">p</span> 
+<span class="m">0.44</span> 
+</code></pre></div>
+
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>The relevant critical value to use for testing whether there is a significant difference in how the sold variants are distributed in Denmark and for export is (with <span><span class="MathJax_Preview">\alpha = 0.05</span><script type="math/tex">\alpha = 0.05</script></span>)?</p>
+</blockquote>
+<ul>
+<li>The degree of freedom:  $ (R-1)(C-1) = (3-1)(2-1) = 2$</li>
+<li>The correct answer is:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+\chi^2_{1-\alpha}=   \chi^2_{0.95}  =   5.991465
+</div>
+<script type="math/tex; mode=display">
+\chi^2_{1-\alpha}=   \chi^2_{0.95}  =   5.991465
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="nf">qchisq</span><span class="p">(</span><span class="m">0.95</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</code></pre></div>
+
+<h2 id="73-local-election">7.3 Local election</h2>
+<blockquote>
+<p>At the local elections in Denmark in November 2013 the Social Democrats (A) had <span><span class="MathJax_Preview">p = 29.5\%</span><script type="math/tex">p = 29.5\%</script></span> of the votes at the country level. From an early so-called exit poll it was estimated that they would only get <span><span class="MathJax_Preview">22.7\%</span><script type="math/tex">22.7\%</script></span> of the votes. Suppose the exit poll was based on <span><span class="MathJax_Preview">740</span><script type="math/tex">740</script></span> people out of which then <span><span class="MathJax_Preview">168</span><script type="math/tex">168</script></span> people reported having voted for A.</p>
+</blockquote>
+<h3 id="a_2">a)</h3>
+<blockquote>
+<p>At the time of the exit poll the <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> was of course not known. If the following
+hypothesis was tested based on the exit poll:</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_0: p = 0.295 \\
+H_1 : p \ne 0.295
+</div>
+<script type="math/tex; mode=display">
+H_0: p = 0.295 \\
+H_1 : p \ne 0.295
+</script>
+</div>
+<blockquote>
+<p>what test statistic and conclusion would then be obtained with <span><span class="MathJax_Preview">\alpha=0.001</span><script type="math/tex">\alpha=0.001</script></span>? </p>
+</blockquote>
+<ul>
+<li><strong>Test statistic</strong></li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+z_{obs} = \frac{x-np_0}{\sqrt{np_0(1-p_0)}} \\
+x = 168 \\
+n = 740 \\
+p_0 = 0.295
+</div>
+<script type="math/tex; mode=display">
+z_{obs} = \frac{x-np_0}{\sqrt{np_0(1-p_0)}} \\
+x = 168 \\
+n = 740 \\
+p_0 = 0.295
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span>   <span class="n">n</span> <span class="o">&lt;-</span> <span class="m">740</span>
+<span class="o">&gt;</span>   <span class="n">x</span> <span class="o">&lt;-</span> <span class="m">168</span>
+<span class="o">&gt;</span>   <span class="n">p0</span> <span class="o">&lt;-</span> <span class="m">0.295</span>
+<span class="o">&gt;</span>   <span class="n">zobs</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">n</span><span class="o">*</span><span class="n">p0</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">p0</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">p0</span><span class="p">)))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-4.054586</span>
+</code></pre></div>
+
+<p>So we get that
+$$
+z_{obs} = -4.054586
+$$</p>
+<ul>
+<li><strong>The critical value</strong></li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+z_{1-\alpha/2} 
+</div>
+<script type="math/tex; mode=display">
+z_{1-\alpha/2} 
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qnorm</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="p">(</span><span class="m">0.001</span><span class="o">/</span><span class="m">2</span><span class="p">))</span>
+<span class="m">3.290527</span>
+</code></pre></div>
+
+<ul>
+<li><strong>Conclusion</strong></li>
+</ul>
+<p><span><span class="MathJax_Preview">|z_{obs}| = 4.0545</span><script type="math/tex">|z_{obs}| = 4.0545</script></span> is more than the critical value <span><span class="MathJax_Preview">3.290527</span><script type="math/tex">3.290527</script></span>, so we reject <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span>. This means that it was significantly unlikely that Social Democrats would have <span><span class="MathJax_Preview">p=29.5</span><script type="math/tex">p=29.5</script></span> at the local elections in Denmark in November 2013 based on the exit poll. </p>
+<h3 id="b_2">b)</h3>
+<blockquote>
+<p>Calculate a 95%-confidence interval for <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> based on the exit poll.</p>
+</blockquote>
+<p><strong>By method 7.3:</strong></p>
+<div>
+<div class="MathJax_Preview">
+\hat{p} \pm z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+</div>
+<script type="math/tex; mode=display">
+\hat{p} \pm z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+</script>
+</div>
+<p>Where
+$$
+n = 740 \
+\hat{p} = 0.227 \
+z_{1-0.05/2} = 1.959964
+$$
+So  the answer is:
+$$
+0.227 \pm 0.03018109 = [0.1968189, 0.2571811 ]
+$$
+or
+$$
+[19.7\%, 25.7\%]
+$$</p>
+<p><strong>With <code>prop.test</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">prop.test</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">168</span> <span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="m">740</span> <span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="m">0.295</span><span class="p">,</span> <span class="n">correct</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
+
+    <span class="m">1</span><span class="o">-</span><span class="n">sample</span> <span class="n">proportions</span> <span class="n">test</span> <span class="n">without</span> <span class="n">continuity</span> <span class="n">correction</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="m">168</span> <span class="n">out</span> <span class="n">of</span> <span class="m">740</span><span class="p">,</span> <span class="n">null</span> <span class="n">probability</span> <span class="m">0.295</span>
+<span class="n">X</span><span class="o">-</span><span class="n">squared</span> <span class="o">=</span> <span class="m">16.44</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">5.022e-05</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">p</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">0.295</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">0.1982994</span> <span class="m">0.2585741</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+       <span class="n">p</span> 
+<span class="m">0.227027</span> 
+</code></pre></div>
+
+<h2 id="74-sugar-quality">7.4 Sugar quality</h2>
+<blockquote>
+<p>A wholesaler needs to find a supplier that delivers sugar in 1 kg bags. From two potential suppliers 50 bags of sugar are received from each. A bag is described as ’defective’ if the weight of the filled bag is less than 990 grams. The received bags were all control weighed and 6 defective from supplier A and 12 defective from supplier B were found.</p>
+</blockquote>
+<h3 id="a_3">a)</h3>
+<blockquote>
+<p>If the following hypothesis</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_0 : p_A = p_B, \\
+H_1 : p_A \ne p_B
+</div>
+<script type="math/tex; mode=display">
+H_0 : p_A = p_B, \\
+H_1 : p_A \ne p_B
+</script>
+</div>
+<blockquote>
+<p>is tested on a significance level of 5%, what is the p-value and conclusion?</p>
+</blockquote>
+<ul>
+<li>Given:</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+x_{A} = 6 \\
+x_{B} = 12 \\
+n_A = n_B = 50 \\
+\hat{p}_A = 0.12 \\
+\hat{p}_B = 0.24
+</div>
+<script type="math/tex; mode=display">
+x_{A} = 6 \\
+x_{B} = 12 \\
+n_A = n_B = 50 \\
+\hat{p}_A = 0.12 \\
+\hat{p}_B = 0.24
+</script>
+</div>
+<p><strong>By method 7.18</strong></p>
+<div>
+<div class="MathJax_Preview">
+\hat{p} = \frac{x_A + x_B}{n_A+n_B} = 0.18
+</div>
+<script type="math/tex; mode=display">
+\hat{p} = \frac{x_A + x_B}{n_A+n_B} = 0.18
+</script>
+</div>
+<ul>
+<li>Test statics</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+z_{obs} = \frac{\hat{p}_A -\hat{p}_B }{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_A}+\frac{1}{n_A})}} = -1.561738
+</div>
+<script type="math/tex; mode=display">
+z_{obs} = \frac{\hat{p}_A -\hat{p}_B }{\sqrt{\hat{p}(1-\hat{p})(\frac{1}{n_A}+\frac{1}{n_A})}} = -1.561738
+</script>
+</div>
+<ul>
+<li>Critical value</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+z_{1-\alpha/2} = z_{0.975} = 1.959964
+</div>
+<script type="math/tex; mode=display">
+z_{1-\alpha/2} = z_{0.975} = 1.959964
+</script>
+</div>
+<ul>
+<li>Conclusion</li>
+</ul>
+<p><span><span class="MathJax_Preview">|z_{obs}| = 1.561738</span><script type="math/tex">|z_{obs}| = 1.561738</script></span> is less than the critical value, so we accept <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span>, which means that there is no significant difference between two suppliers. </p>
+<p><strong>With  <code>prop.test</code> and <code>chisq.test</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">prop.test</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">12</span><span class="p">),</span> <span class="n">n</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">50</span><span class="p">),</span> <span class="n">correct</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">,</span> <span class="n">conf.level</span> <span class="o">=</span> <span class="m">0.95</span><span class="p">)</span>
+
+    <span class="m">2</span><span class="o">-</span><span class="n">sample</span> <span class="n">test</span> <span class="n">for</span> <span class="n">equality</span> <span class="n">of</span> <span class="n">proportions</span> <span class="n">without</span> <span class="n">continuity</span> <span class="n">correction</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">12</span><span class="p">)</span> <span class="n">out</span> <span class="n">of</span> <span class="nf">c</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">50</span><span class="p">)</span>
+<span class="n">X</span><span class="o">-</span><span class="n">squared</span> <span class="o">=</span> <span class="m">2.439</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.1183</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">two.sided</span>
+<span class="m">95</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">-0.26875081</span>  <span class="m">0.02875081</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+<span class="n">prop</span> <span class="m">1</span> <span class="n">prop</span> <span class="m">2</span> 
+  <span class="m">0.12</span>   <span class="m">0.24</span> 
+
+<span class="o">&gt;</span> <span class="nf">chisq.test</span><span class="p">(</span><span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span><span class="m">12</span><span class="p">,</span><span class="m">44</span><span class="p">,</span><span class="m">38</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">),</span> <span class="n">correct</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+    <span class="n">Pearsons</span> <span class="n">Chi</span><span class="o">-</span><span class="n">squared</span> <span class="n">test</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">6</span><span class="p">,</span> <span class="m">12</span><span class="p">,</span> <span class="m">44</span><span class="p">,</span> <span class="m">38</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">2</span><span class="p">)</span>
+<span class="n">X</span><span class="o">-</span><span class="n">squared</span> <span class="o">=</span> <span class="m">2.439</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.1183</span>
+</code></pre></div>
+
+<h3 id="b_3">b)</h3>
+<blockquote>
+<p>A supplier has delivered 200 bags, of which 36 were defective. A 99% confidence interval for <span><span class="MathJax_Preview">p</span><script type="math/tex">p</script></span> the proportion of defective bags for this supplier is:</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\hat{p} \pm z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+</div>
+<script type="math/tex; mode=display">
+\hat{p} \pm z_{1-\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+</script>
+</div>
+<p>Where
+$$
+n = 200 \
+\hat{p} = \frac{36}{200} = 0.18 \
+z_{1-0.01/2} = 2.575829
+$$
+So  the answer is:
+$$
+0.18 \pm 0.03637847 = [ 0.11, 0.25 ]
+$$
+or
+$$
+[22,50 ]
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">n</span> <span class="o">&lt;-</span> <span class="m">200</span>
+<span class="o">&gt;</span> <span class="n">p</span> <span class="o">&lt;-</span> <span class="m">36</span><span class="o">/</span><span class="m">200</span>
+<span class="o">&gt;</span> <span class="n">z</span> <span class="o">&lt;-</span> <span class="nf">qnorm</span><span class="p">(</span><span class="m">1-0.01</span><span class="o">/</span><span class="m">2</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">p</span> <span class="o">-</span> <span class="n">z</span> <span class="o">*</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.1100246</span>
+<span class="o">&gt;</span> <span class="n">p</span> <span class="o">+</span> <span class="n">z</span> <span class="o">*</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.2499754</span>
+</code></pre></div>
+
+<p><strong>With <code>prop.test</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">prop.test</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="m">36</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="m">200</span><span class="p">,</span> <span class="n">correct</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">conf.level</span><span class="o">=</span><span class="m">0.99</span><span class="p">)</span>
+
+    <span class="m">1</span><span class="o">-</span><span class="n">sample</span> <span class="n">proportions</span> <span class="n">test</span> <span class="n">without</span> <span class="n">continuity</span> <span class="n">correction</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="m">36</span> <span class="n">out</span> <span class="n">of</span> <span class="m">200</span><span class="p">,</span> <span class="n">null</span> <span class="n">probability</span> <span class="m">0.5</span>
+<span class="n">X</span><span class="o">-</span><span class="n">squared</span> <span class="o">=</span> <span class="m">81.92</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">&lt;</span> <span class="m">2.2e-16</span>
+<span class="n">alternative</span> <span class="n">hypothesis</span><span class="o">:</span> <span class="n">true</span> <span class="n">p</span> <span class="n">is</span> <span class="n">not</span> <span class="n">equal</span> <span class="n">to</span> <span class="m">0.5</span>
+<span class="m">99</span> <span class="n">percent</span> <span class="n">confidence</span> <span class="n">interval</span><span class="o">:</span>
+ <span class="m">0.1206696</span> <span class="m">0.2598803</span>
+<span class="n">sample</span> <span class="n">estimates</span><span class="o">:</span>
+   <span class="n">p</span> 
+<span class="m">0.18</span> 
+</code></pre></div>
+
+<h2 id="75-physical-training">7.5 Physical training</h2>
+<blockquote>
+<p>A company wants to investigate whether the employees’ physical training condition will affect their success in the job. 200 employees were tested and the following count data were found:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>Physical training condition</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>Below average</strong></td>
+<td><strong>Average</strong></td>
+<td><strong>Above average</strong></td>
+<td><em>Total</em></td>
+</tr>
+<tr>
+<td><strong>Bad job success</strong></td>
+<td>11</td>
+<td>27</td>
+<td>15</td>
+<td>53</td>
+</tr>
+<tr>
+<td><strong>Average job success</strong></td>
+<td>14</td>
+<td>40</td>
+<td>30</td>
+<td>84</td>
+</tr>
+<tr>
+<td><strong>Good job success</strong></td>
+<td>5</td>
+<td>23</td>
+<td>35</td>
+<td>63</td>
+</tr>
+<tr>
+<td><em>Total</em></td>
+<td>30</td>
+<td>90</td>
+<td>80</td>
+<td>200</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>The hypothesis of independence between job success and physical training condition is to be tested by the use of the for this setup usual <span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>−test.</p>
+</blockquote>
+<h3 id="a_4">a)</h3>
+<blockquote>
+<p>What is the expected number of individuals with above average training condition and good job success under <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> (i.e. if <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> is assumed to be true)?</p>
+</blockquote>
+<ul>
+<li>The expected number under the null hypothesis for each cell is found as</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+e_{ij} = "j\text{th column total}" * \frac{"i\text{th row total}"}{"\text{grand total}"}
+</div>
+<script type="math/tex; mode=display">
+e_{ij} = "j\text{th column total}" * \frac{"i\text{th row total}"}{"\text{grand total}"}
+</script>
+</div>
+<ul>
+<li>The answer for table cell(3,3) is</li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+e_{33} =  80 * 63 / 200 = 25.2
+</div>
+<script type="math/tex; mode=display">
+e_{33} =  80 * 63 / 200 = 25.2
+</script>
+</div>
+<h3 id="b_4">b)</h3>
+<blockquote>
+<p>For the calculation of the relevant <span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>-test statistic, identify the following two numbers: </p>
+</blockquote>
+<ul>
+<li><strong>A:</strong></li>
+</ul>
+<p>The number of contributions to the test statistic: 
+ <span><span class="MathJax_Preview">R*C = 3*3 = 9</span><script type="math/tex">R*C = 3*3 = 9</script></span> , one for each cell </p>
+<ul>
+<li><strong>B:</strong></li>
+</ul>
+<div>
+<div class="MathJax_Preview">
+  \frac{(o_{11}-e_{11})^2}{e_{11}}
+</div>
+<script type="math/tex; mode=display">
+  \frac{(o_{11}-e_{11})^2}{e_{11}}
+</script>
+</div>
+<p>Find <span><span class="MathJax_Preview">o_{ii}</span><script type="math/tex">o_{ii}</script></span> and <span><span class="MathJax_Preview">e_{ii}</span><script type="math/tex">e_{ii}</script></span></p>
+<div>
+<div class="MathJax_Preview">
+o_{11} = 11 \\
+e_{11} = 30*53/200 = 7.95
+</div>
+<script type="math/tex; mode=display">
+o_{11} = 11 \\
+e_{11} = 30*53/200 = 7.95
+</script>
+</div>
+<p>Hence</p>
+<div>
+<div class="MathJax_Preview">
+\frac{(11-7.95)^2}{7.95} = 1.170126
+</div>
+<script type="math/tex; mode=display">
+\frac{(11-7.95)^2}{7.95} = 1.170126
+</script>
+</div>
+<ul>
+<li>So the contribution to the statistic from table cell (1,1) is <span><span class="MathJax_Preview">1.170126</span><script type="math/tex">1.170126</script></span></li>
+</ul>
+<h3 id="c_1">c)</h3>
+<blockquote>
+<p>The total <span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>-test statistic is <span><span class="MathJax_Preview">10.985</span><script type="math/tex">10.985</script></span>, so the <span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> and the conclusion will be(both must be valid):</p>
+</blockquote>
+<ul>
+<li>The degree of freedom: <span><span class="MathJax_Preview">(R-1)(C-1)= (3-1)(3-1) = 2</span><script type="math/tex">(R-1)(C-1)= (3-1)(3-1) = 2</script></span></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="m">1</span> <span class="o">-</span> <span class="nf">pchisq</span><span class="p">(</span><span class="m">10.985</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.02673311</span>
+</code></pre></div>
+
+<ul>
+<li>
+<p>So <span><span class="MathJax_Preview">\text{p-value} = 0.0267</span><script type="math/tex">\text{p-value} = 0.0267</script></span></p>
+</li>
+<li>
+<p>The conclusion is that the calculated <span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> is less than <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span>, which means that the hypothesis of <strong>independence</strong> between physical training condition and success in the job is <strong>rejected</strong> on a 5% level. In other words, there is significant dependence between job success and physical training condition.</p>
+</li>
+</ul>
+<!-- What about significance level $\alpha$ here? Do we need choose it by ourself? -->
+
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">training</span> <span class="o">&lt;-</span> <span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="m">27</span><span class="p">,</span><span class="m">15</span><span class="p">,</span><span class="m">14</span><span class="p">,</span><span class="m">40</span><span class="p">,</span><span class="m">30</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">23</span><span class="p">,</span><span class="m">35</span><span class="p">),</span> <span class="n">ncol</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">byrow</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">colnames</span><span class="p">(</span><span class="n">training</span><span class="p">)</span>  <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Below averga&quot;</span><span class="p">,</span> <span class="s">&quot;Average&quot;</span><span class="p">,</span> <span class="s">&quot;Above average&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">rownames</span><span class="p">(</span><span class="n">training</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Bad job success&quot;</span><span class="p">,</span> <span class="s">&quot;Average job success&quot;</span><span class="p">,</span> <span class="s">&quot;Good job success&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">training</span>
+                    <span class="n">Below</span> <span class="n">averga</span> <span class="n">Average</span> <span class="n">Above</span> <span class="n">average</span>
+<span class="n">Bad</span> <span class="n">job</span> <span class="n">success</span>               <span class="m">11</span>      <span class="m">27</span>            <span class="m">15</span>
+<span class="n">Average</span> <span class="n">job</span> <span class="n">success</span>           <span class="m">14</span>      <span class="m">40</span>            <span class="m">30</span>
+<span class="n">Good</span> <span class="n">job</span> <span class="n">success</span>               <span class="m">5</span>      <span class="m">23</span>            <span class="m">35</span>
+<span class="o">&gt;</span> <span class="n">chi</span> <span class="o">&lt;-</span> <span class="nf">chisq.test</span><span class="p">(</span><span class="n">training</span><span class="p">,</span> <span class="n">correct</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">chi</span>
+
+    <span class="n">Pearsons</span> <span class="n">Chi</span><span class="o">-</span><span class="n">squared</span> <span class="n">test</span>
+
+<span class="n">data</span><span class="o">:</span>  <span class="n">training</span>
+<span class="n">X</span><span class="o">-</span><span class="n">squared</span> <span class="o">=</span> <span class="m">10.985</span><span class="p">,</span> <span class="n">df</span> <span class="o">=</span> <span class="m">4</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="n">value</span> <span class="o">=</span> <span class="m">0.02673</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_6/" title="6 Multiple Linear Regression" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                6 Multiple Linear Regression
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
