@@ -214,6 +214,8 @@ $$
 ### c) Sample covariance
 > Find the sample covariance between cholesterol measurements of the patients before and after treatment.
 
+**By Definition 1.18**
+
 $$
 s_{ab} = \frac{1}{n-1}\sum_{i=1}^{n}{(b_{i}-\bar{b})(a_{i}-\bar{a})} = 0.7964286
 $$
