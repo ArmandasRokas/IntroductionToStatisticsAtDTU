@@ -1,0 +1,1404 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.11">
+    
+    
+      
+        <title>8 Grouped Data(one-way ANOVA) - Introduction to Statistics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.860688db.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.943997b5.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5552">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#grouped-data-one-way-anova" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              8 Grouped Data(one-way ANOVA)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link md-tabs__link--active">
+          Book solutions
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../test/" class="md-tabs__link">
+          Notes
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics" class="md-nav__button md-logo" aria-label="Introduction to Statistics">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Introduction to Statistics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Book solutions
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Book solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Book solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-nav__link">
+      3 Confidence Intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_2/" title="3 Hypothesis Testing" class="md-nav__link">
+      3 Hypothesis Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_3/" title="3 Analysis of Two samples" class="md-nav__link">
+      3 Analysis of Two samples
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-nav__link">
+      4 Simulation Methods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_5/" title="5 Simple Linear Regression" class="md-nav__link">
+      5 Simple Linear Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_6/" title="6 Multiple Linear Regression" class="md-nav__link">
+      6 Multiple Linear Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_7/" title="7 Categorical and Count Data" class="md-nav__link">
+      7 Categorical and Count Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        8 Grouped Data(one-way ANOVA)
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="8 Grouped Data(one-way ANOVA)" class="md-nav__link md-nav__link--active">
+      8 Grouped Data(one-way ANOVA)
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-environment-action-plans" class="md-nav__link">
+    8.1 Environment action plans
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 Environment action plans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-environment-action-plans-part-2" class="md-nav__link">
+    8.2 Environment action plans (part 2)
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 Environment action plans (part 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-plastic-film" class="md-nav__link">
+    8.3 Plastic film
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 Plastic film">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-brass-alloys" class="md-nav__link">
+    8.4 Brass alloys
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4 Brass alloys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Notes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Notes" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test/" title="testnotes" class="md-nav__link">
+      testnotes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#81-environment-action-plans" class="md-nav__link">
+    8.1 Environment action plans
+  </a>
+  
+    <nav class="md-nav" aria-label="8.1 Environment action plans">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-environment-action-plans-part-2" class="md-nav__link">
+    8.2 Environment action plans (part 2)
+  </a>
+  
+    <nav class="md-nav" aria-label="8.2 Environment action plans (part 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-plastic-film" class="md-nav__link">
+    8.3 Plastic film
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 Plastic film">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_2" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_2" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#84-brass-alloys" class="md-nav__link">
+    8.4 Brass alloys
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4 Brass alloys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_3" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_3" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="grouped-data-one-way-anova">Grouped Data (one-way ANOVA)</h1>
+<h2 id="81-environment-action-plans">8.1 Environment action plans</h2>
+<blockquote>
+<p>To investigate the effect of two recent national Danish aquatic environment action plans the concentration of nitrogen (measured in g/m 3 ) have been measured in a particular river just before the national action plans were enforced (1998 and 2003) and in 2011. Each measurement is repeated 6 times during a short stretch of river. The result is shown in the following table:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><span><span class="MathJax_Preview">N_{1998}</span><script type="math/tex">N_{1998}</script></span></th>
+<th><span><span class="MathJax_Preview">N_{2003}</span><script type="math/tex">N_{2003}</script></span></th>
+<th><span><span class="MathJax_Preview">N_{2011}</span><script type="math/tex">N_{2011}</script></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>5.01</td>
+<td>5.59</td>
+<td>3.02</td>
+</tr>
+<tr>
+<td></td>
+<td>6.23</td>
+<td>5.13</td>
+<td>4.76</td>
+</tr>
+<tr>
+<td></td>
+<td>5.98</td>
+<td>5.33</td>
+<td>3.46</td>
+</tr>
+<tr>
+<td></td>
+<td>5.31</td>
+<td>4.65</td>
+<td>4.12</td>
+</tr>
+<tr>
+<td></td>
+<td>5.13</td>
+<td>5.52</td>
+<td>4.51</td>
+</tr>
+<tr>
+<td></td>
+<td>5.65</td>
+<td>4.92</td>
+<td>4.42</td>
+</tr>
+<tr>
+<td><strong>Row mean</strong></td>
+<td>5.5517</td>
+<td>5.1900</td>
+<td>4.0483</td>
+</tr>
+<tr>
+<td><strong>Row variances</strong></td>
+<td>0.2365767</td>
+<td>0.1313200</td>
+<td>0.4532967</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Further, the total variation in the data is SST = 11.4944. You got the following output from R corresponding to a one-way analysis of variance (where most of the information, however, is replaced by the letters A-E as well as U and V):</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">anova</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">N</span> <span class="o">~</span> <span class="n">Year</span><span class="p">))</span>
+<span class="n">Analysis</span> <span class="n">of</span> <span class="n">Variance</span> <span class="n">Table</span>
+<span class="n">Response</span><span class="o">:</span> <span class="n">N</span>
+            <span class="n">Df</span>      <span class="n">SumSq</span>       <span class="n">MeanSq</span>      <span class="n">Fvalue</span>      <span class="nf">Pr</span><span class="p">(</span><span class="o">&gt;</span><span class="bp">F</span><span class="p">)</span>
+<span class="n">Year</span>        <span class="n">A</span><span class="o">=</span><span class="m">2</span>     <span class="n">B</span><span class="o">=</span><span class="m">7.3884</span>    <span class="n">C</span><span class="o">=</span><span class="m">3.6942</span>    <span class="n">U</span><span class="o">=</span><span class="m">13.4825</span>   <span class="n">V</span><span class="o">=</span><span class="m">0.00045</span>
+<span class="n">Residuals</span>   <span class="n">D</span><span class="o">=</span><span class="m">15</span>    <span class="m">4.1060</span>      <span class="n">E</span><span class="o">=</span><span class="m">0.274</span>
+</code></pre></div>
+
+<h3 id="a">a)</h3>
+<blockquote>
+<p>What numbers did the letters A-D substitute?</p>
+</blockquote>
+<p><strong>A:</strong> Treatment degree of freedom</p>
+<div>
+<div class="MathJax_Preview">
+(k-1)= 3-1=2
+</div>
+<script type="math/tex; mode=display">
+(k-1)= 3-1=2
+</script>
+</div>
+<p><strong>B:</strong> Treatment sum of squares
+$$
+SS(Tr) = SST - SSE = 11.4944 - 4.1060= 7.3884
+$$</p>
+<p><strong>C:</strong> Treatment mean square 
+$$
+MS(Tr) = \frac{SS(Tr)}{k-1} = \frac{7.3884}{2}=3.6942
+$$
+<strong>D</strong>: Residual degree of freedom
+$$
+(n-k)  = 18-3 = 15
+$$
+<strong>E</strong>: Residual mean square
+$$
+MSE = \frac{SSE}{n-k} = \frac{4.1060}{15} = 0.274
+$$</p>
+<h3 id="b">b)</h3>
+<blockquote>
+<p>If you use the significance level <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span>, what critical value should be used for the hypothesis test carried out in the analysis (and in the table illustrated with the figures U and V)?</p>
+</blockquote>
+<p><strong>Critical value:</strong>
+$$
+F_{1-\alpha} = F_{0.95}(2,15) = 3.682
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">qf</span><span class="p">(</span><span class="m">0.95</span><span class="p">,</span> <span class="n">df1</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">df2</span><span class="o">=</span><span class="m">15</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">3.68232</span>
+</code></pre></div>
+
+<p><strong>U</strong>: The test statistics 
+$$
+F_{obs}=\frac{MS(Tr)}{MSE} = 13.48248
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="bp">F</span> <span class="o">&lt;-</span> <span class="m">3.6942</span> <span class="o">/</span> <span class="m">0.274</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">13.48248</span>
+</code></pre></div>
+
+<p><strong>V:</strong> p-value
+$$
+P(F&gt;F_{obs}) = 0.00045
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">pvalue</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">-</span><span class="nf">pf</span><span class="p">(</span><span class="bp">F</span><span class="p">,</span> <span class="n">df1</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">df2</span><span class="o">=</span><span class="m">15</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.0004456902</span>
+</code></pre></div>
+
+<h3 id="c">c)</h3>
+<blockquote>
+<p>Can you with these data demonstrate statistically significant (at significance level <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span>) differences in N-mean values from year to year (both conclusion and argument must be valid)?</p>
+</blockquote>
+<p>Yes, because the calculated <span><span class="MathJax_Preview">\text{p-value}=0.00045</span><script type="math/tex">\text{p-value}=0.00045</script></span> is less than <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span> </p>
+<h3 id="d">d)</h3>
+<blockquote>
+<p>Compute the 90% confidence interval for the single mean difference between year 2011 and year 1998.</p>
+</blockquote>
+<p>By method 8.9 Post hoc pairwise confidence intervals</p>
+<div>
+<div class="MathJax_Preview">
+\bar{y}_{2011} - \bar{y}_{1998} \pm t_{1-\alpha/2}\sqrt{MSE(\frac{1}{n_i}+\frac{1}{n_j})}  = [-2.03,-0.97]
+</div>
+<script type="math/tex; mode=display">
+\bar{y}_{2011} - \bar{y}_{1998} \pm t_{1-\alpha/2}\sqrt{MSE(\frac{1}{n_i}+\frac{1}{n_j})}  = [-2.03,-0.97]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span>  <span class="m">4.0483</span> <span class="o">-</span> <span class="m">5.5517</span> <span class="o">+</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">*</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1-0.1</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="m">15</span><span class="p">)</span> <span class="o">*</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">0.274</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="m">6+1</span><span class="o">/</span><span class="m">6</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-2.0331965</span> <span class="m">-0.9736035</span>
+</code></pre></div>
+
+<h2 id="82-environment-action-plans-part-2">8.2 Environment action plans (part 2)</h2>
+<blockquote>
+<p>This exercise is using the same data as the previous exercise, but let us repeat the description here. To investigate the effect of two recent national Danish aquatic environment action plans the concentration of nitrogen (measured in g/m 3 ) have been measured in a particular river just before the national action plans were enforced (1998 and 2003) and in 2011. Each measurement is repeated 6 times during a short stretch of river. The data can be read into R  and the means and variances computed by the following in R:</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">nitrogen</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">5.01</span><span class="p">,</span> <span class="m">5.59</span><span class="p">,</span> <span class="m">3.02</span><span class="p">,</span>
+<span class="m">6.23</span><span class="p">,</span> <span class="m">5.13</span><span class="p">,</span> <span class="m">4.76</span><span class="p">,</span>
+<span class="m">5.98</span><span class="p">,</span> <span class="m">5.33</span><span class="p">,</span> <span class="m">3.46</span><span class="p">,</span>
+<span class="m">5.31</span><span class="p">,</span> <span class="m">4.65</span><span class="p">,</span> <span class="m">4.12</span><span class="p">,</span>
+<span class="m">5.13</span><span class="p">,</span> <span class="m">5.52</span><span class="p">,</span> <span class="m">4.51</span><span class="p">,</span>
+<span class="m">5.65</span><span class="p">,</span> <span class="m">4.92</span><span class="p">,</span> <span class="m">4.42</span><span class="p">)</span>
+<span class="n">year</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;1998&quot;</span><span class="p">,</span> <span class="s">&quot;2003&quot;</span><span class="p">,</span> <span class="s">&quot;2011&quot;</span><span class="p">),</span> <span class="m">6</span><span class="p">))</span>
+<span class="nf">tapply</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+<span class="m">1998</span> <span class="m">2003</span> <span class="m">2011</span>
+<span class="m">5.552</span> <span class="m">5.190</span> <span class="m">4.048</span>
+<span class="nf">tapply</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">var</span><span class="p">)</span>
+<span class="m">1998</span> <span class="m">2003</span>
+<span class="m">2011</span>
+<span class="m">0.2366</span> <span class="m">0.1313</span> <span class="m">0.4533</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">4.93</span>
+</code></pre></div>
+
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>Compute the three sums of squares (<span><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span>, <span><span class="MathJax_Preview">SS(Tr)</span><script type="math/tex">SS(Tr)</script></span> and <span><span class="MathJax_Preview">SSE</span><script type="math/tex">SSE</script></span>) using the three means and three variances, and the overall mean (show the formulas explicitly).</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+SST = \sum_{i=1}^k{}\sum_{j=1}^{n_i}({y_{ij}-\bar{y}})^2 =  11.4944
+</div>
+<script type="math/tex; mode=display">
+SST = \sum_{i=1}^k{}\sum_{j=1}^{n_i}({y_{ij}-\bar{y}})^2 =  11.4944
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span>  <span class="n">SST</span> <span class="o">&lt;-</span> <span class="nf">sum</span><span class="p">((</span><span class="n">nitrogen</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">11.4944</span>
+</code></pre></div>
+
+<div>
+<div class="MathJax_Preview">
+SS(Tr) = \sum_{i=1}^{k}n_i(\bar{y}_i-\bar{y})^2=7.388433
+</div>
+<script type="math/tex; mode=display">
+SS(Tr) = \sum_{i=1}^{k}n_i(\bar{y}_i-\bar{y})^2=7.388433
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">alpha</span> <span class="o">&lt;-</span> <span class="nf">tapply</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">SSTr</span> <span class="o">&lt;-</span> <span class="m">6</span><span class="o">*</span><span class="nf">sum</span><span class="p">(</span><span class="n">alpha</span><span class="o">^</span><span class="m">2</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">7.388433</span>
+</code></pre></div>
+
+<div>
+<div class="MathJax_Preview">
+SSE = \sum_{i=1}^k{}\sum_{j=1}^{n_i}({y_{ij}-\bar{y}_i})^2 = 4.105967
+</div>
+<script type="math/tex; mode=display">
+SSE = \sum_{i=1}^k{}\sum_{j=1}^{n_i}({y_{ij}-\bar{y}_i})^2 = 4.105967
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">sum_SSE_each</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">){</span><span class="nf">return</span><span class="p">(</span><span class="nf">sum</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">))</span><span class="o">^</span><span class="m">2</span><span class="p">))}</span>
+<span class="o">&gt;</span> <span class="n">SSE</span> <span class="o">&lt;-</span>  <span class="nf">sum</span><span class="p">(</span><span class="nf">tapply</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="n">sum_SSE_each</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">4.105967</span>
+</code></pre></div>
+
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>Find the <span><span class="MathJax_Preview">SST</span><script type="math/tex">SST</script></span>-value in R using the sample variance function <code>var</code></p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+SST=(n-1)*s^2_y
+</div>
+<script type="math/tex; mode=display">
+SST=(n-1)*s^2_y
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">SST</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="nf">length</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">)</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">11.4944</span>
+</code></pre></div>
+
+<h3 id="c_1">c)</h3>
+<blockquote>
+<p>Run the ANOVA in R and produce the ANOVA table in R</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">anova</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">nitrogen</span> <span class="o">~</span> <span class="n">year</span><span class="p">))</span>
+<span class="n">Analysis</span> <span class="n">of</span> <span class="n">Variance</span> <span class="n">Table</span>
+
+<span class="n">Response</span><span class="o">:</span> <span class="n">nitrogen</span>
+          <span class="n">Df</span> <span class="n">Sum</span> <span class="n">Sq</span> <span class="n">Mean</span> <span class="n">Sq</span> <span class="bp">F</span> <span class="n">value</span>    <span class="nf">Pr</span><span class="p">(</span><span class="o">&gt;</span><span class="bp">F</span><span class="p">)</span>    
+<span class="n">year</span>       <span class="m">2</span> <span class="m">7.3884</span>  <span class="m">3.6942</span>  <span class="m">13.496</span> <span class="m">0.0004436</span> <span class="o">***</span>
+<span class="n">Residuals</span> <span class="m">15</span> <span class="m">4.1060</span>  <span class="m">0.2737</span>                      
+<span class="o">---</span>
+<span class="n">Signif.</span> <span class="n">codes</span><span class="o">:</span>  <span class="m">0</span> ‘<span class="o">***</span>’ <span class="m">0.001</span> ‘<span class="o">**</span>’ <span class="m">0.01</span> ‘<span class="o">*</span>’ <span class="m">0.05</span> ‘<span class="n">.</span>’ <span class="m">0.1</span> ‘ ’ <span class="m">1</span>
+</code></pre></div>
+
+<h3 id="d_1">d)</h3>
+<blockquote>
+<p>Do a complete post hoc analysis, where all the 3 years are compared pairwise.</p>
+</blockquote>
+<p>We have the same number of observation in each treatment group, there is going to be used Least Significant Difference(LSD) in order to perform post hoc analysis. </p>
+<div>
+<div class="MathJax_Preview">
+M=k*(k-1)/2=3*(3-1)/2=3 \\ 
+\alpha_{Bonferroni} = \alpha / M = 0.05/3= 0.0167 \\
+LSD_{\alpha_{Bonferroni}}=t_{1-\alpha_{Bonferroni}/2}*\sqrt{2*MSE/m} = 0.8136401
+</div>
+<script type="math/tex; mode=display">
+M=k*(k-1)/2=3*(3-1)/2=3 \\ 
+\alpha_{Bonferroni} = \alpha / M = 0.05/3= 0.0167 \\
+LSD_{\alpha_{Bonferroni}}=t_{1-\alpha_{Bonferroni}/2}*\sqrt{2*MSE/m} = 0.8136401
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">LSD</span> <span class="o">&lt;-</span> <span class="nf">qt</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">alpha_bonferroni</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="nf">length</span><span class="p">(</span><span class="n">nitrogen</span><span class="p">)</span><span class="o">-</span><span class="nf">length</span><span class="p">(</span><span class="nf">unique</span><span class="p">(</span><span class="n">year</span><span class="p">)))</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">2</span><span class="o">*</span><span class="m">0.2737</span><span class="o">/</span> <span class="m">6</span><span class="p">)</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.8136401</span>
+</code></pre></div>
+
+<p><strong>Compact letter display</strong></p>
+<table>
+<thead>
+<tr>
+<th>Year</th>
+<th>Mean</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1998</td>
+<td>5.5517</td>
+<td>a</td>
+</tr>
+<tr>
+<td>2003</td>
+<td>5.1900</td>
+<td>a</td>
+</tr>
+<tr>
+<td>2011</td>
+<td>4.0483</td>
+<td>b</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Box plot</strong></p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">plot</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="n">nitrogen</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Nitrogen&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Year&quot;</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nf">text</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="m">5.7</span><span class="p">,</span> <span class="m">5.4</span><span class="p">,</span> <span class="m">4</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">),</span> <span class="n">cex</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</code></pre></div>
+
+<p><img alt="" src="../pics/boxplot_lsd.png" /></p>
+<p><strong>Conclusion:</strong>  from the compact letter display and the box plot we can see that the level in 1998 and 2003 are not significantly different, but the nitrogen level in 2011 is significantly smaller than in 2003 and 1998.</p>
+<h3 id="e">e)</h3>
+<blockquote>
+<p>Use R to do model validation by residual analysis.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="nf">library</span><span class="p">(</span><span class="n">MESS</span><span class="p">)</span>
+<span class="n">qqwrap</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="kc">...</span><span class="p">){</span>
+  <span class="n">stdy</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">y</span><span class="p">))</span><span class="o">/</span><span class="nf">sd</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+  <span class="nf">qqnorm</span><span class="p">(</span><span class="n">stdy</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">,</span> <span class="kc">...</span><span class="p">)</span>
+  <span class="nf">qqline</span><span class="p">(</span><span class="n">stdy</span><span class="p">)}</span>
+<span class="nf">wallyplot</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">nitrogen</span><span class="o">~</span><span class="n">year</span><span class="p">)</span><span class="o">$</span><span class="n">residuals</span><span class="p">,</span> <span class="n">FUN</span><span class="o">=</span><span class="n">qqwrap</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-3</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
+</code></pre></div>
+
+<p><img alt="" src="../pics/wally_nitrogen.png" /></p>
+<p><strong>Conclusion:</strong> from the Wally plot we can see that there appears to be no important deviation from normality</p>
+<h2 id="83-plastic-film">8.3 Plastic film</h2>
+<blockquote>
+<p>A company is starting a production of a new type of patch. For the product a thin plastic film is to be used. Samples of products were received from 5 possible suppliers. Each sample consisted of 20 measurements of the film thickness and the following data were found:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Average film thickness<br/>x̄ in μm</th>
+<th>Sample standard deviation<br/>s in μm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supplier 1</td>
+<td>31.4</td>
+<td>1.9</td>
+</tr>
+<tr>
+<td>Supplier 2</td>
+<td>30.6</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>Supplier 3</td>
+<td>30.5</td>
+<td>2.2</td>
+</tr>
+<tr>
+<td>Supplier 4</td>
+<td>31.3</td>
+<td>1.8</td>
+</tr>
+<tr>
+<td>Supplier 5</td>
+<td>29.2</td>
+<td>2.2</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>From the usual calculations for a one-way analysis of variance the following is obtained:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Degrees of freedom</th>
+<th>Sums of Squares</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Supplier</strong></td>
+<td>4</td>
+<td>SS ( Tr ) = 62</td>
+</tr>
+<tr>
+<td><strong>Error</strong></td>
+<td>95</td>
+<td>SS ( Tr ) = 62</td>
+</tr>
+</tbody>
+</table>
+<h3 id="a_2">a)</h3>
+<blockquote>
+<p>Is there a significant (α = 5%) difference between the mean film thicknesses for the suppliers (both conclusion and argument must be correct)?</p>
+</blockquote>
+<p>There is a significant difference between the mean film thicknesses for the suppliers, because the <span><span class="MathJax_Preview">\text{p-value}=0.004</span><script type="math/tex">\text{p-value}=0.004</script></span> is smaller than <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span> </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">df1</span> <span class="o">&lt;-</span> <span class="m">4</span>
+<span class="o">&gt;</span> <span class="n">df2</span> <span class="o">&lt;-</span> <span class="m">95</span>
+<span class="o">&gt;</span> <span class="n">SSTr</span> <span class="o">&lt;-</span> <span class="m">62</span>
+<span class="o">&gt;</span> <span class="n">SSE</span> <span class="o">&lt;-</span> <span class="m">362.71</span>
+<span class="o">&gt;</span> <span class="bp">F</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">SSTr</span><span class="o">/</span><span class="n">df1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">SSE</span><span class="o">/</span><span class="n">df2</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">pv</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">-</span><span class="nf">pf</span><span class="p">(</span><span class="bp">F</span><span class="p">,</span> <span class="n">df1</span><span class="o">=</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="o">=</span><span class="n">df2</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">pv</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.004407421</span>
+</code></pre></div>
+
+<h3 id="b_2">b)</h3>
+<blockquote>
+<p>Compute a 95% confidence interval for the difference in mean film thicknesses of Supplier 1 and Supplier 4 (considered as a “single pre-planned” comparison).</p>
+</blockquote>
+<p>By the method 8.9</p>
+<div>
+<div class="MathJax_Preview">
+\bar{y}_{1} - \bar{y}_{4} \pm t_{1-\alpha/2}\sqrt{MSE(\frac{1}{n_i}+\frac{1}{n_j})}  = [ -1.126686,  1.326686]
+</div>
+<script type="math/tex; mode=display">
+\bar{y}_{1} - \bar{y}_{4} \pm t_{1-\alpha/2}\sqrt{MSE(\frac{1}{n_i}+\frac{1}{n_j})}  = [ -1.126686,  1.326686]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">df2</span> <span class="o">&lt;-</span> <span class="m">95</span>
+<span class="o">&gt;</span> <span class="n">mean1</span> <span class="o">&lt;-</span> <span class="m">31.4</span>
+<span class="o">&gt;</span> <span class="n">mean4</span> <span class="o">&lt;-</span> <span class="m">31.3</span>
+<span class="o">&gt;</span> <span class="n">MSE</span> <span class="o">&lt;-</span> <span class="m">362.71</span><span class="o">/</span><span class="n">df2</span>
+<span class="o">&gt;</span> <span class="n">n1</span> <span class="o">&lt;-</span> <span class="m">20</span>
+<span class="o">&gt;</span> <span class="n">n4</span> <span class="o">&lt;-</span><span class="m">20</span>
+<span class="o">&gt;</span> <span class="n">mean1</span> <span class="o">-</span> <span class="n">mean4</span> <span class="o">+</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">*</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df2</span><span class="p">)</span> <span class="o">*</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">MSE</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="n">n1</span><span class="m">+1</span><span class="o">/</span><span class="n">n4</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-1.126686</span>  <span class="m">1.326686</span>
+</code></pre></div>
+
+<h2 id="84-brass-alloys">8.4 Brass alloys</h2>
+<blockquote>
+<p>When brass is used in a production, the modulus of elasticity, E, of the material is often important for the functionality. The modulus of elasticity for 6 different brass alloys are measured. 5 samples from each alloy are tested. The results are shown in the table below where the measured modulus of elasticity is given in GPa:</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>M1</th>
+<th>M2</th>
+<th>M3</th>
+<th>M4</th>
+<th>M5</th>
+<th>M6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>82.5</td>
+<td>82.7</td>
+<td>92.2</td>
+<td>96.5</td>
+<td>88.9</td>
+<td>75.6</td>
+</tr>
+<tr>
+<td>83.7</td>
+<td>81.9</td>
+<td>106.8</td>
+<td>93.8</td>
+<td>89.2</td>
+<td>78.1</td>
+</tr>
+<tr>
+<td>80.9</td>
+<td>78.9</td>
+<td>104.6</td>
+<td>92.1</td>
+<td>94.2</td>
+<td>92.2</td>
+</tr>
+<tr>
+<td>95.2</td>
+<td>83.6</td>
+<td>94.5</td>
+<td>87.4</td>
+<td>91.4</td>
+<td>87.3</td>
+</tr>
+<tr>
+<td>80.8</td>
+<td>78.6</td>
+<td>100.7</td>
+<td>89.6</td>
+<td>90.1</td>
+<td>83.8</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>In an R-run for one way analysis of variance and the following output is obtained: (however some of the values have been substituted by the symbols A, B, and C)</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">anova</span><span class="p">(</span> <span class="nf">lm</span><span class="p">(</span><span class="n">elasmodul</span> <span class="o">~</span> <span class="n">alloy</span><span class="p">)</span> <span class="p">)</span>
+<span class="n">Analysis</span> <span class="n">of</span> <span class="n">Variance</span> <span class="n">Table</span>
+<span class="n">Response</span><span class="o">:</span> <span class="n">elasmodul</span>
+            <span class="n">Df</span>  <span class="n">Sum</span> <span class="n">Sq</span>  <span class="n">Mean</span> <span class="n">Sq</span> <span class="bp">F</span> <span class="n">value</span> <span class="nf">Pr</span><span class="p">(</span><span class="o">&gt;</span><span class="bp">F</span><span class="p">)</span>
+<span class="n">alloy</span>       <span class="n">A</span>   <span class="m">1192.51</span> <span class="m">238.501</span> <span class="m">9.9446</span> <span class="m">3.007e-05</span>
+<span class="n">Residuals</span>   <span class="n">B</span>   <span class="n">C</span>       <span class="m">23.983</span>
+</code></pre></div>
+
+<h3 id="a_3">a)</h3>
+<blockquote>
+<p>What are the values of A, B, and C?</p>
+</blockquote>
+<p><strong>A:</strong> Treatment degree of freedom
+$$
+(k-1)= 6-1=5
+$$</p>
+<p><strong>B</strong>: Residual degree of freedom
+$$
+(n-k)  = 30-6 = 24
+$$</p>
+<p><strong>C</strong>: Residual sum of squares
+$$
+SSE = MSE*(n-k) = 575.592
+$$</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">MSE</span> <span class="o">&lt;-</span> <span class="m">23.983</span>
+<span class="o">&gt;</span> <span class="n">df2</span> <span class="o">&lt;-</span> <span class="m">24</span>
+<span class="o">&gt;</span> <span class="n">SSE</span> <span class="o">&lt;-</span> <span class="n">MSE</span> <span class="o">*</span> <span class="n">df2</span>
+<span class="o">&gt;</span> <span class="n">SSE</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">575.592</span>
+</code></pre></div>
+
+<h3 id="b_3">b)</h3>
+<blockquote>
+<p>The assumptions for using the one-way analysis of variance is (choose the answer that lists all the assumptions and that NOT lists any unnecessary assumptions):</p>
+</blockquote>
+<ol>
+<li>The data must be normally and independently distributed within each group and the variances within each group should not differ significantly from each other</li>
+<li>The data must be normally and independently distributed within each group</li>
+<li>The data must be normally and independently distributed and have approximately the same mean and variance within each group</li>
+<li>The data should not bee too large or too small</li>
+<li>The data must be normally and independently distributed within each group and have approximately the same IQR-value in each group</li>
+</ol>
+<p><strong>Correct answer: 1)</strong></p>
+<h3 id="c_2">c)</h3>
+<blockquote>
+<p>Compute a 95% confidence interval for the single pre-planned difference between brass alloy 1 and 2.</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\bar{y}_{1} - \bar{y}_{2} \pm t_{1-\alpha/2}\sqrt{MSE(\frac{1}{n_i}+\frac{1}{n_j})}  = [ -2.912491,  9.872491]
+</div>
+<script type="math/tex; mode=display">
+\bar{y}_{1} - \bar{y}_{2} \pm t_{1-\alpha/2}\sqrt{MSE(\frac{1}{n_i}+\frac{1}{n_j})}  = [ -2.912491,  9.872491]
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">df2</span> <span class="o">&lt;-</span> <span class="m">24</span>
+<span class="o">&gt;</span> <span class="n">mean1</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">82.5</span><span class="p">,</span><span class="m">83.7</span><span class="p">,</span><span class="m">80.9</span><span class="p">,</span><span class="m">95.2</span><span class="p">,</span><span class="m">80.8</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">mean2</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">82.7</span><span class="p">,</span><span class="m">81.9</span><span class="p">,</span><span class="m">78.9</span><span class="p">,</span><span class="m">83.6</span><span class="p">,</span><span class="m">78.6</span><span class="p">))</span>
+<span class="o">&gt;</span> <span class="n">MSE</span> <span class="o">&lt;-</span> <span class="m">23.983</span>
+<span class="o">&gt;</span> <span class="n">n1</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="o">&gt;</span> <span class="n">n2</span> <span class="o">&lt;-</span><span class="m">5</span>
+<span class="o">&gt;</span> <span class="n">mean1</span> <span class="o">-</span> <span class="n">mean2</span> <span class="o">+</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">*</span> <span class="nf">qt</span><span class="p">((</span><span class="m">1-0.05</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">df2</span><span class="p">)</span> <span class="o">*</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">MSE</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="n">n1</span><span class="m">+1</span><span class="o">/</span><span class="n">n2</span><span class="p">))</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">-2.912491</span>  <span class="m">9.872491</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_7/" title="7 Categorical and Count Data" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                7 Categorical and Count Data
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../test/" title="testnotes" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                testnotes
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
