@@ -1,0 +1,1027 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.11">
+    
+    
+      
+        <title>3 Sample size and Statistical power - Introduction to Statistics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.860688db.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.943997b5.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#ef5552">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-sample-size-and-statistical-power" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Introduction to Statistics" class="md-header-nav__button md-logo" aria-label="Introduction to Statistics">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Introduction to Statistics
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              3 Sample size and Statistical power
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href=".." class="md-tabs__link md-tabs__link--active">
+          Book solutions
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../test/" class="md-tabs__link">
+          Notes
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Introduction to Statistics" class="md-nav__button md-logo" aria-label="Introduction to Statistics">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Introduction to Statistics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      Book solutions
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Book solutions" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Book solutions
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Preface" class="md-nav__link">
+      Preface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_1/" title="1 Descriptive Statistics" class="md-nav__link">
+      1 Descriptive Statistics
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_1/" title="2 Probability Discrete" class="md-nav__link">
+      2 Probability Discrete
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_2_2/" title="2 Probability Continuous" class="md-nav__link">
+      2 Probability Continuous
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_1/" title="3 Confidence Intervals" class="md-nav__link">
+      3 Confidence Intervals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_2/" title="3 Hypothesis Testing" class="md-nav__link">
+      3 Hypothesis Testing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_3_3/" title="3 Analysis of Two samples" class="md-nav__link">
+      3 Analysis of Two samples
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        3 Sample size and Statistical power
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="3 Sample size and Statistical power" class="md-nav__link md-nav__link--active">
+      3 Sample size and Statistical power
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#35-transport-times" class="md-nav__link">
+    3.5 Transport times
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Transport times">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-concrete-items" class="md-nav__link">
+    3.10 Concrete items
+  </a>
+  
+    <nav class="md-nav" aria-label="3.10 Concrete items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_1" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    g)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-nav__link">
+      4 Simulation Methods
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_5/" title="5 Simple Linear Regression" class="md-nav__link">
+      5 Simple Linear Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_6/" title="6 Multiple Linear Regression" class="md-nav__link">
+      6 Multiple Linear Regression
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_7/" title="7 Categorical and Count Data" class="md-nav__link">
+      7 Categorical and Count Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chapter_8/" title="8 Grouped Data(one-way ANOVA)" class="md-nav__link">
+      8 Grouped Data(one-way ANOVA)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Notes
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Notes" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Notes
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../test/" title="testnotes" class="md-nav__link">
+      testnotes
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#35-transport-times" class="md-nav__link">
+    3.5 Transport times
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Transport times">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-concrete-items" class="md-nav__link">
+    3.10 Concrete items
+  </a>
+  
+    <nav class="md-nav" aria-label="3.10 Concrete items">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a_1" class="md-nav__link">
+    a)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b_1" class="md-nav__link">
+    b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#d_1" class="md-nav__link">
+    d)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_1" class="md-nav__link">
+    e)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#f" class="md-nav__link">
+    f)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#g" class="md-nav__link">
+    g)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="3-sample-size-and-statistical-power">3 Sample Size and Statistical Power</h1>
+<h2 id="35-transport-times">3.5 Transport times</h2>
+<blockquote>
+<p>A company, MM, selling items online wants to compare the transport times for two transport firms for delivery of the goods. To compare the two companies recordings of delivery times on a specific route were made, with a sample size of n = 9 for each firm. The following data were found:</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+\text{Firm A: } \bar{y}_A = 1.93d \text{ and } s_A=0.45 d \\
+\text{Firm B: } \bar{y}_B = 1.49d \text{ and } s_B=0.58 d
+</div>
+<script type="math/tex; mode=display">
+\text{Firm A: } \bar{y}_A = 1.93d \text{ and } s_A=0.45 d \\
+\text{Firm B: } \bar{y}_B = 1.49d \text{ and } s_B=0.58 d
+</script>
+</div>
+<blockquote>
+<p>note that d is the SI unit for days. It is assumed that data can be regarded as stemming from normal distributions.</p>
+</blockquote>
+<h3 id="a">a)</h3>
+<blockquote>
+<p>We want to test the following hypothesis</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+H_0:\mu_A=\mu_B \\
+H_1: \mu_A \ne \mu_B
+</div>
+<script type="math/tex; mode=display">
+H_0:\mu_A=\mu_B \\
+H_1: \mu_A \ne \mu_B
+</script>
+</div>
+<blockquote>
+<p>What is the p-value, interpretation and conclusion for this test (at α = 5% level)?</p>
+</blockquote>
+<p><span><span class="MathJax_Preview">\text{p-value} =  0.09221726</span><script type="math/tex">\text{p-value} =  0.09221726</script></span> is more than <span><span class="MathJax_Preview">\alpha=0.05</span><script type="math/tex">\alpha=0.05</script></span> , so we have to accept <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span>, that means there is no significant difference between  for two transport firm for delivery of the goods.</p>
+<div class="highlight"><pre><span></span><code><span class="n">t.test2</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span><span class="n">m2</span><span class="p">,</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">,</span><span class="n">n1</span><span class="p">,</span><span class="n">n2</span><span class="p">,</span><span class="n">m0</span><span class="o">=</span><span class="m">0</span><span class="p">,</span><span class="n">equal.variance</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">conf.int</span><span class="o">=</span><span class="m">0.05</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="nf">if</span><span class="p">(</span> <span class="n">equal.variance</span><span class="o">==</span><span class="kc">FALSE</span> <span class="p">)</span> 
+  <span class="p">{</span>
+    <span class="n">se</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="n">s1</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">s2</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span> <span class="p">)</span>
+    <span class="c1"># welch-satterthwaite df</span>
+    <span class="n">df</span> <span class="o">&lt;-</span> <span class="p">(</span> <span class="p">(</span><span class="n">s1</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="n">s2</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span><span class="o">^</span><span class="m">2</span> <span class="p">)</span><span class="o">/</span><span class="p">(</span> <span class="p">(</span><span class="n">s1</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n1</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="p">(</span><span class="n">n1</span><span class="m">-1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">s2</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="p">(</span><span class="n">n2</span><span class="m">-1</span><span class="p">)</span> <span class="p">)</span>
+  <span class="p">}</span> <span class="n">else</span>
+  <span class="p">{</span>
+    <span class="c1"># pooled standard deviation, scaled by the sample sizes</span>
+    <span class="n">se</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span> <span class="p">(</span><span class="m">1</span><span class="o">/</span><span class="n">n1</span> <span class="o">+</span> <span class="m">1</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">n1</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="n">s1</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">n2</span><span class="m">-1</span><span class="p">)</span><span class="o">*</span><span class="n">s2</span><span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="m">-2</span><span class="p">)</span> <span class="p">)</span> 
+    <span class="n">df</span> <span class="o">&lt;-</span> <span class="n">n1</span><span class="o">+</span><span class="n">n2</span><span class="m">-2</span>
+  <span class="p">}</span>      
+  <span class="n">CI</span> <span class="o">&lt;-</span> <span class="n">m1</span><span class="o">-</span><span class="n">m2</span> <span class="o">+</span> <span class="nf">c</span><span class="p">(</span><span class="m">-1</span><span class="p">,</span><span class="m">1</span><span class="p">)</span><span class="o">*</span><span class="nf">qt</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">conf.int</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span><span class="o">*</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">s1</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n1</span><span class="o">+</span><span class="n">s2</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span>
+  <span class="n">t</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">m1</span><span class="o">-</span><span class="n">m2</span><span class="o">-</span><span class="n">m0</span><span class="p">)</span><span class="o">/</span><span class="n">se</span> 
+  <span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="n">m1</span><span class="o">-</span><span class="n">m2</span><span class="p">,</span><span class="n">df</span> <span class="p">,</span> <span class="n">se</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="m">2</span><span class="o">*</span><span class="nf">pt</span><span class="p">(</span><span class="o">-</span><span class="nf">abs</span><span class="p">(</span><span class="n">t</span><span class="p">),</span><span class="n">df</span><span class="p">),</span> <span class="n">CI</span><span class="p">)</span>    
+  <span class="nf">names</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;Difference of means&quot;</span><span class="p">,</span> <span class="s">&quot;df&quot;</span> <span class="p">,</span> <span class="s">&quot;Std Error&quot;</span><span class="p">,</span> <span class="s">&quot;t&quot;</span><span class="p">,</span> <span class="s">&quot;p-value&quot;</span><span class="p">,</span> <span class="s">&quot;CI low&quot;</span><span class="p">,</span> <span class="s">&quot;CI high&quot;</span><span class="p">)</span>
+
+
+  <span class="nf">return</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span> 
+<span class="p">}</span>
+<span class="o">&gt;</span> <span class="nf">t.test2</span><span class="p">(</span><span class="n">m1</span><span class="o">=</span><span class="m">1.93</span><span class="p">,</span> <span class="n">m2</span><span class="o">=</span><span class="m">1.49</span><span class="p">,</span> <span class="n">s1</span><span class="o">=</span><span class="m">0.45</span><span class="p">,</span> <span class="n">s2</span><span class="o">=</span><span class="m">0.58</span><span class="p">,</span> <span class="n">n1</span><span class="o">=</span><span class="m">9</span><span class="p">,</span> <span class="n">n2</span><span class="o">=</span><span class="m">9</span><span class="p">)</span>
+<span class="n">Difference</span> <span class="n">of</span> <span class="n">means</span>     <span class="m">0.44000000</span>                 
+<span class="n">df</span>                      <span class="m">15.06964679</span>        
+<span class="n">Std</span> <span class="n">Error</span>               <span class="m">0.24469936</span>                
+<span class="n">t</span>                       <span class="m">1.79812484</span>   
+<span class="n">p</span><span class="o">-</span><span class="n">value</span>                 <span class="m">0.09221726</span>
+<span class="n">CI</span> <span class="n">low</span>                  <span class="m">-0.08135448</span> 
+<span class="n">CI</span> <span class="n">high</span>                 <span class="m">0.96135448</span>      
+</code></pre></div>
+
+<h3 id="b">b)</h3>
+<blockquote>
+<p>Find the 95% confidence interval for the mean difference µA − µB.</p>
+</blockquote>
+<p>From the output above:</p>
+<div>
+<div class="MathJax_Preview">
+\bar{x}-\bar{y}\pm t_{1-\alpha/2}*\sqrt{\frac{s_{1}^2}{n_1}+\frac{s^2_{2}}{n_2}} = [-0.08135448,0.96135448]
+</div>
+<script type="math/tex; mode=display">
+\bar{x}-\bar{y}\pm t_{1-\alpha/2}*\sqrt{\frac{s_{1}^2}{n_1}+\frac{s^2_{2}}{n_2}} = [-0.08135448,0.96135448]
+</script>
+</div>
+<h3 id="c">c)</h3>
+<blockquote>
+<p>What is the power of a study with n = 9 observations in each of the two samples of detecting a potential mean difference of 0.4 between the firms (assume that σ = 0.5 and that we use α = 0.05)?</p>
+</blockquote>
+<p><strong>Answer:</strong> From the output below, we can see that the power is 0.358, which is basically the probability of correctly rejecting <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> if <span><span class="MathJax_Preview">H_0</span><script type="math/tex">H_0</script></span> is false. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">9</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="m">0.4</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">)</span>
+
+     <span class="n">Two</span><span class="o">-</span><span class="n">sample</span> <span class="n">t</span> <span class="n">test</span> <span class="n">power</span> <span class="n">calculation</span> 
+
+              <span class="n">n</span> <span class="o">=</span> <span class="m">9</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="m">0.4</span>
+             <span class="n">sd</span> <span class="o">=</span> <span class="m">0.5</span>
+      <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span>
+          <span class="n">power</span> <span class="o">=</span> <span class="m">0.357765</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="n">two.sided</span>
+
+<span class="n">NOTE</span><span class="o">:</span> <span class="n">n</span> <span class="n">is</span> <span class="n">number</span> <span class="n">in</span> <span class="o">*</span><span class="n">each</span><span class="o">*</span> <span class="n">group</span>
+</code></pre></div>
+
+<h3 id="d">d)</h3>
+<blockquote>
+<p>What effect size (mean difference) could be detected with n = 9 observations in each of the two samples with a power of 0.8 (assume that σ = 0.5 and that we use α = 0.05)?</p>
+</blockquote>
+<p><strong>Answer:</strong> From the output below we can see, that 0.7 mean difference could be detected with given values. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">9</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.8</span><span class="p">)</span>
+
+     <span class="n">Two</span><span class="o">-</span><span class="n">sample</span> <span class="n">t</span> <span class="n">test</span> <span class="n">power</span> <span class="n">calculation</span> 
+
+              <span class="n">n</span> <span class="o">=</span> <span class="m">9</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="m">0.7034721</span>
+             <span class="n">sd</span> <span class="o">=</span> <span class="m">0.5</span>
+      <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span>
+          <span class="n">power</span> <span class="o">=</span> <span class="m">0.8</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="n">two.sided</span>
+
+<span class="n">NOTE</span><span class="o">:</span> <span class="n">n</span> <span class="n">is</span> <span class="n">number</span> <span class="n">in</span> <span class="o">*</span><span class="n">each</span><span class="o">*</span> <span class="n">group</span>
+</code></pre></div>
+
+<h3 id="e">e)</h3>
+<blockquote>
+<p>How large a sample size (from each firm) would be needed in a new investigation, if we want to detect a potential mean difference of 0.4 between the firms with probability 0.90, that is with power=0.90 (assume that σ = 0.5 and that we use α = 0.05)?</p>
+</blockquote>
+<p><strong>Answer:</strong> From the output below we can see that we would be needed a sample size with 34 observations in a new investigation with given values.  </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">sd</span><span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.9</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="m">0.4</span><span class="p">)</span>
+
+     <span class="n">Two</span><span class="o">-</span><span class="n">sample</span> <span class="n">t</span> <span class="n">test</span> <span class="n">power</span> <span class="n">calculation</span> 
+
+              <span class="n">n</span> <span class="o">=</span> <span class="m">33.82555</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="m">0.4</span>
+             <span class="n">sd</span> <span class="o">=</span> <span class="m">0.5</span>
+      <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span>
+          <span class="n">power</span> <span class="o">=</span> <span class="m">0.9</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="n">two.sided</span>
+
+<span class="n">NOTE</span><span class="o">:</span> <span class="n">n</span> <span class="n">is</span> <span class="n">number</span> <span class="n">in</span> <span class="o">*</span><span class="n">each</span><span class="o">*</span> <span class="n">group</span>
+</code></pre></div>
+
+<h2 id="310-concrete-items">3.10 Concrete items</h2>
+<blockquote>
+<p>A construction company receives concrete items for a construction. The length of the items are assumed reasonably normally distributed. The following requirements for the length of the elements are made <span><span class="MathJax_Preview">\mu=3000mm</span><script type="math/tex">\mu=3000mm</script></span>. The company samples 9 items from a delivery which are then measured for control. The following measurements (in mm) are found: 3003, 3005, 2997, 3006, 2999, 2998, 3007, 3005, 3001.</p>
+</blockquote>
+<h3 id="a_1">a)</h3>
+<blockquote>
+<p>A study is planned of a new supplier. It is expected that the standard deviation will be approximately 3, that is, σ = 3 mm. We want a 90% confidence interval for the mean value in this new study to have a width of 2 mm. How many items should be sampled to achieve this?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+n= \left(\frac{z_{1-\alpha/2}*\sigma}{ME}\right)^2 = 24.34989
+</div>
+<script type="math/tex; mode=display">
+n= \left(\frac{z_{1-\alpha/2}*\sigma}{ME}\right)^2 = 24.34989
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="p">(</span><span class="nf">qnorm</span><span class="p">(</span><span class="m">1-0.1</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="m">3</span><span class="o">/</span><span class="m">1</span><span class="p">)</span><span class="o">^</span><span class="m">2</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">24.34989</span>
+</code></pre></div>
+
+<h3 id="b_1">b)</h3>
+<blockquote>
+<p>Answer the sample size question above but requiring the 99% confidence interval to have the (same) width of 2 mm.</p>
+</blockquote>
+<p>By increasing the confidence interval to 99%, we have to increase the sample size to 60. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="p">(</span><span class="nf">qnorm</span><span class="p">(</span><span class="m">1-0.01</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="m">3</span><span class="o">/</span><span class="m">1</span><span class="p">)</span><span class="o">^</span><span class="m">2</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">59.71407</span>
+</code></pre></div>
+
+<h3 id="d_1">d)</h3>
+<blockquote>
+<p>Now a new experiment is to be planned. In the first part above, given some wanted margin of error (ME) a sample size of n = 25 was found. What are each of the probabilities that an experiment with n = 25 will detect effects corresponding to (”end up significant for”) μ 1 = 3001, 3002, 3003
+respectively? Assume that we use the typical α = 0.05 level and that σ = 3?</p>
+</blockquote>
+<p><strong>Answer</strong> From the output below the three probabilities are 0.36, 0.89 and 0.998 for respectively 1, 2 and 3 deltas, which are found by 3001-3000=1 etc. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">sd</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">25</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;one.sample&quot;</span><span class="p">)</span>
+
+     <span class="n">One</span><span class="o">-</span><span class="n">sample</span> <span class="n">t</span> <span class="n">test</span> <span class="n">power</span> <span class="n">calculation</span> 
+
+              <span class="n">n</span> <span class="o">=</span> <span class="m">25</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span>
+             <span class="n">sd</span> <span class="o">=</span> <span class="m">3</span>
+      <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span>
+          <span class="n">power</span> <span class="o">=</span> <span class="m">0.3594721</span><span class="p">,</span> <span class="m">0.8920169</span><span class="p">,</span> <span class="m">0.9976846</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="n">two.sided</span>
+</code></pre></div>
+
+<p><strong>Plot of powers with n=25</strong></p>
+<div class="highlight"><pre><span></span><code><span class="n">ds</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+<span class="n">powers25</span> <span class="o">&lt;-</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">25</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">ds</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span>
+<span class="n">type</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;one.sample&quot;</span><span class="p">))</span><span class="o">$</span><span class="n">power</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">powers25</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<p><img alt="" src="../pics/power25.png" /></p>
+<h3 id="e_1">e)</h3>
+<blockquote>
+<p>One of the sample size computation above led to n = 60 (it is not so important how/why). Answer the same question as above using n = 60.</p>
+</blockquote>
+<p><strong>Answer:</strong> Now we can see that the probabilities increased to 0.719, 0.999, 1.0.</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">sd</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;one.sample&quot;</span><span class="p">)</span>
+
+     <span class="n">One</span><span class="o">-</span><span class="n">sample</span> <span class="n">t</span> <span class="n">test</span> <span class="n">power</span> <span class="n">calculation</span> 
+
+              <span class="n">n</span> <span class="o">=</span> <span class="m">60</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span>
+             <span class="n">sd</span> <span class="o">=</span> <span class="m">3</span>
+      <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span>
+          <span class="n">power</span> <span class="o">=</span> <span class="m">0.7189760</span><span class="p">,</span> <span class="m">0.9990908</span><span class="p">,</span> <span class="m">1.0000000</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="n">two.sided</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">ds</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">0.1</span><span class="p">)</span>
+<span class="n">powers60</span> <span class="o">&lt;-</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="m">60</span><span class="p">,</span> <span class="n">delta</span> <span class="o">=</span> <span class="n">ds</span><span class="p">,</span> <span class="n">sd</span> <span class="o">=</span> <span class="m">3</span><span class="p">,</span> <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span>
+<span class="n">type</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&quot;one.sample&quot;</span><span class="p">))</span><span class="o">$</span><span class="n">power</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">powers60</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;l&quot;</span><span class="p">)</span>
+<span class="nf">lines</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">powers25</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="nf">legend</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">0.6</span><span class="p">,</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;n=60&quot;</span><span class="p">,</span> <span class="s">&quot;n=25&quot;</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;black&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">)</span> <span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+</code></pre></div>
+
+<p><img alt="" src="../pics/powers25vs60.png" /></p>
+<h3 id="f">f)</h3>
+<blockquote>
+<p>What sample size would be needed to achieve a power of 0.80 for an effect of size 0.5?</p>
+</blockquote>
+<p><strong>Answer:</strong> The sample size of 285 would be needed to achieve a power of 0.80 for an effect of size 0.5</p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">sd</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.80</span><span class="p">,</span><span class="n">delta</span> <span class="o">=</span><span class="m">0.5</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;one.sample&quot;</span><span class="p">)</span>
+
+     <span class="n">One</span><span class="o">-</span><span class="n">sample</span> <span class="n">t</span> <span class="n">test</span> <span class="n">power</span> <span class="n">calculation</span> 
+
+              <span class="n">n</span> <span class="o">=</span> <span class="m">284.4864</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="m">0.5</span>
+             <span class="n">sd</span> <span class="o">=</span> <span class="m">3</span>
+      <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span>
+          <span class="n">power</span> <span class="o">=</span> <span class="m">0.8</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="n">two.sided</span>
+</code></pre></div>
+
+<h3 id="g">g)</h3>
+<blockquote>
+<p>Assume that you only have the finances to do an experiment with n = 50. How large a difference would you be able to detect with probability 0.8 (i.e. Power = 0.80)?</p>
+</blockquote>
+<p><strong>Answer:</strong> Only the difference of 1.21 would be able to be detected with probability 0.8 and n=50, so a true alternative mean of 2998.8 (or smaller) or 3001.2 (or larger) would be detected by this experiment. </p>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="nf">power.t.test</span><span class="p">(</span><span class="n">sd</span><span class="o">=</span><span class="m">3</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="m">50</span><span class="p">,</span> <span class="n">sig.level</span><span class="o">=</span><span class="m">0.05</span><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="m">0.80</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;one.sample&quot;</span><span class="p">)</span>
+
+     <span class="n">One</span><span class="o">-</span><span class="n">sample</span> <span class="n">t</span> <span class="n">test</span> <span class="n">power</span> <span class="n">calculation</span> 
+
+              <span class="n">n</span> <span class="o">=</span> <span class="m">50</span>
+          <span class="n">delta</span> <span class="o">=</span> <span class="m">1.212554</span>
+             <span class="n">sd</span> <span class="o">=</span> <span class="m">3</span>
+      <span class="n">sig.level</span> <span class="o">=</span> <span class="m">0.05</span>
+          <span class="n">power</span> <span class="o">=</span> <span class="m">0.8</span>
+    <span class="n">alternative</span> <span class="o">=</span> <span class="n">two.sided</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chapter_3_3/" title="3 Analysis of Two samples" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                3 Analysis of Two samples
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                4 Simulation Methods
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>

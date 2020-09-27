@@ -305,6 +305,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../chapter_3_4/" title="3 Sample size and Statistical power" class="md-nav__link">
+      3 Sample size and Statistical power
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../chapter_4_1/" title="4 Simulation Methods" class="md-nav__link">
       4 Simulation Methods
     </a>
@@ -454,6 +466,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -477,6 +496,13 @@
           <li class="md-nav__item">
   <a href="#b_3" class="md-nav__link">
     b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
   </a>
   
 </li>
@@ -509,7 +535,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#c_1" class="md-nav__link">
+  <a href="#c_3" class="md-nav__link">
     c)
   </a>
   
@@ -688,6 +714,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    c)
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -711,6 +744,13 @@
           <li class="md-nav__item">
   <a href="#b_3" class="md-nav__link">
     b)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    c)
   </a>
   
 </li>
@@ -743,7 +783,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#c_1" class="md-nav__link">
+  <a href="#c_3" class="md-nav__link">
     c)
   </a>
   
@@ -1116,6 +1156,18 @@ $$</p>
 <span class="m">0.227027</span> 
 </code></pre></div>
 
+<h3 id="c_1">c)</h3>
+<blockquote>
+<p>Based on a scenario that the proportion voting for particular party is around 30%, how large an exit poll should be taken to achieve a 99% confidence interval having a width of 0.01 in average for this proportion?</p>
+</blockquote>
+<p><strong>Answer</strong> The exit pool of 55734 people should be taken to achieve a 99% CI having a width of 0.01 in average. </p>
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">&lt;-</span> <span class="m">0.3</span>
+<span class="n">ME</span> <span class="o">&lt;-</span> <span class="m">0.01</span>
+<span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">0.01</span>
+<span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="nf">qnorm</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">ME</span><span class="o">/</span><span class="m">2</span><span class="p">))</span><span class="o">^</span><span class="m">2</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">55733.13</span>
+</code></pre></div>
+
 <h2 id="74-sugar-quality">7.4 Sugar quality</h2>
 <blockquote>
 <p>A wholesaler needs to find a supplier that delivers sugar in 1 kg bags. From two potential suppliers 50 bags of sugar are received from each. A bag is described as ’defective’ if the weight of the filled bag is less than 990 grams. The received bags were all control weighed and 6 defective from supplier A and 12 defective from supplier B were found.</p>
@@ -1263,6 +1315,29 @@ $$</p>
 <span class="m">0.18</span> 
 </code></pre></div>
 
+<h3 id="c_2">c)</h3>
+<blockquote>
+<p>Based on the scenario, that the proportion of defective bags for a new supplier is about 20%, a new study was planned with the aim of obtaining an average width, B, of a 95% confidence interval. The Analysis Department achieved the result that one should examine 1537 bags, but had forgotten to specify which value for the width B, they had used. What was the value used for B?</p>
+</blockquote>
+<div>
+<div class="MathJax_Preview">
+n=p(1-p)\left(\frac{z_{1-\alpha/2}}{ME}\right)^2 \\
+ME = \sqrt{p(1-p)*\frac{z_{1-\alpha/2}^2}{n}}= 0.20
+</div>
+<script type="math/tex; mode=display">
+n=p(1-p)\left(\frac{z_{1-\alpha/2}}{ME}\right)^2 \\
+ME = \sqrt{p(1-p)*\frac{z_{1-\alpha/2}^2}{n}}= 0.20
+</script>
+</div>
+<div class="highlight"><pre><span></span><code><span class="o">&gt;</span> <span class="n">p</span> <span class="o">&lt;-</span> <span class="m">0.2</span>
+<span class="o">&gt;</span> <span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">0.05</span>
+<span class="o">&gt;</span> <span class="n">n</span> <span class="o">&lt;-</span> <span class="m">1537</span>
+<span class="o">&gt;</span> <span class="n">ME</span> <span class="o">&lt;-</span> <span class="nf">sqrt</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="nf">qnorm</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">alpha</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">^</span><span class="m">2</span><span class="o">/</span><span class="n">n</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="n">ME</span>
+<span class="p">[</span><span class="m">1</span><span class="p">]</span> <span class="m">0.01999729</span>
+</code></pre></div>
+
+<p><strong>Answer:</strong> since the width of the confidence interval is twice the margin of error, the average width B is 0.040.</p>
 <h2 id="75-physical-training">7.5 Physical training</h2>
 <blockquote>
 <p>A company wants to investigate whether the employees’ physical training condition will affect their success in the job. 200 employees were tested and the following count data were found:</p>
@@ -1387,7 +1462,7 @@ e_{11} = 30*53/200 = 7.95
 <ul>
 <li>So the contribution to the statistic from table cell (1,1) is <span><span class="MathJax_Preview">1.170126</span><script type="math/tex">1.170126</script></span></li>
 </ul>
-<h3 id="c_1">c)</h3>
+<h3 id="c_3">c)</h3>
 <blockquote>
 <p>The total <span><span class="MathJax_Preview">\chi^2</span><script type="math/tex">\chi^2</script></span>-test statistic is <span><span class="MathJax_Preview">10.985</span><script type="math/tex">10.985</script></span>, so the <span><span class="MathJax_Preview">\text{p-value}</span><script type="math/tex">\text{p-value}</script></span> and the conclusion will be(both must be valid):</p>
 </blockquote>
