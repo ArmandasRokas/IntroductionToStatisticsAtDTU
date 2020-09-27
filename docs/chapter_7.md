@@ -297,6 +297,28 @@ sample estimates:
 0.227027 
 ```
 
+### c)
+
+> Based on a scenario that the proportion voting for particular party is around 30%, how large an exit poll should be taken to achieve a 99% confidence interval having a width of 0.01 in average for this proportion?
+
+**Answer** The exit pool of 55734 people should be taken to achieve a 99% CI having a width of 0.01 in average. 
+
+
+
+```R
+p <- 0.3
+ME <- 0.01
+alpha <- 0.01
+p*(1-p)*(qnorm(1-alpha/2)/(ME/2))^2
+[1] 55733.13
+```
+
+
+
+
+
+
+
 ## 7.4 Sugar quality
 
 > A wholesaler needs to find a supplier that delivers sugar in 1 kg bags. From two potential suppliers 50 bags of sugar are received from each. A bag is described as ’defective’ if the weight of the filled bag is less than 990 grams. The received bags were all control weighed and 6 defective from supplier A and 12 defective from supplier B were found.
@@ -424,6 +446,27 @@ sample estimates:
    p 
 0.18 
 ```
+
+### c)
+
+> Based on the scenario, that the proportion of defective bags for a new supplier is about 20%, a new study was planned with the aim of obtaining an average width, B, of a 95% confidence interval. The Analysis Department achieved the result that one should examine 1537 bags, but had forgotten to specify which value for the width B, they had used. What was the value used for B?
+
+
+$$
+n=p(1-p)\left(\frac{z_{1-\alpha/2}}{ME}\right)^2 \\
+ME = \sqrt{p(1-p)*\frac{z_{1-\alpha/2}^2}{n}}= 0.20
+$$
+
+```R
+> p <- 0.2
+> alpha <- 0.05
+> n <- 1537
+> ME <- sqrt(p*(1-p)*qnorm(1-alpha/2)^2/n)
+> ME
+[1] 0.01999729
+```
+
+**Answer:** since the width of the confidence interval is twice the margin of error, the average width B is 0.040.
 
 
 
